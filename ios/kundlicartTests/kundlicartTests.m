@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface kundlicartTests : XCTestCase
+@interface kundlikartTests : XCTestCase
 
 @end
 
-@implementation kundlicartTests
+@implementation kundlikartTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

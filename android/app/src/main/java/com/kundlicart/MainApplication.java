@@ -1,4 +1,4 @@
-package com.kundlicart;
+package com.kundlikart;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "kundlicart.app"
-               BlueprintName = "kundlicart"
-               ReferencedContainer = "container:kundlicart.xcodeproj">
+               BuildableName = "kundlikart.app"
+               BlueprintName = "kundlikart"
+               ReferencedContainer = "container:kundlikart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "kundlicartTests.xctest"
-               BlueprintName = "kundlicartTests"
-               ReferencedContainer = "container:kundlicart.xcodeproj">
+               BuildableName = "kundlikartTests.xctest"
+               BlueprintName = "kundlikartTests"
+               ReferencedContainer = "container:kundlikart.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "kundlicart.app"
-            BlueprintName = "kundlicart"
-            ReferencedContainer = "container:kundlicart.xcodeproj">
+            BuildableName = "kundlikart.app"
+            BlueprintName = "kundlikart"
+            ReferencedContainer = "container:kundlikart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "kundlicart.app"
-            BlueprintName = "kundlicart"
-            ReferencedContainer = "container:kundlicart.xcodeproj">
+            BuildableName = "kundlikart.app"
+            BlueprintName = "kundlikart"
+            ReferencedContainer = "container:kundlikart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
