@@ -1,0 +1,6 @@
+{
+    "OtpScreen":{
+        "confirmText": "We have sent you OTP ",
+        "subText": "via SMS for mobile number verification"
+    }
+}
