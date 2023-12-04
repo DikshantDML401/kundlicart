@@ -1,9 +1,19 @@
+/* eslint-disable react/no-unstable-nested-components */
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {CheckBox} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import TextField from '../../components/atoms/TextField';
-import {textgrey} from '../../styles/colors';
+import {
+  lightBlack,
+  lightOrange,
+  mediumBlue,
+  textgrey,
+  white,
+} from '../../styles/colors';
+import {widthToDp} from '../../styles/responsive';
+import CustomButton from '../../components/atoms/CustomButton';
 
 const Login: React.FC = () => {
   const [number, setNumber] = useState<number | null>(null);
@@ -21,7 +31,6 @@ const Login: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Login</Text>
       <View style={styles.textField}>
         <TextField
           placeholder="Mobile Number"
@@ -34,7 +43,7 @@ const Login: React.FC = () => {
         <Text style={styles.text}>We will send you a one time password.</Text>
         <Text style={styles.text}>Carrier rates may apply.</Text>
       </View>
-      <View style={[styles.checkboxContainer, styles.textWrapper]}>
+      <View style={[styles.checkboxContainer]}>
         <CheckBox
           checked={checked}
           onPress={toggleCheckbox}
@@ -44,9 +53,42 @@ const Login: React.FC = () => {
           uncheckedIcon="checkbox-blank-outline"
           checkedColor="orange"
         />
-        <Text numberOfLines={2} ellipsizeMode="tail" style={styles.text}>
+        <Text style={[styles.text]}>
           By creating an account, you are agreeing to our Disclaimer and privacy
           policy{' '}
+        </Text>
+      </View>
+      <View style={styles.btnStyle}>
+        <CustomButton title="Get Otp" color={lightOrange} />
+      </View>
+      <View style={[styles.common]}>
+        <Text style={styles.text}>Or with</Text>
+      </View>
+      <View style={styles.btnStyle}>
+        <CustomButton
+          title="truecaller"
+          color={mediumBlue}
+          leftIcone={true}
+          leftImage={() => (
+            <Icon
+              name="call"
+              size={20}
+              color={mediumBlue}
+              style={{
+                backgroundColor: white,
+                borderRadius: 30 / 2,
+              }}
+            />
+          )}
+        />
+      </View>
+      <View>
+        <CustomButton title="AstroSage ID" color={lightOrange} />
+      </View>
+      <View style={[styles.common, styles.textWrapper]}>
+        <Text style={[styles.text, {color: lightBlack}]}>
+          Don't have an account?
+          <Text style={{color: lightOrange}}> Sign up</Text>
         </Text>
       </View>
     </View>
@@ -54,14 +96,18 @@ const Login: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  textinput: {},
   container: {
     marginHorizontal: 28,
   },
+  common: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textinput: {},
   textField: {},
   textWrapper: {
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 15,
   },
   text: {
     color: textgrey,
@@ -69,6 +115,11 @@ const styles = StyleSheet.create({
   },
   checkboxContainer: {
     flexDirection: 'row',
+    width: widthToDp('70%'),
+    alignItems: 'center',
+  },
+  btnStyle: {
+    marginVertical: 20,
   },
 });
 
