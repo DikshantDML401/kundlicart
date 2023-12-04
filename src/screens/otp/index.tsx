@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import AuthHeader from '../../components/organisms/AuthHeader';
 import {useTranslation} from '../../components/hooks/useTranslation';
+import CustomButton from '../../components/atoms/CustomButton';
+import {lightOrange} from '../../styles/colors';
 
 const Otp = () => {
   const {t} = useTranslation();
@@ -35,6 +37,9 @@ const Otp = () => {
       }
     }
   };
+  const handleVerify = () => {
+    console.log('first');
+  };
   const handleResendOtp = () => {
     console.log('first');
   };
@@ -60,6 +65,15 @@ const Otp = () => {
             ref={inputRefs[index]}
           />
         ))}
+      </View>
+      <View style={styles.btnStyle}>
+        <CustomButton
+          title="Verify"
+          color={lightOrange}
+          onPress={() => {
+            handleVerify();
+          }}
+        />
       </View>
       <View style={styles.resendWrapper}>
         <TouchableOpacity onPress={handleResendOtp}>
@@ -110,11 +124,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#f5a442',
   },
-  resendWrapper: {marginTop: 40, alignItems: 'center'},
+  resendWrapper: {marginTop: 30, alignItems: 'center'},
   resendText: {
     color: 'black',
     textDecorationLine: 'underline',
     fontSize: 18,
     fontWeight: '400',
+  },
+  btnStyle: {
+    marginVertical: 20,
+    marginTop: 70,
   },
 });

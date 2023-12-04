@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {CheckBox} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import {useNavigation} from '@react-navigation/native';
 import TextField from '../../components/atoms/TextField';
 import {
   lightBlack,
@@ -14,12 +14,13 @@ import {
 } from '../../styles/colors';
 import {widthToDp} from '../../styles/responsive';
 import CustomButton from '../../components/atoms/CustomButton';
+import AuthHeader from '../../components/organisms/AuthHeader';
 
 const Login: React.FC = () => {
   const [number, setNumber] = useState<number | null>(null);
   const [checked, setChecked] = useState(true);
   const toggleCheckbox = () => setChecked(!checked);
-
+  const navigation = useNavigation();
   const handleNumberChange = (num: string) => {
     const parsedNumber = parseFloat(num);
     if (!isNaN(parsedNumber)) {
@@ -28,9 +29,15 @@ const Login: React.FC = () => {
       setNumber(null);
     }
   };
-
+  const handleOtp = () => {
+    navigation.navigate('Otp' as never);
+  };
+  const handleAstroSage = () => {
+    navigation.navigate('AstroSageLogin' as never);
+  };
   return (
     <View style={styles.container}>
+      <AuthHeader screenHeading="Login" />
       <View style={styles.textField}>
         <TextField
           placeholder="Mobile Number"
@@ -59,7 +66,13 @@ const Login: React.FC = () => {
         </Text>
       </View>
       <View style={styles.btnStyle}>
-        <CustomButton title="Get Otp" color={lightOrange} />
+        <CustomButton
+          title="Get Otp"
+          color={lightOrange}
+          onPress={() => {
+            handleOtp();
+          }}
+        />
       </View>
       <View style={[styles.common]}>
         <Text style={styles.text}>Or with</Text>
@@ -80,10 +93,19 @@ const Login: React.FC = () => {
               }}
             />
           )}
+          onPress={() => {
+            handleOtp();
+          }}
         />
       </View>
       <View>
-        <CustomButton title="AstroSage ID" color={lightOrange} />
+        <CustomButton
+          title="AstroSage ID"
+          color={lightOrange}
+          onPress={() => {
+            handleAstroSage();
+          }}
+        />
       </View>
       <View style={[styles.common, styles.textWrapper]}>
         <Text style={[styles.text, {color: lightBlack}]}>

@@ -1,23 +1,18 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {authHeaderLogo} from '../../../utils/images';
 
-interface AuthHeaderProps {
-  showSkip?: boolean;
+interface AstrosageHeaderProps {
   screenHeading?: string;
 }
-const AuthHeader: React.FC<AuthHeaderProps> = ({
-  showSkip = true,
+const AstrosageHeader: React.FC<AstrosageHeaderProps> = ({
   screenHeading = '',
 }) => {
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.headerTop}>
-        {showSkip && <Text style={styles.headerTopButton}>Skip</Text>}
-      </View>
       <View style={styles.mainHeadingWrapper}>
-        <Image source={authHeaderLogo} style={styles.headerLogo} />
         <Text style={styles.headerText}>AstroSage</Text>
+        <Image source={authHeaderLogo} style={styles.headerLogo} />
       </View>
       <View style={styles.screenTextWrapper}>
         <Text style={styles.screenHeading}>{screenHeading}</Text>
@@ -26,7 +21,7 @@ const AuthHeader: React.FC<AuthHeaderProps> = ({
   );
 };
 
-export default AuthHeader;
+export default AstrosageHeader;
 
 const styles = StyleSheet.create({
   mainContainer: {},
@@ -50,14 +45,14 @@ const styles = StyleSheet.create({
   },
   mainHeadingWrapper: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 7,
+    gap: 15,
   },
-  headerText: {fontSize: 29, fontWeight: '600', color: 'black'},
-  headerLogo: {width: 30, height: 30},
-  screenHeading: {color: 'black', fontSize: 30, fontWeight: 'bold'},
+  headerText: {fontSize: 29, fontWeight: '600', color: '#f5a442'},
+  headerLogo: {width: 60, height: 60},
+  screenHeading: {color: 'black', fontSize: 30, fontWeight: '300'},
   screenTextWrapper: {
     justifyContent: 'center',
     alignItems: 'center',

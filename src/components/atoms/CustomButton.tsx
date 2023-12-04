@@ -6,6 +6,7 @@ import {Button} from '@rneui/themed';
 import {heightToDp, widthToDp} from '../../styles/responsive';
 
 interface CustomButton {
+  onPress: () => void | undefined;
   title: string;
   color: string;
   leftIcone?: boolean;
@@ -13,6 +14,7 @@ interface CustomButton {
 }
 
 const CustomButton: React.FC<CustomButton> = ({
+  onPress,
   title,
   color,
   leftIcone = false,
@@ -29,6 +31,7 @@ const CustomButton: React.FC<CustomButton> = ({
           borderRadius: 25,
         }}
         icon={leftIcone && leftImage}
+        onPress={() => onPress()}
       />
     </View>
   );
