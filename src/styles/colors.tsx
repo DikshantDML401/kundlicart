@@ -27,6 +27,7 @@ export const footergray = '#757575';
 export const footerOverlay = '#00000059';
 export const rightIconegray = '#626262';
 export const mediumBlue = '#4287f5';
+export const mediumGray = '#b5b2ae';
 
 //Color for SafeAreaView (IOS)
 export const safeAreaTopColor = '#000000';

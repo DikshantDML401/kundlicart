@@ -12,7 +12,6 @@ import AuthHeader from '../../components/organisms/AuthHeader';
 import {useNavigation} from '@react-navigation/native';
 
 const Login: React.FC = () => {
-
   const [number, setNumber] = useState<number | null>(null);
   const [checked, setChecked] = useState(true);
   const toggleCheckbox = () => setChecked(!checked);
