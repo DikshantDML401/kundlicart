@@ -4,6 +4,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {CheckBox} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import TextField from '../../components/atoms/TextField';
 import {lightBlack, lightOrange, mediumBlue, white} from '../../styles/colors';
 import {widthToDp} from '../../styles/responsive';
@@ -11,12 +12,12 @@ import CustomButton from '../../components/atoms/CustomButton';
 import AuthHeader from '../../components/organisms/AuthHeader';
 import {useNavigation} from '@react-navigation/native';
 
-const Login: React.FC = () => {
-
+const SignUp: React.FC = () => {
+  const navigation = useNavigation();
   const [number, setNumber] = useState<number | null>(null);
   const [checked, setChecked] = useState(true);
   const toggleCheckbox = () => setChecked(!checked);
-  const navigation = useNavigation();
+
   const handleNumberChange = (num: string) => {
     const parsedNumber = parseFloat(num);
     if (!isNaN(parsedNumber)) {
@@ -25,16 +26,11 @@ const Login: React.FC = () => {
       setNumber(null);
     }
   };
-  const handleOtp = () => {
-    navigation.navigate('Otp' as never);
-  };
-  const handleAstroSage = () => {
-    navigation.navigate('AstroSageLogin' as never);
-  };
+
   return (
     <View style={styles.container}>
       <View style={{marginBottom: 24}}>
-        <AuthHeader screenHeading="Login" />
+        <AuthHeader screenHeading="Sign Up" />
       </View>
       <View style={styles.textField}>
         <TextField
@@ -52,6 +48,7 @@ const Login: React.FC = () => {
         <CheckBox
           checked={checked}
           onPress={toggleCheckbox}
+          // Use ThemeProvider to make change for all checkbox
           iconType="material-community"
           checkedIcon="checkbox-marked"
           uncheckedIcon="checkbox-blank-outline"
@@ -63,13 +60,7 @@ const Login: React.FC = () => {
         </Text>
       </View>
       <View style={styles.btnStyle}>
-        <CustomButton
-          title="Get Otp"
-          color={lightOrange}
-          onPress={() => {
-            handleOtp();
-          }}
-        />
+        <CustomButton title="Get Otp" color={lightOrange} />
       </View>
       <View style={[styles.common]}>
         <Text style={styles.text}>Or with</Text>
@@ -90,26 +81,17 @@ const Login: React.FC = () => {
               }}
             />
           )}
-          onPress={() => {
-            handleOtp();
-          }}
         />
       </View>
       <View>
-        <CustomButton
-          title="AstroSage ID"
-          color={lightOrange}
-          onPress={() => {
-            handleAstroSage();
-          }}
-        />
+        <CustomButton title="AstroSage ID" color={lightOrange} />
       </View>
       <View style={styles.signUp}>
         <Text style={styles.textBottom}>Don't have an account?</Text>
         <TouchableOpacity
           style={styles.touchableOpacity}
-          onPress={() => navigation.navigate('signup' as never)}>
-          <Text style={{color: lightOrange, fontSize: 16}}> Sign Up</Text>
+          onPress={() => navigation.navigate('Login' as never)}>
+          <Text style={{color: lightOrange, fontSize: 16}}> Login</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -118,7 +100,6 @@ const Login: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     marginHorizontal: 28,
   },
   common: {
@@ -159,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default SignUp;

@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Otp from '../../screens/otp';
 import Login from '../../screens/Login';
 import AstroSageLogin from '../../screens/astroSageLogin';
+import SignUp from '../../screens/SignUp';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,13 @@ const RootNavigator = () => {
           name="Otp"
           component={Otp}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="signup"
+          component={SignUp}
+          options={{
+            headerShown: false,
+          }}
         />
         <Stack.Screen
           name="AstroSageLogin"
