@@ -3,20 +3,22 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {CheckBox} from 'react-native-elements';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import TextField from '../../components/atoms/TextField';
-import {lightBlack, lightOrange, mediumBlue, white} from '../../styles/colors';
+import {lightBlack, lightOrange} from '../../styles/colors';
 import {widthToDp} from '../../styles/responsive';
 import CustomButton from '../../components/atoms/CustomButton';
 import AuthHeader from '../../components/organisms/AuthHeader';
 import {useNavigation} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 const Login: React.FC = () => {
-
   const [number, setNumber] = useState<number | null>(null);
   const [checked, setChecked] = useState(true);
   const toggleCheckbox = () => setChecked(!checked);
   const navigation = useNavigation();
+
+  const {t} = useTranslation();
+
   const handleNumberChange = (num: string) => {
     const parsedNumber = parseFloat(num);
     if (!isNaN(parsedNumber)) {
@@ -45,8 +47,8 @@ const Login: React.FC = () => {
         />
       </View>
       <View style={styles.textWrapper}>
-        <Text style={styles.text}>We will send you a one time password.</Text>
-        <Text style={styles.text}>Carrier rates may apply.</Text>
+        <Text style={styles.text}>{t('LoginScreen.otpText')}</Text>
+        <Text style={styles.text}>{t('LoginScreen.OtpSubText')}</Text>
       </View>
       <View style={[styles.checkboxContainer]}>
         <CheckBox
@@ -57,10 +59,7 @@ const Login: React.FC = () => {
           uncheckedIcon="checkbox-blank-outline"
           checkedColor="orange"
         />
-        <Text style={[styles.text]}>
-          By creating an account, you are agreeing to our Disclaimer and privacy
-          policy{' '}
-        </Text>
+        <Text style={[styles.text]}>{t('LoginScreen.checkboxText')}</Text>
       </View>
       <View style={styles.btnStyle}>
         <CustomButton
@@ -71,30 +70,10 @@ const Login: React.FC = () => {
           }}
         />
       </View>
-      <View style={[styles.common]}>
+      <View style={[styles.common, {marginBottom: 24}]}>
         <Text style={styles.text}>Or with</Text>
       </View>
-      <View style={styles.btnStyle}>
-        <CustomButton
-          title="truecaller"
-          color={mediumBlue}
-          leftIcone={true}
-          leftImage={() => (
-            <Icon
-              name="call"
-              size={20}
-              color={mediumBlue}
-              style={{
-                backgroundColor: white,
-                borderRadius: 30 / 2,
-              }}
-            />
-          )}
-          onPress={() => {
-            handleOtp();
-          }}
-        />
-      </View>
+
       <View>
         <CustomButton
           title="AstroSage ID"
