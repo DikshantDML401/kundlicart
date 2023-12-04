@@ -12,9 +12,8 @@ import CustomButton from '../../components/atoms/CustomButton';
 import AuthHeader from '../../components/organisms/AuthHeader';
 import {useNavigation} from '@react-navigation/native';
 
-const Login: React.FC = () => {
+const SignUp: React.FC = () => {
   const navigation = useNavigation();
-
   const [number, setNumber] = useState<number | null>(null);
   const [checked, setChecked] = useState(true);
   const toggleCheckbox = () => setChecked(!checked);
@@ -31,7 +30,7 @@ const Login: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={{marginBottom: 24}}>
-        <AuthHeader screenHeading="Login" />
+        <AuthHeader screenHeading="Sign Up" />
       </View>
       <View style={styles.textField}>
         <TextField
@@ -49,6 +48,7 @@ const Login: React.FC = () => {
         <CheckBox
           checked={checked}
           onPress={toggleCheckbox}
+          // Use ThemeProvider to make change for all checkbox
           iconType="material-community"
           checkedIcon="checkbox-marked"
           uncheckedIcon="checkbox-blank-outline"
@@ -90,8 +90,8 @@ const Login: React.FC = () => {
         <Text style={styles.textBottom}>Don't have an account?</Text>
         <TouchableOpacity
           style={styles.touchableOpacity}
-          onPress={() => navigation.navigate('signup' as never)}>
-          <Text style={{color: lightOrange, fontSize: 16}}> Sign Up</Text>
+          onPress={() => navigation.navigate('Login' as never)}>
+          <Text style={{color: lightOrange, fontSize: 16}}> Login</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -100,7 +100,6 @@ const Login: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     marginHorizontal: 28,
   },
   common: {
@@ -141,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default SignUp;
