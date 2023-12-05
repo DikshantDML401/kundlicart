@@ -10,3 +10,10 @@
         "signUp": "Sign Up"
     }
 }
+
+  "LoginScreen": {
+    "otpText": "We will send you a one time password.",
+    "OtpSubText": "Carrier rates may apply.",
+    "checkboxText": "By creating an account, you are agreeing to our Disclaimer and privacy policy."
+  }
+}
