@@ -4,10 +4,11 @@ import Login from '../../screens/Login';
 import Otp from '../../screens/otp';
 import SignUp from '../../screens/SignUp';
 import AstroSageLogin from '../../screens/astroSageLogin';
+import AstroSageSignUp from '../../screens/AstroSageSignUp';
 
 const Stack = createStackNavigator();
 
-const StackNavigaor = () => {
+const AuthStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -30,8 +31,13 @@ const StackNavigaor = () => {
         component={AstroSageLogin}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="AstroSageSignUp"
+        component={AstroSageSignUp}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
 
-export default StackNavigaor;
+export default AuthStack;
