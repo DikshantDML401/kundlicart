@@ -9,7 +9,7 @@ import {widthToDp} from '../../styles/responsive';
 import CustomButton from '../../components/atoms/CustomButton';
 import AuthHeader from '../../components/organisms/AuthHeader';
 import {useNavigation} from '@react-navigation/native';
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from '../../components/hooks/useTranslation';
 
 const Login: React.FC = () => {
   const [number, setNumber] = useState<number | null>(null);
@@ -112,11 +112,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: lightBlack,
-    fontSize: 16,
+    fontSize: 14,
   },
   checkboxContainer: {
     flexDirection: 'row',
-    width: widthToDp('70%'),
+    maxWidth: widthToDp('70%'),
     alignItems: 'center',
   },
   btnStyle: {
