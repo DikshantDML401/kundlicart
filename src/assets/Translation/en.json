@@ -1,8 +1,13 @@
 {
-    "OtpScreen":{
-        "confirmText": "We have sent you OTP ",
-        "subText": "via SMS for mobile number verification",
-        "resendText": "Resend OTP",
-        "getOtp": "Get OTP via phone call"
-    }
+  "OtpScreen": {
+    "confirmText": "We have sent you OTP ",
+    "subText": "via SMS for mobile number verification",
+    "resendText": "Resend OTP",
+    "getOtp": "Get OTP via phone call"
+  },
+  "LoginScreen": {
+    "otpText": "We will send you a one time password.",
+    "OtpSubText": "Carrier rates may apply.",
+    "checkboxText": "By creating an account, you are agreeing to our Disclaimer and privacy policy."
+  }
 }

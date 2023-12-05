@@ -3,10 +3,9 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {CheckBox} from 'react-native-elements';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import TextField from '../../components/atoms/TextField';
-import {lightBlack, lightOrange, mediumBlue, white} from '../../styles/colors';
+import {lightBlack, lightOrange} from '../../styles/colors';
 import {widthToDp} from '../../styles/responsive';
 import CustomButton from '../../components/atoms/CustomButton';
 import AuthHeader from '../../components/organisms/AuthHeader';
@@ -25,6 +24,13 @@ const SignUp: React.FC = () => {
     } else {
       setNumber(null);
     }
+  };
+
+  const handleOtp = () => {
+    navigation.navigate('Otp' as never);
+  };
+  const handleAstroSage = () => {
+    navigation.navigate('AstroSageLogin' as never);
   };
 
   return (
@@ -60,31 +66,26 @@ const SignUp: React.FC = () => {
         </Text>
       </View>
       <View style={styles.btnStyle}>
-        <CustomButton title="Get Otp" color={lightOrange} />
+        <CustomButton
+          title="Get Otp"
+          color={lightOrange}
+          onPress={() => {
+            handleOtp();
+          }}
+        />
       </View>
       <View style={[styles.common]}>
         <Text style={styles.text}>Or with</Text>
       </View>
-      <View style={styles.btnStyle}>
-        <CustomButton
-          title="truecaller"
-          color={mediumBlue}
-          leftIcone={true}
-          leftImage={() => (
-            <Icon
-              name="call"
-              size={20}
-              color={mediumBlue}
-              style={{
-                backgroundColor: white,
-                borderRadius: 30 / 2,
-              }}
-            />
-          )}
-        />
-      </View>
+
       <View>
-        <CustomButton title="AstroSage ID" color={lightOrange} />
+        <CustomButton
+          title="AstroSage ID"
+          color={lightOrange}
+          onPress={() => {
+            handleAstroSage();
+          }}
+        />
       </View>
       <View style={styles.signUp}>
         <Text style={styles.textBottom}>Don't have an account?</Text>
