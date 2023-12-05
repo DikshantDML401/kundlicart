@@ -1,42 +1,15 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import Otp from '../../screens/otp';
-import Login from '../../screens/Login';
-import AstroSageLogin from '../../screens/astroSageLogin';
-import SignUp from '../../screens/SignUp';
-
-const Stack = createStackNavigator();
+import {If} from '../../helpers/if';
+import StackNavigaor from './stackNavigators/StackNavigator';
 
 const RootNavigator = () => {
+  const isLoggedIn = true;
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Otp"
-          component={Otp}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="signup"
-          component={SignUp}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="AstroSageLogin"
-          component={AstroSageLogin}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
+      <If show={isLoggedIn}>
+        <StackNavigaor />
+      </If>
     </NavigationContainer>
   );
 };

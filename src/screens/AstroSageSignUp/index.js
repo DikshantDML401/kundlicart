@@ -1,14 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const index = () => {
+const AstroSageSignUp = () => {
   return (
     <View>
-      <Text>index</Text>
+      <Text>AstroSageSignUp</Text>
     </View>
   );
 };
 
-export default index;
+export default AstroSageSignUp;
 
 const styles = StyleSheet.create({});

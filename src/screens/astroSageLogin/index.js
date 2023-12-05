@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import AstrosageHeader from '../../components/organisms/AstroSageheader';
 import CustomButton from '../../components/atoms/CustomButton';
@@ -7,15 +7,17 @@ import {lightOrange, mediumBlue, mediumGray, white} from '../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import {useTranslation} from '../../components/hooks/useTranslation';
+import {useNavigation} from '@react-navigation/native';
 
 const AstroSageLogin = () => {
   const {t} = useTranslation();
+  const navigation = useNavigation();
 
   const handleOtp = () => {
     console.log('first');
   };
   const handleAstroSage = () => {
-    console.log('first');
+    navigation.navigate('AstroSageSignUp');
   };
   return (
     <View>
@@ -33,7 +35,7 @@ const AstroSageLogin = () => {
                 color={white}
                 style={{
                   marginLeft: 25,
-                  paddingRight: 17
+                  paddingRight: 17,
                 }}
               />
             )}
@@ -86,7 +88,11 @@ const AstroSageLogin = () => {
           <Text style={styles.bottomText}>
             {t('AstroSageLogin.bottomText')}
           </Text>
-          <Text style={styles.bottomSignUp}>{t('AstroSageLogin.signUp')}</Text>
+          <TouchableOpacity onPress={handleAstroSage}>
+            <Text style={styles.bottomSignUp}>
+              {t('AstroSageLogin.signUp')}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
