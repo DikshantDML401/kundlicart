@@ -1,9 +1,12 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../../screens/Login';
 import Otp from '../../screens/otp';
 import SignUp from '../../screens/SignUp';
-import AstroSageLogin from '../../screens/astroSageLogin';
+import AstroSageTab from '../tabNavigator/AstroSageTab';
+
+import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 
 const Stack = createStackNavigator();
 
@@ -27,8 +30,13 @@ const StackNavigaor = () => {
       />
       <Stack.Screen
         name="AstroSageLogin"
-        component={AstroSageLogin}
-        options={{headerShown: false}}
+        component={AstroSageTab}
+        options={{
+          headerShown: true,
+          header: () => (
+            <AstroSageBackHeader title="AstroSage Kundli" backArrow={true} />
+          ),
+        }}
       />
     </Stack.Navigator>
   );
