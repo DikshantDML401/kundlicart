@@ -8,7 +8,6 @@ import AstroSageTab from '../tabNavigator/AstroSageTab';
 
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 
-
 const Stack = createStackNavigator();
 
 const AuthStack = () => {
@@ -38,11 +37,6 @@ const AuthStack = () => {
             <AstroSageBackHeader title="AstroSage Kundli" backArrow={true} />
           ),
         }}
-      />
-      <Stack.Screen
-        name="AstroSageSignUp"
-        component={AstroSageSignUp}
-        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
