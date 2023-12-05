@@ -1,13 +1,19 @@
 {
-  "OtpScreen": {
-    "confirmText": "We have sent you OTP ",
+  "OtpScreenText": {
+    "confirmText1": "We have sent you OTP ",
     "subText": "via SMS for mobile number verification",
-    "resendText": "Resend OTP",
-    "getOtp": "Get OTP via phone call"
+    "resend": "Resend OTP",
+    "getOtpText": "Get OTP via phone call"
   },
-  "AstroSageLogin": {
-    "bottomText": "Don't have an account?",
-    "signUp": "Sign Up"
+  "AstroSageSignUp":{
+    "bottomText": "Already have an account?",
+    "signIn": "Sign In",
+    "footertext": "By creating an account, you are agreeing to our",
+    "termsOfUse": "Terms of Use"
+  },
+  "AstroSageLoginScreen": {
+    "bottomSrnText": "Don't have an account?",
+    "signUpText": "Sign Up"
   },
 
   "LoginScreen": {

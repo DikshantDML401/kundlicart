@@ -50,8 +50,8 @@ const Otp = () => {
     <View style={styles.container}>
       <AuthHeader showSkip={false} screenHeading="OTP" />
       <View style={styles.subTextWrapper}>
-        <Text style={styles.heading}>{t('OtpScreen.confirmText')}</Text>
-        <Text style={styles.subHeading}>{t('OtpScreen.subText')}</Text>
+        <Text style={styles.heading}>{t('OtpScreenText.confirmText1')}</Text>
+        <Text style={styles.subHeading}>{t('OtpScreenText.subText')}</Text>
       </View>
       <View style={styles.otpCodeWrapper}>
         {otp.map((digit, index) => (
@@ -77,12 +77,12 @@ const Otp = () => {
       </View>
       <View style={styles.resendWrapper}>
         <TouchableOpacity onPress={handleResendOtp}>
-          <Text style={styles.resendText}>{t('OtpScreen.resendText')}</Text>
+          <Text style={styles.resendText}>{t('OtpScreenText.resend')}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.resendWrapper}>
         <TouchableOpacity onPress={handlePhoneCall}>
-          <Text style={styles.resendText}>{t('OtpScreen.getOtp')}</Text>
+          <Text style={styles.resendText}>{t('OtpScreenText.getOtpText')}</Text>
         </TouchableOpacity>
       </View>
     </View>
