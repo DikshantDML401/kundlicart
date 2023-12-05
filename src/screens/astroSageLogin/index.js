@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
@@ -5,7 +6,6 @@ import AstrosageHeader from '../../components/organisms/AstroSageheader';
 import CustomButton from '../../components/atoms/CustomButton';
 import {lightOrange, mediumBlue, mediumGray, white} from '../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Feather from 'react-native-vector-icons/Feather';
 import {useTranslation} from '../../components/hooks/useTranslation';
 import {useNavigation} from '@react-navigation/native';
 
@@ -16,11 +16,9 @@ const AstroSageLogin = () => {
   const handleOtp = () => {
     console.log('first');
   };
-  const handleAstroSage = () => {
-    navigation.navigate('AstroSageSignUp');
-  };
+
   return (
-    <View>
+    <View style={styles.container}>
       <AstrosageHeader screenHeading="Welcome back" />
       <View style={styles.wrapper}>
         <View style={styles.btnStyle}>
@@ -88,7 +86,7 @@ const AstroSageLogin = () => {
           <Text style={styles.bottomText}>
             {t('AstroSageLogin.bottomText')}
           </Text>
-          <TouchableOpacity onPress={handleAstroSage}>
+          <TouchableOpacity onPress={() => navigation.navigate('SIGN UP')}>
             <Text style={styles.bottomSignUp}>
               {t('AstroSageLogin.signUp')}
             </Text>
