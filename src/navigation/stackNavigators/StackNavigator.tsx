@@ -8,9 +8,10 @@ import AstroSageTab from '../tabNavigator/AstroSageTab';
 
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 
+
 const Stack = createStackNavigator();
 
-const StackNavigaor = () => {
+const AuthStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -38,8 +39,13 @@ const StackNavigaor = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="AstroSageSignUp"
+        component={AstroSageSignUp}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
 
-export default StackNavigaor;
+export default AuthStack;
