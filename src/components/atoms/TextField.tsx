@@ -18,7 +18,8 @@ import {
   textgrey,
 } from '../../styles/colors';
 import {heightToDp, widthToDp} from '../../styles/responsive';
-import {HORIZONTAL_5} from '../../utils/spacing';
+import {HORIZONTAL_3, HORIZONTAL_5} from '../../utils/spacing';
+import {font16Px} from '../../utils/typography';
 
 interface TextFieldProps {
   placeholder: string;
@@ -84,13 +85,13 @@ const TextField: React.FC<TextFieldProps> = ({
 const styles = StyleSheet.create({
   input: {
     borderRadius: 1,
-    padding: 10,
+    padding: widthToDp('1%'),
     width: widthToDp('40%'),
     color: lightBlack,
-    fontSize: 18,
+    fontSize: font16Px,
   },
   FieldContainer: {
-    borderRadius: 42,
+    borderRadius: widthToDp('20%'),
     borderWidth: 1,
     borderColor: lightOrange,
     display: 'flex',
@@ -106,24 +107,24 @@ const styles = StyleSheet.create({
     height: heightToDp('5%'),
     backgroundColor: boldWhite,
     justifyContent: 'center',
-    borderRadius: 40,
+    borderRadius: widthToDp('20%'),
   },
   countryCode: {
     color: textgrey,
-    fontSize: 18,
-    paddingLeft: 20,
+    fontSize: font16Px,
+    paddingLeft: HORIZONTAL_5,
     width: widthToDp('20%'),
   },
   strightLine: {
     borderWidth: 0.6,
-    height: 25,
+    height: heightToDp('4%'),
     borderColor: strightLineGray,
     marginHorizontal: HORIZONTAL_5,
   },
   countryWrapper: {
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingLeft: 10,
+    paddingLeft: HORIZONTAL_3,
   },
 });
 

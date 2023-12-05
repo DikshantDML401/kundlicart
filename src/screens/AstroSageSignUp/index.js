@@ -5,15 +5,15 @@ import CustomButton from '../../components/atoms/CustomButton';
 import {lightOrange, mediumBlue, mediumGray, white} from '../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useTranslation} from '../../components/hooks/useTranslation';
+import {useNavigation} from '@react-navigation/native';
 
 const AstroSageSignUp = () => {
+  const navigation = useNavigation();
   const {t} = useTranslation();
   const handleOtp = () => {
     console.log('first');
   };
-  const handleAstroSage = () => {
-    handleAstroSage;
-  };
+
   return (
     <View>
       <AstrosageHeader screenHeading="Charts & notes on Cloud, Multi-device access" />
@@ -83,7 +83,7 @@ const AstroSageSignUp = () => {
           <Text style={styles.bottomText}>
             {t('AstroSageSignUp.bottomText')}
           </Text>
-          <TouchableOpacity onPress={handleAstroSage}>
+          <TouchableOpacity onPress={() => navigation.navigate('SIGN IN')}>
             <Text style={styles.bottomSignUp}>
               {t('AstroSageSignUp.signIn')}
             </Text>

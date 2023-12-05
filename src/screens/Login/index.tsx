@@ -10,6 +10,8 @@ import CustomButton from '../../components/atoms/CustomButton';
 import AuthHeader from '../../components/organisms/AuthHeader';
 import {useNavigation} from '@react-navigation/native';
 import {useTranslation} from '../../components/hooks/useTranslation';
+import {font14Px, font16Px} from '../../utils/typography';
+import {HORIZONTAL_8, VERTICAL_2, VERTICAL_3} from '../../utils/spacing';
 
 const Login: React.FC = () => {
   const [number, setNumber] = useState<number | null>(null);
@@ -35,7 +37,7 @@ const Login: React.FC = () => {
   };
   return (
     <View style={styles.container}>
-      <View style={{marginBottom: 24}}>
+      <View style={{marginBottom: VERTICAL_3}}>
         <AuthHeader screenHeading="Login" />
       </View>
       <View style={styles.textField}>
@@ -70,7 +72,7 @@ const Login: React.FC = () => {
           }}
         />
       </View>
-      <View style={[styles.common, {marginBottom: 24}]}>
+      <View style={[styles.common, {marginBottom: VERTICAL_3}]}>
         <Text style={styles.text}>Or with</Text>
       </View>
 
@@ -83,12 +85,12 @@ const Login: React.FC = () => {
           }}
         />
       </View>
-      <View style={styles.signUp}>
+      <View style={styles.signUpContainer}>
         <Text style={styles.textBottom}>Don't have an account?</Text>
         <TouchableOpacity
           style={styles.touchableOpacity}
           onPress={() => navigation.navigate('signup' as never)}>
-          <Text style={{color: lightOrange, fontSize: 16}}> Sign Up</Text>
+          <Text style={styles.signUpTxt}> Sign Up</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -98,7 +100,7 @@ const Login: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 28,
+    marginHorizontal: HORIZONTAL_8,
   },
   common: {
     justifyContent: 'center',
@@ -108,11 +110,11 @@ const styles = StyleSheet.create({
   textField: {},
   textWrapper: {
     alignItems: 'center',
-    marginVertical: 15,
+    marginVertical: VERTICAL_2,
   },
   text: {
     color: lightBlack,
-    fontSize: 14,
+    fontSize: font14Px,
   },
   checkboxContainer: {
     flexDirection: 'row',
@@ -120,21 +122,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnStyle: {
-    marginVertical: 20,
+    marginVertical: VERTICAL_3,
   },
   textBottom: {
     color: lightBlack,
-    fontSize: 18,
+    fontSize: font16Px,
   },
   touchableOpacity: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  signUp: {
+  signUpContainer: {
     flexDirection: 'row',
-    marginVertical: 28,
+    marginVertical: VERTICAL_3,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  signUpTxt: {
+    color: lightOrange,
+    fontSize: font16Px,
   },
 });
 
