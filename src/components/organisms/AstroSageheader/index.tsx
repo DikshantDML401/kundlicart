@@ -60,7 +60,14 @@ const styles = StyleSheet.create({
   },
   headerText: {fontSize: 29, fontWeight: '600', color: '#f5a442'},
   headerLogo: {width: 60, height: 60},
-  screenHeading: {color: 'black', fontSize: 30, fontWeight: '400'},
+  screenHeading: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: '500',
+    width: 280,
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
   screenTextWrapper: {
     justifyContent: 'center',
     alignItems: 'center',

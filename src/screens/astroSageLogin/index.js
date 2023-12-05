@@ -86,11 +86,11 @@ const AstroSageLogin = () => {
         </View>
         <View style={styles.bottomTextWrapper}>
           <Text style={styles.bottomText}>
-            {t('AstroSageLogin.bottomText')}
+            {t('AstroSageLoginScreen.bottomSrnText')}
           </Text>
           <TouchableOpacity onPress={handleAstroSage}>
             <Text style={styles.bottomSignUp}>
-              {t('AstroSageLogin.signUp')}
+              {t('AstroSageLoginScreen.signUpText')}
             </Text>
           </TouchableOpacity>
         </View>
