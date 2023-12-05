@@ -1,10 +1,16 @@
 {
-  "OtpScreen": {
-    "confirmText": "We have sent you OTP ",
-    "subText": "via SMS for mobile number verification",
-    "resendText": "Resend OTP",
-    "getOtp": "Get OTP via phone call"
-  },
+    "OtpScreen":{
+        "confirmText": "We have sent you OTP ",
+        "subText": "via SMS for mobile number verification",
+        "resendText": "Resend OTP",
+        "getOtp": "Get OTP via phone call"
+    },
+    "AstroSageLogin":{
+        "bottomText":"Don't have an account?",
+        "signUp": "Sign Up"
+    }
+}
+
   "LoginScreen": {
     "otpText": "We will send you a one time password.",
     "OtpSubText": "Carrier rates may apply.",

@@ -24,7 +24,15 @@ const AstrosageHeader: React.FC<AstrosageHeaderProps> = ({
 export default AstrosageHeader;
 
 const styles = StyleSheet.create({
-  mainContainer: {},
+  mainContainer: {
+    backgroundColor: 'white',
+    width: 365,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 14,
+    marginRight: 20,
+    marginTop: 20,
+  },
   headerTop: {
     marginTop: 50,
     marginRight: 10,
@@ -52,7 +60,7 @@ const styles = StyleSheet.create({
   },
   headerText: {fontSize: 29, fontWeight: '600', color: '#f5a442'},
   headerLogo: {width: 60, height: 60},
-  screenHeading: {color: 'black', fontSize: 30, fontWeight: '300'},
+  screenHeading: {color: 'black', fontSize: 30, fontWeight: '400'},
   screenTextWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
