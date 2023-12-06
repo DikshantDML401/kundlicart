@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313142344772",
+    "project_id": "kundlikart-301e9",
+    "storage_bucket": "kundlikart-301e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313142344772:android:597795d85380e34a125011",
+        "android_client_info": {
+          "package_name": "com.kundlikart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAa6k4kv5WSCeV1DiWaLBvMG-5BSM_5_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

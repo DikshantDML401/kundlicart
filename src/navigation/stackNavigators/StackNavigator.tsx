@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+
 import Login from '../../screens/Login';
 import Otp from '../../screens/otp';
 import SignUp from '../../screens/SignUp';
 import AstroSageTab from '../tabNavigator/AstroSageTab';
-
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 import AstroSageSignUp from '../../screens/AstroSageSignUp';
+
 
 const Stack = createStackNavigator();
 
@@ -49,6 +50,7 @@ const AuthStack = () => {
           ),
         }}
       />
+
     </Stack.Navigator>
   );
 };

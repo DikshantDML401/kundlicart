@@ -29,6 +29,7 @@ const AstroSageSignUp = () => {
   const handleOtp = () => {
     console.log('first');
   };
+
   return (
     <View>
       <AstrosageHeader screenHeading="Charts & notes on Cloud, Multi-device access" />

@@ -4,6 +4,8 @@ import React from 'react';
 import {Button} from '@rneui/themed';
 
 import {heightToDp, widthToDp} from '../../styles/responsive';
+import {font18Px} from '../../utils/typography';
+import {HORIZONTAL_1} from '../../utils/spacing';
 
 interface CustomButton {
   onPress: () => void | undefined;
@@ -24,11 +26,15 @@ const CustomButton: React.FC<CustomButton> = ({
     <View style={styles.buttonContainer}>
       <Button
         title={title}
-        titleStyle={{fontWeight: '600', fontSize: 18, marginHorizontal: 10}}
+        titleStyle={{
+          fontWeight: 'bold',
+          fontSize: font18Px,
+          marginHorizontal: HORIZONTAL_1,
+        }}
         buttonStyle={{backgroundColor: color, height: heightToDp('6%')}}
         containerStyle={{
           width: widthToDp('80%'),
-          borderRadius: 25,
+          borderRadius: widthToDp('6%'),
         }}
         icon={leftIcone && leftImage}
         onPress={() => onPress()}
@@ -45,6 +51,5 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%',
   },
 });
