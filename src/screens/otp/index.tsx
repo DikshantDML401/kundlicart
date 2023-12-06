@@ -11,8 +11,10 @@ import AuthHeader from '../../components/organisms/AuthHeader';
 import {useTranslation} from '../../components/hooks/useTranslation';
 import CustomButton from '../../components/atoms/CustomButton';
 import {lightOrange} from '../../styles/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const Otp = () => {
+  const navigation = useNavigation();
   const {t} = useTranslation();
   const [otp, setOtp] = useState(['', '', '', '']);
   const inputRefs = [
@@ -39,6 +41,7 @@ const Otp = () => {
   };
   const handleVerify = () => {
     console.log('first');
+    return navigation.navigate('Dashboard' as never);
   };
   const handleResendOtp = () => {
     console.log('first');

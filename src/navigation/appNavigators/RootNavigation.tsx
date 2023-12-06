@@ -1,14 +1,18 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {If} from '../../helpers/if';
-import StackNavigaor from '../stackNavigators/StackNavigator';
+import StackNavigation from '../stackNavigators/StackNavigation';
+import DrawerNavigation from '../DrawerNavigators/DrawerNavigation';
 
 const RootNavigator = () => {
   const isLoggedIn = true;
   return (
     <NavigationContainer>
+      {/* <If show={!isLoggedIn}>
+        <StackNavigation />
+      </If> */}
       <If show={isLoggedIn}>
-        <StackNavigaor />
+        <DrawerNavigation />
       </If>
     </NavigationContainer>
   );

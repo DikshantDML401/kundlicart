@@ -10,7 +10,7 @@ import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader'
 
 const Stack = createStackNavigator();
 
-const AuthStack = () => {
+const StackNavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -42,4 +42,4 @@ const AuthStack = () => {
   );
 };
 
-export default AuthStack;
+export default StackNavigation;
