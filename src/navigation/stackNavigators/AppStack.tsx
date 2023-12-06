@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 const AppStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="DashboardStack" component={DashboardStack} />
+      <Stack.Screen name="Dashboard" component={DashboardStack} />
     </Stack.Navigator>
   );
 };
