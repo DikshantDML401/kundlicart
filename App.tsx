@@ -5,7 +5,7 @@ import RootNavigator from './src/navigation/appNavigators/RootNavigation';
 
 const App = () => {
   return (
-    <View style={{flex: 1, backgroundColor: 'red'}}>
+    <View style={{flex: 1}}>
       <RootNavigator />
     </View>
   );

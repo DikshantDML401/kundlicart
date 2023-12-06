@@ -44,7 +44,9 @@ const Otp = () => {
     }
   };
   const handleVerify = () => {
-    navigation.navigate('HomeScreen' as never);
+
+    console.log('first');
+    return navigation.navigate('Dashboard' as never);
   };
   const handleResendOtp = () => {
     console.log('first');
