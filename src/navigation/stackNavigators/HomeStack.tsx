@@ -7,12 +7,8 @@ const Stack = createStackNavigator();
 
 function HomeStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Dashboard"
-        component={TabNavigation}
-        options={{headerShown: false}}
-      />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Dashboard" component={TabNavigation} />
       <Stack.Screen name="AppStack" component={AppStack} />
     </Stack.Navigator>
   );
