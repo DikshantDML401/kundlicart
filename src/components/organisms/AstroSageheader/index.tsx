@@ -26,12 +26,12 @@ export default AstrosageHeader;
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: 'white',
-    width: 365,
+    width: 375,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 14,
+    marginLeft: 10,
     marginRight: 20,
-    marginTop: 20,
+    marginTop: 8,
   },
   headerTop: {
     marginTop: 50,

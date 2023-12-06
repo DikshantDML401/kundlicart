@@ -4,10 +4,27 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import AstrosageHeader from '../../components/organisms/AstroSageheader';
 import CustomButton from '../../components/atoms/CustomButton';
-import {lightOrange, mediumBlue, mediumGray, white} from '../../styles/colors';
+import {
+  black,
+  lightOrange,
+  mediumBlue,
+  mediumGray,
+  signUpText,
+  white,
+} from '../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useTranslation} from '../../components/hooks/useTranslation';
 import {useNavigation} from '@react-navigation/native';
+import {widthToDp} from '../../styles/responsive';
+import {
+  HORIZONTAL_1,
+  HORIZONTAL_2,
+  VERTICAL_1,
+  VERTICAL_2,
+  VERTICAL_3,
+  VERTICAL_5,
+} from '../../utils/spacing';
+import {font16Px} from '../../utils/typography';
 
 const AstroSageLogin = () => {
   const {t} = useTranslation();
@@ -101,15 +118,15 @@ export default AstroSageLogin;
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: 'white',
-    width: 365,
-    marginLeft: 14,
-    marginRight: 20,
-    marginBottom: 20,
-    paddingBottom: 50,
+    backgroundColor: white,
+    width: widthToDp('95.4%'),
+    marginLeft: HORIZONTAL_2,
+    marginRight: HORIZONTAL_1,
+    marginBottom: HORIZONTAL_1,
+    paddingBottom: VERTICAL_5,
   },
   btnStyle: {
-    marginVertical: 10,
+    marginVertical: VERTICAL_1,
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
@@ -118,16 +135,16 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginVertical: 18,
+    marginVertical: VERTICAL_3,
     gap: 10,
   },
   bottomText: {
-    color: 'black',
-    fontSize: 16,
+    color: black,
+    fontSize: font16Px,
   },
   bottomSignUp: {
-    color: '#f5a442',
-    fontSize: 16,
+    color: signUpText,
+    fontSize: font16Px,
     fontWeight: '500',
   },
 });

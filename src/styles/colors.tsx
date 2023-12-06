@@ -4,6 +4,7 @@ export const lightDisable = '#EBEBE4';
 export const lightBlue = '#EBE7FD';
 export const whiteGreen = '#E4F2E5';
 export const black = '#000000';
+export const signUpText = '#f5a442';
 export const normalLightBlack = '#343434';
 export const lightBlack = '#292929';
 export const textgrey = '#A4A4A4';
@@ -11,6 +12,7 @@ export const lightBordergrey = '#FFFFFF80';
 export const textInputbackground = '#F4FAF5';
 export const white = '#FFFFFF';
 export const textColor = '#707070';
+export const gray = '#b3b2af';
 export const disableColor = '#d3d3d3';
 export const dividerColor = '#A4A4A4';
 export const borderLightGrey = '#BFBFBF';
@@ -28,7 +30,7 @@ export const footerOverlay = '#00000059';
 export const rightIconegray = '#626262';
 export const mediumBlue = '#4287f5';
 export const mediumGray = '#b5b2ae';
-export const lightYellow = '#f0af18';
+export const lightYellow = '#ebc23b';
 
 //Color for SafeAreaView (IOS)
 export const safeAreaTopColor = '#000000';

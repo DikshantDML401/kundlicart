@@ -13,6 +13,7 @@ export const VERTICAL_2 = heightToDp('2%');
 export const VERTICAL_3 = heightToDp('3%');
 export const VERTICAL_4 = heightToDp('4%');
 export const VERTICAL_5 = heightToDp('5%');
+export const VERTICAL_6 = heightToDp('10%');
 
 //Horizontals
 export const HORIZONTAL_1 = widthToDp('1%');

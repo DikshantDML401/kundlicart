@@ -7,6 +7,8 @@ import Otp from '../../screens/otp';
 import SignUp from '../../screens/SignUp';
 import AstroSageTab from '../tabNavigator/AstroSageTab';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
+import AstroSageSignUp from '../../screens/AstroSageSignUp';
+
 
 const Stack = createStackNavigator();
 
@@ -20,7 +22,6 @@ const AuthStack = () => {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Otp" component={Otp} options={{headerShown: false}} />
       <Stack.Screen
         name="signup"
         component={SignUp}
@@ -28,6 +29,7 @@ const AuthStack = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen name="Otp" component={Otp} options={{headerShown: false}} />
       <Stack.Screen
         name="AstroSageLogin"
         component={AstroSageTab}
@@ -38,6 +40,17 @@ const AuthStack = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="AstroSageSignUp"
+        component={AstroSageSignUp}
+        options={{
+          headerShown: true,
+          header: () => (
+            <AstroSageBackHeader title="AstroSage Kundli" backArrow={true} />
+          ),
+        }}
+      />
+
     </Stack.Navigator>
   );
 };

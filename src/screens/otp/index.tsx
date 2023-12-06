@@ -11,6 +11,10 @@ import AuthHeader from '../../components/organisms/AuthHeader';
 import {useTranslation} from '../../components/hooks/useTranslation';
 import CustomButton from '../../components/atoms/CustomButton';
 import {lightOrange} from '../../styles/colors';
+import {black} from '../../styles/colors';
+import {font16Px, font17Px, font18Px} from '../../utils/typography';
+import {VERTICAL_2, VERTICAL_4, VERTICAL_6} from '../../utils/spacing';
+import {widthToDp} from '../../styles/responsive';
 
 const Otp = () => {
   const {t} = useTranslation();
@@ -91,31 +95,35 @@ const Otp = () => {
 
 export default Otp;
 const styles = StyleSheet.create({
-  container: {flex: 1, marginTop: 30},
+  container: {flex: 1, marginTop: VERTICAL_4},
   heading: {
-    color: 'black',
-    marginTop: 15,
-    width: 200,
+    color: black,
+    marginTop: VERTICAL_2,
     justifyContent: 'center',
     textAlign: 'center',
-    fontSize: 17,
+    fontSize: font17Px,
     fontWeight: '400',
   },
   subTextWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  subHeading: {color: 'black', lineHeight: 25, fontSize: 16, fontWeight: '400'},
+  subHeading: {
+    color: black,
+    lineHeight: 25,
+    fontSize: font16Px,
+    fontWeight: '400',
+  },
   otpCodeWrapper: {
     flexDirection: 'row',
     gap: 10,
-    marginTop: 25,
+    marginTop: VERTICAL_4,
     justifyContent: 'center',
   },
   otpCode: {
-    color: 'black',
-    width: 50,
-    fontSize: 18,
+    color: black,
+    width: widthToDp('4%'),
+    fontSize: font18Px,
     borderRadius: 10,
     borderColor: 'white',
     borderWidth: 1,
@@ -124,15 +132,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#f5a442',
   },
-  resendWrapper: {marginTop: 30, alignItems: 'center'},
+  resendWrapper: {marginTop: VERTICAL_4, alignItems: 'center'},
   resendText: {
-    color: 'black',
+    color: black,
     textDecorationLine: 'underline',
-    fontSize: 18,
+    fontSize: font18Px,
     fontWeight: '400',
   },
   btnStyle: {
-    marginVertical: 20,
-    marginTop: 70,
+    marginVertical: VERTICAL_2,
+    marginTop: VERTICAL_6,
   },
 });
