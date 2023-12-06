@@ -12,7 +12,7 @@ import AstroSageSignUp from '../../screens/AstroSageSignUp';
 
 const Stack = createStackNavigator();
 
-const AuthStack = () => {
+const StackNavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -55,4 +55,4 @@ const AuthStack = () => {
   );
 };
 
-export default AuthStack;
+export default StackNavigation;
