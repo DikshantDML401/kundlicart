@@ -15,8 +15,10 @@ import {black} from '../../styles/colors';
 import {font16Px, font17Px, font18Px} from '../../utils/typography';
 import {VERTICAL_2, VERTICAL_4, VERTICAL_6} from '../../utils/spacing';
 import {widthToDp} from '../../styles/responsive';
+import {useNavigation} from '@react-navigation/native';
 
 const Otp = () => {
+  const navigation = useNavigation();
   const {t} = useTranslation();
   const [otp, setOtp] = useState(['', '', '', '']);
   const inputRefs = [
@@ -42,7 +44,7 @@ const Otp = () => {
     }
   };
   const handleVerify = () => {
-    console.log('first');
+    navigation.navigate('HomeScreen' as never);
   };
   const handleResendOtp = () => {
     console.log('first');
