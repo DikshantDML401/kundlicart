@@ -31,6 +31,8 @@ export const rightIconegray = '#626262';
 export const mediumBlue = '#4287f5';
 export const mediumGray = '#b5b2ae';
 export const lightYellow = '#ebc23b';
+export const orange = 'rgba(255,110,0,255)';
+export const darkYellow = 'rgba(254,192,8,255)';
 
 //Color for SafeAreaView (IOS)
 export const safeAreaTopColor = '#000000';

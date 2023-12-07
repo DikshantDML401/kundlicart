@@ -1,16 +1,16 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {black} from '../../styles/colors';
+import {black} from '../../../styles/colors';
 
-const Chat = () => {
+const Video = () => {
   return (
     <View>
-      <Text style={styles.heading}>Chat</Text>
+      <Text style={styles.heading}>Videos</Text>
     </View>
   );
 };
 
-export default Chat;
+export default Video;
 
 const styles = StyleSheet.create({
   heading: {

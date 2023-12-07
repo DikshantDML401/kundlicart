@@ -44,7 +44,6 @@ const Otp = () => {
     }
   };
   const handleVerify = () => {
-
     console.log('first');
     return navigation.navigate('Dashboard' as never);
   };

@@ -2,15 +2,15 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {black} from '../../styles/colors';
 
-const Chat = () => {
+const Live = () => {
   return (
     <View>
-      <Text style={styles.heading}>Chat</Text>
+      <Text style={styles.heading}>Live</Text>
     </View>
   );
 };
 
-export default Chat;
+export default Live;
 
 const styles = StyleSheet.create({
   heading: {

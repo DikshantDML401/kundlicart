@@ -1,11 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {lightOrange} from '../../styles/colors';
+import {black, lightOrange} from '../../styles/colors';
 
 const Dashboard = () => {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Text style={styles.heading}>Home</Text>
     </View>
   );
 };
@@ -15,5 +15,8 @@ export default Dashboard;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: lightOrange,
+  },
+  heading: {
+    color: black,
   },
 });

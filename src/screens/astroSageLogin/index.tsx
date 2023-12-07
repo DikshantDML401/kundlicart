@@ -20,7 +20,6 @@ import {
   HORIZONTAL_1,
   HORIZONTAL_2,
   VERTICAL_1,
-  VERTICAL_2,
   VERTICAL_3,
   VERTICAL_5,
 } from '../../utils/spacing';
@@ -35,7 +34,7 @@ const AstroSageLogin = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View>
       <AstrosageHeader screenHeading="Welcome back" />
       <View style={styles.wrapper}>
         <View style={styles.btnStyle}>
@@ -103,7 +102,8 @@ const AstroSageLogin = () => {
           <Text style={styles.bottomText}>
             {t('AstroSageLoginScreen.bottomSrnText')}
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('SIGN UP')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SIGN UP' as never)}>
             <Text style={styles.bottomSignUp}>
               {t('AstroSageLoginScreen.signUpText')}
             </Text>
