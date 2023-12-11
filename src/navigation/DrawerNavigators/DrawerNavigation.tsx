@@ -12,6 +12,10 @@ import ChangeLanguage from '../../screens/changeLanguage';
 import UpgradePlan from '../../screens/upgradePlan';
 import RemnoveAds from '../../screens/removeAds';
 import Feedback from '../../screens/feedback';
+import RateAstroSage from '../../screens/RateAstrosage';
+import AboutUs from '../../screens/aboutUs';
+import AstroRegistration from '../../screens/AstroRegistration';
+import ChooseKundli from '../../screens/chooseKundli';
 
 const Drawer = createDrawerNavigator();
 
@@ -57,6 +61,30 @@ const DrawerNavigation = () => {
     {
       name: 'Feedback',
       component: Feedback,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'RateAstrosage',
+      component: RateAstroSage,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'AboutUs',
+      component: AboutUs,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'AstroRegistration',
+      component: AstroRegistration,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'ChooseKundli',
+      component: ChooseKundli,
       unmount: false,
       headerShown: true,
     },

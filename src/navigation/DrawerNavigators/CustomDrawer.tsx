@@ -3,7 +3,6 @@ import {StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import {View} from 'react-native';
 import {DrawerItem} from '@react-navigation/drawer';
-import Icon from 'react-native-vector-icons/Fontisto';
 import Feather from 'react-native-vector-icons/Feather';
 import Material from 'react-native-vector-icons/MaterialIcons';
 
@@ -21,7 +20,7 @@ const CustomDrawer = ({navigation}: any) => {
           onPress={() => navigation.navigate('Preferences')}
           labelStyle={styles.label}
           label={'Set Preferences'}
-          icon={() => <Icon name="equalizer" size={18} color={black} />}
+          icon={() => <Feather name="sliders" size={18} color={black} />}
         />
         <DrawerItem
           onPress={() => navigation.navigate('Notification')}
@@ -52,6 +51,30 @@ const CustomDrawer = ({navigation}: any) => {
           labelStyle={styles.label}
           label={'Feedback'}
           icon={() => <Material name="announcement" size={18} color={black} />}
+        />
+        <DrawerItem
+          onPress={() => navigation.navigate('RateAstrosage')}
+          labelStyle={styles.label}
+          label={'Rate Astrosage'}
+          icon={() => <Feather name="star" size={18} color={black} />}
+        />
+        <DrawerItem
+          onPress={() => navigation.navigate('AboutUs')}
+          labelStyle={styles.label}
+          label={'About Us'}
+          icon={() => <Material name="info" size={18} color={black} />}
+        />
+        <DrawerItem
+          onPress={() => navigation.navigate('AstroRegistration')}
+          labelStyle={styles.label}
+          label={'Astrosage Registration'}
+          icon={() => <Feather name="user" size={18} color={black} />}
+        />
+        <DrawerItem
+          onPress={() => navigation.navigate('ChooseKundli')}
+          labelStyle={styles.label}
+          label={'Choose Kundli'}
+          icon={() => <Feather name="file-text" size={18} color={black} />}
         />
       </View>
     </ScrollView>
