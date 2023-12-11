@@ -63,7 +63,7 @@ export default function TabNavigation() {
                     <AppHeader headerText="AstroSage" />
                   ) : (
                     <AstroSageBackHeader
-                      title={'Astrosage'}
+                      title={'AstroSage'}
                       backArrow={true}
                       rightIcons={true}
                     />

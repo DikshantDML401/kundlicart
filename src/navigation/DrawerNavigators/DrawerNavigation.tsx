@@ -2,7 +2,6 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Preferences from '../../screens/prefrences';
-import AppHeader from '../../components/organisms/Appheader/AppHeader';
 import {darkYellow} from '../../styles/colors';
 import HomeStack from '../stackNavigators/HomeStack';
 import {lightYellow} from '../../styles/colors';
@@ -31,6 +30,12 @@ const DrawerNavigation = () => {
     {
       name: 'Preferences',
       component: Preferences,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'Notification',
+      component: Notification,
       unmount: false,
       headerShown: true,
     },
@@ -92,7 +97,7 @@ const DrawerNavigation = () => {
             component={val.component}
             key={index}
             options={{
-              headerStyle: {backgroundColor: lightYellow},
+              headerStyle: {backgroundColor: darkYellow},
               headerShown: val.headerShown,
               unmountOnBlur: val.unmount,
             }}
