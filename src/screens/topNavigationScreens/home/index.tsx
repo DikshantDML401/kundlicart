@@ -3,7 +3,7 @@ import React from 'react';
 import {homeBanner, kundliLogo} from '../../../utils/images';
 import {heightToDp} from '../../../styles/responsive';
 import KundliData from '../../../components/molecules/common/kundliData';
-import LiveChat from '../../../components/molecules/LiveChat';
+import LiveChat from '../../../components/molecules/LiveChatSlider';
 
 const Homepage = () => {
   const KundliDataProps = {

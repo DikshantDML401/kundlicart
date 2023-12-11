@@ -3,11 +3,14 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {black} from '../../styles/colors';
 
-const LiveChat = () => {
+interface LiveChatProps {
+  topHeadingText: string;
+}
+const LiveChat: React.FC<LiveChatProps> = ({topHeadingText}) => {
   return (
     <View>
       <View style={styles.topWrapper}>
-        <Text style={styles.heading}>AstroSage Live TV</Text>
+        <Text style={styles.heading}>{topHeadingText}</Text>
         <View>
           <Icon
             name="refresh-cw"
