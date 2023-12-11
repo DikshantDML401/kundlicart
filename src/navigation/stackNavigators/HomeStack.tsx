@@ -17,6 +17,9 @@ function HomeStack() {
           headerTitle: () => <AppHeader headerText="" />,
         }}
       />
+
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Dashboard" component={TabNavigation} />
       <Stack.Screen name="AppStack" component={AppStack} />
     </Stack.Navigator>
   );

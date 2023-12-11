@@ -8,6 +8,9 @@ import Chat from '../../screens/chat';
 import History from '../../screens/historyTab';
 import Home from '../../screens/home';
 
+import Notification from '../../screens/notification';
+import Dashboard from '../../screens/Dashboard';
+
 const Tab = createBottomTabNavigator();
 
 const tabScreens = [
@@ -65,3 +68,5 @@ export default function TabNavigation() {
     </Tab.Navigator>
   );
 }
+
+export const common = () => {};
