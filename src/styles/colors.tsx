@@ -31,6 +31,10 @@ export const rightIconegray = '#626262';
 export const mediumBlue = '#4287f5';
 export const mediumGray = '#b5b2ae';
 export const lightYellow = '#ebc23b';
+export const orange = 'rgba(255,110,0,255)';
+export const darkYellow = 'rgba(254,192,8,255)';
+
+
 export const primaryColor = '#677F71';
 export const darkGray = '#666666';
 export const Green = '#0DB13E';

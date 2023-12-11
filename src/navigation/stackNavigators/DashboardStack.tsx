@@ -5,7 +5,7 @@ const DashboardStack = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Dashboard" component={Dashboard} />
+      <Stack.Screen name="Dashboards" component={Dashboard} />
     </Stack.Navigator>
   );
 };

@@ -9,7 +9,6 @@ import AstroSageTab from '../tabNavigator/AstroSageTab';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 import AstroSageSignUp from '../../screens/AstroSageSignUp';
 
-
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
@@ -50,7 +49,6 @@ const StackNavigation = () => {
           ),
         }}
       />
-
     </Stack.Navigator>
   );
 };

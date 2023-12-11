@@ -7,9 +7,9 @@ const RootNavigator = () => {
   const isLoggedIn = true;
   return (
     <NavigationContainer>
-      {/* <If show={!isLoggedIn}>
+      <If show={!isLoggedIn}>
         <StackNavigation />
-      </If> */}
+      </If>
       <If show={isLoggedIn}>
         <DrawerNavigation />
       </If>

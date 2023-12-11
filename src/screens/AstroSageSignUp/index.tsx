@@ -99,7 +99,8 @@ const AstroSageSignUp = () => {
           <Text style={styles.bottomText}>
             {t('AstroSageSignUp.bottomText')}
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('SIGN IN')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SIGN IN' as never)}>
             <Text style={styles.bottomSignUp}>
               {t('AstroSageSignUp.signIn')}
             </Text>

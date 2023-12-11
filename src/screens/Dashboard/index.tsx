@@ -1,6 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+
+import {black, lightOrange} from '../../styles/colors';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import {black, darkGray, lightYellow, primaryColor} from '../../styles/colors';
 import {heightToDp, widthToDp} from '../../styles/responsive';
@@ -70,5 +72,8 @@ const styles = StyleSheet.create({
   },
   tabBarIndicator: {
     backgroundColor: primaryColor,
+  },
+  heading: {
+    color: black,
   },
 });
