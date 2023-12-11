@@ -1,15 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {black} from '../../styles/colors';
 
-const Call = () => {
+const Notification = () => {
   return (
     <View>
-      <Text style={{color: black}}>Call</Text>
+      <Text>index</Text>
     </View>
   );
 };
 
-export default Call;
+export default Notification;
 
 const styles = StyleSheet.create({});
