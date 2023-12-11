@@ -1,8 +1,8 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import React from 'react';
-import {font16Px, font17Px} from '../../utils/typography';
-import {widthToDp} from '../../styles/responsive';
-import {black, darkYellow} from '../../styles/colors';
+import {font16Px, font17Px} from '../../../utils/typography';
+import {widthToDp} from '../../../styles/responsive';
+import {black, darkYellow} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/Feather';
 
 interface AppHeaderProps {
