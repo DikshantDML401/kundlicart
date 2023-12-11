@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
@@ -7,9 +8,8 @@ import Live from '../../screens/live';
 import Chat from '../../screens/chat';
 import History from '../../screens/historyTab';
 import Home from '../../screens/home';
-
-import Notification from '../../screens/notification';
-import Dashboard from '../../screens/Dashboard';
+import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
+import AppHeader from '../../screens/Appheader/AppHeader';
 
 const Tab = createBottomTabNavigator();
 
@@ -55,7 +55,22 @@ export default function TabNavigation() {
           name={screen.name}
           component={screen.component}
           options={{
-            headerShown: false,
+            headerShown: true,
+            header: () => {
+              return (
+                <>
+                  {screen.name === 'Home' ? (
+                    <AppHeader headerText="AstroSage" />
+                  ) : (
+                    <AstroSageBackHeader
+                      title={'Astrosage'}
+                      backArrow={true}
+                      rightIcons={true}
+                    />
+                  )}
+                </>
+              );
+            },
             tabBarIcon: () => (
               <Icon name={screen.icon} size={22} color={orange} />
             ),

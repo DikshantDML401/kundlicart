@@ -3,8 +3,6 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeStack from '../stackNavigators/HomeStack';
 import Preferences from '../../screens/prefrences';
-import AppHeader from '../../screens/Appheader/AppHeader';
-import {darkYellow} from '../../styles/colors';
 
 import {lightYellow} from '../../styles/colors';
 import CustomDrawer from './CustomDrawer';
@@ -16,6 +14,7 @@ import RateAstroSage from '../../screens/RateAstrosage';
 import AboutUs from '../../screens/aboutUs';
 import AstroRegistration from '../../screens/AstroRegistration';
 import ChooseKundli from '../../screens/chooseKundli';
+import Notification from '../../screens/notifications';
 
 const Drawer = createDrawerNavigator();
 
@@ -90,17 +89,6 @@ const DrawerNavigation = () => {
     },
   ];
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen
-        name="AstroSage"
-        component={HomeStack}
-        options={({route}) => ({
-          headerStyle: {backgroundColor: darkYellow},
-          headerTitle: () => <AppHeader headerText={route.name} />,
-        })}
-      />
-      <Drawer.Screen name="Set Preferences" component={Preferences} />
-
     <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
       {routing &&
         routing?.map((val, index) => (
@@ -108,7 +96,11 @@ const DrawerNavigation = () => {
             name={val.name}
             component={val.component}
             key={index}
-            options={{headerStyle: {backgroundColor: lightYellow}}}
+            options={{
+              headerStyle: {backgroundColor: lightYellow},
+              headerShown: val.headerShown,
+              unmountOnBlur: val.unmount,
+            }}
           />
         ))}
     </Drawer.Navigator>
