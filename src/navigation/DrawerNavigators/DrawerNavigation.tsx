@@ -1,11 +1,10 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import HomeStack from '../stackNavigators/HomeStack';
 import Preferences from '../../screens/prefrences';
-import AppHeader from '../../screens/Appheader/AppHeader';
+import AppHeader from '../../components/organisms/Appheader/AppHeader';
 import {darkYellow} from '../../styles/colors';
-
+import HomeStack from '../stackNavigators/HomeStack';
 import {lightYellow} from '../../styles/colors';
 import CustomDrawer from './CustomDrawer';
 import ChangeLanguage from '../../screens/changeLanguage';
@@ -22,17 +21,11 @@ const DrawerNavigation = () => {
       component: HomeStack,
       unmount: false,
       headerShown: false,
+      headerBackgroundColor: darkYellow,
     },
     {
       name: 'Preferences',
       component: Preferences,
-      unmount: false,
-      headerShown: true,
-    },
-
-    {
-      name: 'Notification',
-      component: Notification,
       unmount: false,
       headerShown: true,
     },
@@ -62,16 +55,15 @@ const DrawerNavigation = () => {
     },
   ];
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen
-        name="AstroSage"
-        component={HomeStack}
-        options={({route}) => ({
-          headerStyle: {backgroundColor: darkYellow},
-          headerTitle: () => <AppHeader headerText={route.name} />,
-        })}
-      />
-      <Drawer.Screen name="Set Preferences" component={Preferences} />
+    // <Drawer.Navigator>
+    //   <Drawer.Screen
+    //     name="AstroSage"
+    //     component={HomeStack}
+    //     options={({route}) => ({
+    //       headerStyle: {backgroundColor: darkYellow},
+    //       headerTitle: () => <AppHeader headerText={route.name} />,
+    //     })}
+    //   />
 
     <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
       {routing &&
@@ -80,7 +72,12 @@ const DrawerNavigation = () => {
             name={val.name}
             component={val.component}
             key={index}
-            options={{headerStyle: {backgroundColor: lightYellow}}}
+            options={({route}) => ({
+              headerStyle: {
+                backgroundColor: val.headerBackgroundColor || lightYellow,
+              },
+              headerTitle: () => <AppHeader headerText={route.name} />,
+            })}
           />
         ))}
     </Drawer.Navigator>

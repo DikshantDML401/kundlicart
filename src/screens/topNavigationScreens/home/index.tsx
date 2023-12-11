@@ -1,27 +1,22 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {homeBanner, kundliLogo} from '../../../utils/images';
-import {black} from '../../../styles/colors';
-import {font16Px} from '../../../utils/typography';
+import {heightToDp} from '../../../styles/responsive';
+import KundliData from '../../../components/molecules/common/kundliData';
+import LiveChat from '../../../components/molecules/LiveChat';
 
 const Homepage = () => {
+  const KundliDataProps = {
+    imageSource: kundliLogo,
+    textValue1: 'Kundli',
+    textValue2: 'Matching',
+    textValue3: 'Horoscope',
+  };
   return (
     <View>
       <Image source={homeBanner} style={styles.homeBanner} />
-      <View style={styles.wrapper}>
-        <View style={styles.kundliWrapper}>
-          <Image source={kundliLogo} style={styles.kundliLogo} />
-          <Text style={styles.kundliText}>Kundli</Text>
-        </View>
-        <View style={styles.kundliWrapper}>
-          <Image source={kundliLogo} style={styles.kundliLogo} />
-          <Text style={styles.kundliText}>Kundli</Text>
-        </View>
-        <View style={styles.kundliWrapper}>
-          <Image source={kundliLogo} style={styles.kundliLogo} />
-          <Text style={styles.kundliText}>Kundli</Text>
-        </View>
-      </View>
+      <KundliData {...KundliDataProps} />
+      <LiveChat />
     </View>
   );
 };
@@ -29,26 +24,5 @@ const Homepage = () => {
 export default Homepage;
 
 const styles = StyleSheet.create({
-  homeBanner: {width: 'auto', height: 80},
-  wrapper: {
-    flexDirection: 'row',
-    gap: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  kundliWrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    width: 130,
-    borderBottomColor: black,
-    borderWidth: 2,
-  },
-  kundliLogo: {width: 40, height: 40},
-  kundliText: {
-    color: black,
-    fontSize: font16Px,
-    fontWeight: '600',
-    paddingTop: 10,
-  },
+  homeBanner: {width: 'auto', height: heightToDp('10%')},
 });
