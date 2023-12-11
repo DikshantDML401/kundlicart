@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {font17Px} from '../../utils/typography';
-import {widthToDp} from '../../styles/responsive';
-import {black, lightYellow} from '../../styles/colors';
+import {widthToDp} from '../../../styles/responsive';
+import {black, lightYellow} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
+import {font17Px} from '../../../utils/typography';
 
 interface AppHeaderProps {
   headerText: string;

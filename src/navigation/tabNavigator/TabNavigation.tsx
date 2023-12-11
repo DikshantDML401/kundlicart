@@ -9,7 +9,7 @@ import Chat from '../../screens/chat';
 import History from '../../screens/historyTab';
 import Home from '../../screens/home';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
-import AppHeader from '../../screens/Appheader/AppHeader';
+import AppHeader from '../../components/organisms/Appheader/AppHeader';
 
 const Tab = createBottomTabNavigator();
 
