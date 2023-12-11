@@ -11,6 +11,11 @@ import ChangeLanguage from '../../screens/changeLanguage';
 import UpgradePlan from '../../screens/upgradePlan';
 import RemnoveAds from '../../screens/removeAds';
 import Feedback from '../../screens/feedback';
+import RateAstroSage from '../../screens/RateAstrosage';
+import AboutUs from '../../screens/aboutUs';
+import AstroRegistration from '../../screens/AstroRegistration';
+import ChooseKundli from '../../screens/chooseKundli';
+import Notification from '../../screens/notifications';
 
 const Drawer = createDrawerNavigator();
 
@@ -53,18 +58,32 @@ const DrawerNavigation = () => {
       unmount: false,
       headerShown: true,
     },
+    {
+      name: 'RateAstrosage',
+      component: RateAstroSage,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'AboutUs',
+      component: AboutUs,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'AstroRegistration',
+      component: AstroRegistration,
+      unmount: false,
+      headerShown: true,
+    },
+    {
+      name: 'ChooseKundli',
+      component: ChooseKundli,
+      unmount: false,
+      headerShown: true,
+    },
   ];
   return (
-    // <Drawer.Navigator>
-    //   <Drawer.Screen
-    //     name="AstroSage"
-    //     component={HomeStack}
-    //     options={({route}) => ({
-    //       headerStyle: {backgroundColor: darkYellow},
-    //       headerTitle: () => <AppHeader headerText={route.name} />,
-    //     })}
-    //   />
-
     <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
       {routing &&
         routing?.map((val, index) => (
@@ -72,12 +91,11 @@ const DrawerNavigation = () => {
             name={val.name}
             component={val.component}
             key={index}
-            options={({route}) => ({
-              headerStyle: {
-                backgroundColor: val.headerBackgroundColor || lightYellow,
-              },
-              headerTitle: () => <AppHeader headerText={route.name} />,
-            })}
+            options={{
+              headerStyle: {backgroundColor: lightYellow},
+              headerShown: val.headerShown,
+              unmountOnBlur: val.unmount,
+            }}
           />
         ))}
     </Drawer.Navigator>
