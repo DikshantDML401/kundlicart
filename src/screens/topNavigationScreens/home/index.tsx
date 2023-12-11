@@ -30,8 +30,25 @@ export default Homepage;
 
 const styles = StyleSheet.create({
   homeBanner: {width: 'auto', height: 80},
-  wrapper:{flexDirection: 'row',gap: 1,alignItems: 'center', justifyContent: 'center'},
-  kundliWrapper: {justifyContent: 'center', alignItems: 'center',padding: 10, width:130, borderBottomColor: black, borderWidth: 2},
+  wrapper: {
+    flexDirection: 'row',
+    gap: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  kundliWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    width: 130,
+    borderBottomColor: black,
+    borderWidth: 2,
+  },
   kundliLogo: {width: 40, height: 40},
-  kundliText: {color: black, fontSize: font16Px, fontWeight: '600', paddingTop: 10},
+  kundliText: {
+    color: black,
+    fontSize: font16Px,
+    fontWeight: '600',
+    paddingTop: 10,
+  },
 });
