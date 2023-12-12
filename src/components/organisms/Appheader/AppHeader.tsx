@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {widthToDp} from '../../../styles/responsive';
-import {black, lightYellow} from '../../../styles/colors';
+import {black, darkYellow} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 import {font17Px} from '../../../utils/typography';
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: widthToDp('3%'),
     paddingVertical: widthToDp('5%'),
-    backgroundColor: lightYellow,
+    backgroundColor: darkYellow,
   },
   header: {
     color: black,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   notificationWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: widthToDp('5%'),
+    gap: widthToDp('6%'),
   },
   headerLeft: {
     flexDirection: 'row',
