@@ -14,6 +14,7 @@ import RateAstroSage from '../../screens/RateAstrosage';
 import AboutUs from '../../screens/aboutUs';
 import AstroRegistration from '../../screens/AstroRegistration';
 import ChooseKundli from '../../screens/chooseKundli';
+import Notification from '../../screens/notifications';
 
 const Drawer = createDrawerNavigator();
 

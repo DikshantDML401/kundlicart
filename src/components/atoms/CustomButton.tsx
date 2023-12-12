@@ -13,6 +13,8 @@ interface CustomButton {
   color: string;
   leftIcone?: boolean;
   leftImage?: any;
+  style?: object;
+  titleStyle?: object;
 }
 
 const CustomButton: React.FC<CustomButton> = ({
@@ -21,21 +23,31 @@ const CustomButton: React.FC<CustomButton> = ({
   color,
   leftIcone = false,
   leftImage,
+  style,
+  titleStyle,
 }) => {
   return (
     <View style={styles.buttonContainer}>
       <Button
         title={title}
-        titleStyle={{
-          fontWeight: 'bold',
-          fontSize: font18Px,
-          marginHorizontal: HORIZONTAL_1,
-        }}
+        titleStyle={
+          titleStyle
+            ? titleStyle
+            : {
+                fontWeight: 'bold',
+                fontSize: font18Px,
+                marginHorizontal: HORIZONTAL_1,
+              }
+        }
         buttonStyle={{backgroundColor: color, height: heightToDp('6%')}}
-        containerStyle={{
-          width: widthToDp('80%'),
-          borderRadius: widthToDp('6%'),
-        }}
+        containerStyle={
+          style
+            ? style
+            : {
+                width: widthToDp('80%'),
+                borderRadius: widthToDp('6%'),
+              }
+        }
         icon={leftIcone && leftImage}
         onPress={() => onPress()}
       />
