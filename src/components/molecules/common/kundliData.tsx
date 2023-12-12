@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {black, gray} from '../../../styles/colors';
 import {font16Px} from '../../../utils/typography';
@@ -18,22 +18,27 @@ const KundliData: React.FC<KundliDataProps> = ({
   textValue2,
   textValue3,
 }) => {
+  const handleOnClick = () => {};
   return (
-    <View>
-      <View style={styles.wrapper}>
+    <View style={styles.wrapper}>
+      <TouchableOpacity onPress={handleOnClick}>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue1}</Text>
         </View>
+      </TouchableOpacity>
+      <TouchableOpacity>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue2}</Text>
         </View>
+      </TouchableOpacity>
+      <TouchableOpacity>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue3}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -46,8 +51,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomWidth: 1.8,
-    borderBottomColor: gray,
-    opacity: 10,
+    borderBottomColor: '#d9d8d7',
+    opacity: 20,
+    borderTopWidth: 1.8,
+    borderTopColor: '#d9d8d7',
   },
   kundliWrapper: {
     justifyContent: 'center',

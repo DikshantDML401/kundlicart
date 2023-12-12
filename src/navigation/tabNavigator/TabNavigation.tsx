@@ -2,7 +2,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
-import {black, orange} from '../../styles/colors';
+import {black, darkYellow, orange} from '../../styles/colors';
 import Call from '../../screens/call';
 import Live from '../../screens/live';
 import Chat from '../../screens/chat';
@@ -10,6 +10,7 @@ import History from '../../screens/historyTab';
 import Home from '../../screens/home';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 import AppHeader from '../../components/organisms/Appheader/AppHeader';
+import {StatusBar} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,39 +49,42 @@ const tabScreens = [
 
 export default function TabNavigation() {
   return (
-    <Tab.Navigator>
-      {tabScreens.map((screen, index) => (
-        <Tab.Screen
-          key={index}
-          name={screen.name}
-          component={screen.component}
-          options={{
-            headerShown: true,
-            header: () => {
-              return (
-                <>
-                  {screen.name === 'Home' ? (
-                    <AppHeader headerText="AstroSage" />
-                  ) : (
-                    <AstroSageBackHeader
-                      title={'AstroSage'}
-                      backArrow={true}
-                      rightIcons={true}
-                    />
-                  )}
-                </>
-              );
-            },
-            tabBarIcon: () => (
-              <Icon name={screen.icon} size={22} color={orange} />
-            ),
-            tabBarLabelStyle: {
-              color: screen.color,
-            },
-          }}
-        />
-      ))}
-    </Tab.Navigator>
+    <>
+      <StatusBar backgroundColor={darkYellow} barStyle={'dark-content'} />
+      <Tab.Navigator>
+        {tabScreens.map((screen, index) => (
+          <Tab.Screen
+            key={index}
+            name={screen.name}
+            component={screen.component}
+            options={{
+              headerShown: true,
+              header: () => {
+                return (
+                  <>
+                    {screen.name === 'Home' ? (
+                      <AppHeader headerText="KundliKart" />
+                    ) : (
+                      <AstroSageBackHeader
+                        title={'KundliKart'}
+                        backArrow={true}
+                        rightIcons={true}
+                      />
+                    )}
+                  </>
+                );
+              },
+              tabBarIcon: () => (
+                <Icon name={screen.icon} size={22} color={orange} />
+              ),
+              tabBarLabelStyle: {
+                color: screen.color,
+              },
+            }}
+          />
+        ))}
+      </Tab.Navigator>
+    </>
   );
 }
 

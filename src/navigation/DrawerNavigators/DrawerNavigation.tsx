@@ -4,7 +4,6 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Preferences from '../../screens/prefrences';
 import {darkYellow} from '../../styles/colors';
 import HomeStack from '../stackNavigators/HomeStack';
-import {lightYellow} from '../../styles/colors';
 import CustomDrawer from './CustomDrawer';
 import ChangeLanguage from '../../screens/changeLanguage';
 import UpgradePlan from '../../screens/upgradePlan';
@@ -14,6 +13,7 @@ import RateAstroSage from '../../screens/RateAstrosage';
 import AboutUs from '../../screens/aboutUs';
 import AstroRegistration from '../../screens/AstroRegistration';
 import ChooseKundli from '../../screens/chooseKundli';
+import Notification from '../../screens/notifications';
 
 const Drawer = createDrawerNavigator();
 

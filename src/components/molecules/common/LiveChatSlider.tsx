@@ -1,12 +1,24 @@
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import {black, boldRed, darkOrange} from '../../styles/colors';
-import {font13Px, font14Px, font16Px, font17Px} from '../../utils/typography';
-import {VERTICAL_1} from '../../utils/spacing';
-import {heightToDp, widthToDp} from '../../styles/responsive';
-import {dummyuser} from '../../utils/images';
-import {white} from '../../styles/colors';
+import {black, boldRed, darkOrange} from '../../../styles/colors';
+import {
+  font13Px,
+  font14Px,
+  font16Px,
+  font17Px,
+} from '../../../utils/typography';
+import {VERTICAL_1} from '../../../utils/spacing';
+import {heightToDp, widthToDp} from '../../../styles/responsive';
+import {dummyuser} from '../../../utils/images';
+import {white} from '../../../styles/colors';
 
 interface LiveChatProps {
   topHeadingText: string;
@@ -34,13 +46,15 @@ const LiveChat: React.FC<LiveChatProps> = ({topHeadingText, astrologers}) => {
           showsHorizontalScrollIndicator={false}
           style={styles.scrollWrapper}>
           {astrologers.map((astrologer, index) => (
-            <View style={styles.imageWrapper} key={index}>
-              <Image source={dummyuser} style={styles.dummyLogo} />
-              <Text style={styles.liveText}>
-                {astrologer.live ? 'LIVE' : 'OFFLINE'}
-              </Text>
-              <Text style={styles.astrologername}>{astrologer.name}</Text>
-            </View>
+            <TouchableOpacity>
+              <View style={styles.imageWrapper} key={index}>
+                <Image source={dummyuser} style={styles.dummyLogo} />
+                <Text style={styles.liveText}>
+                  {astrologer.live ? 'LIVE' : 'OFFLINE'}
+                </Text>
+                <Text style={styles.astrologername}>{astrologer.name}</Text>
+              </View>
+            </TouchableOpacity>
           ))}
         </ScrollView>
       </View>
@@ -71,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: darkOrange,
     width: widthToDp('26%'),
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: widthToDp('3%'),
     height: heightToDp('13.5%'),
     marginLeft: VERTICAL_1,
   },
@@ -90,6 +104,6 @@ const styles = StyleSheet.create({
     fontSize: font13Px,
     width: widthToDp('10%'),
     textAlign: 'center',
-    borderRadius: 8,
+    borderRadius: widthToDp('3%'),
   },
 });
