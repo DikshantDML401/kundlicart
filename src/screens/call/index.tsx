@@ -1,15 +1,24 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, View} from 'react-native';
 import React from 'react';
-import {black} from '../../styles/colors';
+import {lightYellow} from '../../styles/colors';
+import CallSubHeader from '../../components/organisms/subHeader/CallSubHeader';
+import {widthToDp} from '../../styles/responsive';
 
 const Call = () => {
   return (
-    <View>
-      <Text style={{color: black}}>Call</Text>
-    </View>
+    <>
+      <StatusBar backgroundColor={lightYellow} barStyle={'dark-content'} />
+      <View style={styles.subHeader}>
+        <CallSubHeader />
+      </View>
+    </>
   );
 };
 
 export default Call;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  subHeader: {
+    marginHorizontal: widthToDp('2%'),
+  },
+});
