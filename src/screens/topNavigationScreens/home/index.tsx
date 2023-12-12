@@ -21,7 +21,7 @@ const Homepage = () => {
     topHeadingText: 'KundliKart Live TV',
     astrologers: astrologersData,
   };
-  const kundliDataArray = [1, 2, 3, 4];
+  // const kundliDataArray = [1, 2, 3, 4];
   const ChatWithAstrologerProps = {
     topHeadingText: 'Chat/Call with Astrologer',
     astrologers: astrologersBioData,
@@ -33,12 +33,12 @@ const Homepage = () => {
     <ScrollView style={styles.container}>
       <View>
         <Image source={homeBanner} style={styles.homeBanner} />
-        <KundliData {...KundliDataProps} />
+        <KundliData {...KundliDataProps[0]} />
         <LiveChat {...LiveChatTitleProps} />
         <ChatWithAstrologer {...ChatWithAstrologerProps} />
         <View style={styles.kundliChartWrapper}>
-          {kundliDataArray.map((item, index) => (
-            <KundliData key={index} {...KundliDataProps} />
+        {KundliDataProps.map((data, index) => (
+            <KundliData key={index} {...data} />
           ))}
         </View>
         <View>
