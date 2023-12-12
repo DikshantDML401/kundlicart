@@ -3,7 +3,7 @@ import {StyleSheet, Text, useWindowDimensions} from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import {heightToDp} from '../../styles/responsive';
 import {lable2} from '../../utils/typography';
-import {black} from '../../styles/colors';
+import {black, darkYellow} from '../../styles/colors';
 import Homepage from '../topNavigationScreens/home';
 import Year from '../topNavigationScreens/year';
 import AstroShop from '../topNavigationScreens/astroShop';
@@ -80,7 +80,7 @@ export default function Home() {
 }
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: 'rgba(254,192,8,255)',
+    backgroundColor: darkYellow,
     height: heightToDp('7%'),
     justifyContent: 'center',
   },

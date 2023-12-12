@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   title: {
     color: lightBlack,
     fontSize: font18Px,
+    fontWeight: '500',
   },
   backArrow: {
     marginHorizontal: widthToDp('5%'),
