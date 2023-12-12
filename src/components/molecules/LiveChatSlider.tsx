@@ -1,12 +1,11 @@
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import {black, boldRed} from '../../styles/colors';
+import {black, boldRed, darkOrange} from '../../styles/colors';
 import {font13Px, font14Px, font16Px, font17Px} from '../../utils/typography';
 import {VERTICAL_1} from '../../utils/spacing';
 import {heightToDp, widthToDp} from '../../styles/responsive';
 import {dummyuser} from '../../utils/images';
-import {lightOrange} from '../../styles/colors';
 import {white} from '../../styles/colors';
 
 interface LiveChatProps {
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
   },
   imageWrapper: {
     flexDirection: 'column',
-    backgroundColor: lightOrange,
+    backgroundColor: darkOrange,
     width: widthToDp('26%'),
     alignItems: 'center',
     borderRadius: 10,
