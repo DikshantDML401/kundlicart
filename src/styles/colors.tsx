@@ -39,7 +39,7 @@ export const darkYellow = 'rgba(254,192,8,255)';
 export const skinLight = '#FFF0E4';
 export const blue = '#009AEB';
 export const paleOrange = '#FFB270';
-
+export const lemonYellow = 'rgba(255,193,2,255)';
 export const primaryColor = '#677F71';
 export const darkGray = '#666666';
 export const Green = '#0DB13E';

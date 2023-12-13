@@ -1,12 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {black} from '../../../styles/colors';
+import {Image} from 'react-native';
+import {homeBanner} from '../../../utils/images';
+import {heightToDp} from '../../../styles/responsive';
 
 const Year = () => {
   return (
-    <View>
-      <Text style={styles.heading}>Year 2024</Text>
-    </View>
+    <ScrollView>
+      <View>
+        <Image source={homeBanner} style={styles.homeBanner} />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -16,4 +21,5 @@ const styles = StyleSheet.create({
   heading: {
     color: black,
   },
+  homeBanner: {width: 'auto', height: heightToDp('10%')},
 });

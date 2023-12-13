@@ -10,11 +10,11 @@ import {
   astrologersBioData,
   astrologersData,
 } from '../../../helpers/commonText';
-import {HORIZONTAL_1, HORIZONTAL_3} from '../../../utils/spacing';
+import {HORIZONTAL_3} from '../../../utils/spacing';
 import CustomButton from '../../../components/atoms/CustomButton';
 import {orange, white} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {font18Px} from '../../../utils/typography';
+import {font17Px} from '../../../utils/typography';
 
 const Homepage = () => {
   const LiveChatTitleProps = {
@@ -60,7 +60,7 @@ const Homepage = () => {
             rightImage={
               <Icon
                 name="share"
-                size={20}
+                size={22}
                 color={white}
                 style={{
                   marginLeft: 25,
@@ -87,12 +87,11 @@ const styles = StyleSheet.create({
   kundliChartWrapper: {marginTop: HORIZONTAL_3},
   headingStyle: {
     fontWeight: 'bold',
-    fontSize: font18Px,
-    marginHorizontal: HORIZONTAL_1,
+    fontSize: font17Px,
   },
   containerHeadStyle: {
     width: widthToDp('98%'),
-    borderRadius: widthToDp('1%'),
+    borderRadius: widthToDp('0%'),
     margin: HORIZONTAL_3,
   },
 });
