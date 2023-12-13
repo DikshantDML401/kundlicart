@@ -2,7 +2,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
-import {black, darkYellow, orange} from '../../styles/colors';
+import {black, darkYellow,paleOrange, orange} from '../../styles/colors';
 import Call from '../../screens/call';
 import Live from '../../screens/live';
 import Chat from '../../screens/chat';
@@ -67,6 +67,7 @@ export default function TabNavigation() {
                     ) : (
                       <AstroSageBackHeader
                         title={'KundliKart'}
+
                         backArrow={true}
                         rightIcons={true}
                       />
@@ -74,18 +75,20 @@ export default function TabNavigation() {
                   </>
                 );
               },
-              tabBarIcon: () => (
-                <Icon name={screen.icon} size={22} color={orange} />
+              tabBarIcon: ({focused}) => (
+                <Icon
+                  name={screen.icon}
+                  size={22}
+                  color={focused ? orange : paleOrange}
+                />
               ),
               tabBarLabelStyle: {
                 color: screen.color,
               },
             }}
           />
-        ))}
-      </Tab.Navigator>
-    </>
+        );
+      })}
+    </Tab.Navigator>
   );
 }
-
-export const common = () => {};

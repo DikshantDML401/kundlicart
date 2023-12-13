@@ -17,6 +17,9 @@ interface CustomButton {
   headingStyle?: any;
   containerHeadStyle?: any;
   showRightIcon?: boolean;
+
+  style?: object;
+  titleStyle?: object;
 }
 
 const CustomButton: React.FC<CustomButton> = ({
@@ -59,32 +62,33 @@ const CustomButton: React.FC<CustomButton> = ({
           onPress={() => onPress()}
         />
       ) : (
-        <Button
-          title={title}
-          titleStyle={
-            headingStyle
-              ? headingStyle
-              : {
-                  fontWeight: 'bold',
-                  fontSize: font18Px,
-                  marginHorizontal: HORIZONTAL_1,
-                }
-          }
-          buttonStyle={{backgroundColor: color, height: heightToDp('6%')}}
-          containerStyle={
-            containerHeadStyle
-              ? containerHeadStyle
-              : {
-                  width: widthToDp('80%'),
-                  borderRadius: widthToDp('6%'),
-                }
-          }
-          icon={leftIcone && leftImage}
-          onPress={() => onPress()}
-        />
+           <Button
+        title={title}
+        titleStyle={
+          titleStyle
+            ? titleStyle
+            : {
+                fontWeight: 'bold',
+                fontSize: font18Px,
+                marginHorizontal: HORIZONTAL_1,
+              }
+        }
+        buttonStyle={{backgroundColor: color, height: heightToDp('6%')}}
+        containerStyle={
+          style
+            ? style
+            : {
+                width: widthToDp('80%'),
+                borderRadius: widthToDp('6%'),
+              }
+        }
+        icon={leftIcone && leftImage}
+        onPress={() => onPress()}
+      />
       )}
-    </View>
-  );
+  style,
+  titleStyle,
+})
 };
 
 export default CustomButton;
