@@ -34,6 +34,8 @@ export const lightYellow = '#ebc23b';
 export const orange = 'rgba(255,110,0,255)';
 export const darkYellow = 'rgba(254,192,8,255)';
 export const skinLight = '#FFF0E4';
+export const blue = '#009AEB';
+export const paleOrange = '#FFB270';
 
 export const primaryColor = '#677F71';
 export const darkGray = '#666666';
