@@ -17,6 +17,8 @@ interface CustomButton {
   headingStyle?: any;
   containerHeadStyle?: any;
   showRightIcon?: boolean;
+  style?: object;
+  titleStyle?: object;
 }
 
 const CustomButton: React.FC<CustomButton> = ({
@@ -30,6 +32,8 @@ const CustomButton: React.FC<CustomButton> = ({
   headingStyle,
   containerHeadStyle,
   showRightIcon,
+  style,
+  titleStyle,
 }) => {
   return (
     <View style={styles.buttonContainer}>
@@ -62,8 +66,8 @@ const CustomButton: React.FC<CustomButton> = ({
         <Button
           title={title}
           titleStyle={
-            headingStyle
-              ? headingStyle
+            titleStyle
+              ? titleStyle
               : {
                   fontWeight: 'bold',
                   fontSize: font18Px,
@@ -72,8 +76,8 @@ const CustomButton: React.FC<CustomButton> = ({
           }
           buttonStyle={{backgroundColor: color, height: heightToDp('6%')}}
           containerStyle={
-            containerHeadStyle
-              ? containerHeadStyle
+            style
+              ? style
               : {
                   width: widthToDp('80%'),
                   borderRadius: widthToDp('6%'),

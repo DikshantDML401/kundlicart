@@ -1,12 +1,16 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 
 import {black, lightBlack, lightYellow} from '../../styles/colors';
 import {TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {widthToDp} from '../../styles/responsive';
+import {heightToDp, widthToDp} from '../../styles/responsive';
 import {font18Px} from '../../utils/typography';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import {If} from '../../helpers/if';
+import UpSideModal from '../../layouts/UpSideModal';
+import FilterContent from '../molecules/FilterContent';
 
 interface AstroSage {
   title: string;
@@ -20,6 +24,8 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
   rightIcons = false,
 }) => {
   const navigation = useNavigation();
+
+  const [showFilter, setShowFilter] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
@@ -36,13 +42,29 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
       <View style={styles.rightContainer}>
         {rightIcons && (
           <View style={styles.rightIcons}>
-            <Icon name="credit-card" size={22} color={black} />
-            <Icon name="filter" size={22} color={black} />
-            <Icon name="bell" size={22} color={black} />
-            <Icon name="search" size={22} color={black} />
+            <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
+              <Icon name="credit-card" size={22} color={black} />
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => setShowFilter(true)}>
+              <Icon name="filter" size={22} color={black} />
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
+              <Icon name="bell" size={22} color={black} />
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
+              <Icon name="search" size={22} color={black} />
+            </TouchableWithoutFeedback>
           </View>
         )}
       </View>
+      <If show={showFilter}>
+        <UpSideModal
+          modalStyle={styles.modal}
+          style={styles.modalContainer}
+          value={showFilter}>
+          <FilterContent onClose={() => setShowFilter(false)} />
+        </UpSideModal>
+      </If>
     </View>
   );
 };
@@ -76,5 +98,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginRight: widthToDp('2%'),
     gap: widthToDp('2%'),
+  },
+  modal: {
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    top: widthToDp('5%'),
+    alignSelf: 'center',
+  },
+  modalContainer: {
+    left: 0,
+    borderRadius: widthToDp('5%'),
+    height: heightToDp('80%'),
   },
 });
