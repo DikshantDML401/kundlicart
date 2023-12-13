@@ -1,4 +1,4 @@
-import {Image, ScrollView, StyleSheet, View} from 'react-native';
+import {Image, ScrollView, Share, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {homeBanner} from '../../../utils/images';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
@@ -21,23 +21,32 @@ const Homepage = () => {
     topHeadingText: 'KundliKart Live TV',
     astrologers: astrologersData,
   };
-  // const kundliDataArray = [1, 2, 3, 4];
   const ChatWithAstrologerProps = {
     topHeadingText: 'Chat/Call with Astrologer',
     astrologers: astrologersBioData,
   };
   const handleShare = () => {
-    console.log('ssd');
+    const options = {
+      message: 'Check out this awesome app!',
+    };
+
+    Share.share(options)
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        err && console.log(err);
+      });
   };
   return (
     <ScrollView style={styles.container}>
       <View>
         <Image source={homeBanner} style={styles.homeBanner} />
-        <KundliData {...KundliDataProps[0]} />
+        <KundliData {...KundliDataProps[3]} />
         <LiveChat {...LiveChatTitleProps} />
         <ChatWithAstrologer {...ChatWithAstrologerProps} />
         <View style={styles.kundliChartWrapper}>
-        {KundliDataProps.map((data, index) => (
+          {KundliDataProps.map((data, index) => (
             <KundliData key={index} {...data} />
           ))}
         </View>
@@ -48,7 +57,7 @@ const Homepage = () => {
             rightIcon={true}
             containerHeadStyle={styles.containerHeadStyle}
             headingStyle={styles.headingStyle}
-            rightImage={() => (
+            rightImage={
               <Icon
                 name="share"
                 size={20}
@@ -58,7 +67,8 @@ const Homepage = () => {
                   paddingRight: 17,
                 }}
               />
-            )}
+            }
+            showRightIcon={true}
             onPress={() => {
               handleShare();
             }}
