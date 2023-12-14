@@ -43,7 +43,6 @@ const KundliData: React.FC<KundliDataProps> = ({
   );
 };
 export default KundliData;
-
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',

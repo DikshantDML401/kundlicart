@@ -9,7 +9,7 @@ const dummy2 = require('../assets/images/hinduism.png');
 const dummy3 = require('../assets/images/lamp.png');
 const dummy4 = require('../assets/images/youtube.png');
 const astrolady = require('../assets/images/astroLady.jpg');
-
+const yearBanner = require('../assets/images/yearBanner.png');
 export {
   authHeaderLogo,
   drawerHeader,
@@ -22,4 +22,5 @@ export {
   dummy3,
   dummy4,
   astrolady,
+  yearBanner,
 };

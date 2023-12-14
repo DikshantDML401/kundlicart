@@ -20,6 +20,8 @@ const Homepage = () => {
   const LiveChatTitleProps = {
     topHeadingText: 'KundliKart Live TV',
     astrologers: astrologersData,
+    subTitle: 'View All',
+    showIcon: true,
   };
   const ChatWithAstrologerProps = {
     topHeadingText: 'Chat/Call with Astrologer',
