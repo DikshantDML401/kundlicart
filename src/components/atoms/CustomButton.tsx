@@ -19,6 +19,7 @@ interface CustomButton {
   showRightIcon?: boolean;
   style?: object;
   titleStyle?: object;
+  buttonStyle?: object;
 }
 
 const CustomButton: React.FC<CustomButton> = ({
@@ -34,6 +35,7 @@ const CustomButton: React.FC<CustomButton> = ({
   showRightIcon,
   style,
   titleStyle,
+  buttonStyle,
 }) => {
   return (
     <View style={styles.buttonContainer}>
@@ -74,7 +76,11 @@ const CustomButton: React.FC<CustomButton> = ({
                   marginHorizontal: HORIZONTAL_1,
                 }
           }
-          buttonStyle={{backgroundColor: color, height: heightToDp('6%')}}
+          buttonStyle={
+            buttonStyle
+              ? buttonStyle
+              : {backgroundColor: color, height: heightToDp('6%')}
+          }
           containerStyle={
             style
               ? style

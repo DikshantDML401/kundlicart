@@ -1,13 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {black, blue, white} from '../../styles/colors';
+import {black, blue, darkYellow} from '../../styles/colors';
 import {heightToDp, widthToDp} from '../../styles/responsive';
 import {astroList} from '../../helpers/HomeTab';
 import {astroRating} from '../../helpers/HomeTab';
 import {font18Px} from '../../utils/typography';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TouchableOpacity} from 'react-native';
+import ActionButton from '../atoms/ActionButton';
 
 const AstroProfileCard = () => {
   return (
@@ -47,9 +48,11 @@ const AstroProfileCard = () => {
                       <Text style={{color: black}}>{item.rating}</Text>
                     </View>
                   ))}
-                <View style={styles.astroBtn}>
-                  <Text style={styles.btnText}>Busy</Text>
-                </View>
+                <ActionButton
+                  title={'busy'}
+                  onPress={() => console.log('hello')}
+                  backgroundColor={darkYellow}
+                />
               </View>
             </View>
           </TouchableOpacity>
@@ -97,15 +100,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: widthToDp('1%'),
-  },
-  astroBtn: {
-    paddingHorizontal: widthToDp('6%'),
-    paddingVertical: widthToDp('1.5%'),
-    borderRadius: widthToDp('6%'),
-    backgroundColor: 'red',
-    marginTop: widthToDp('3%'),
-  },
-  btnText: {
-    color: white,
   },
 });

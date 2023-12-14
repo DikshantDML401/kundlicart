@@ -96,6 +96,25 @@ export const astroList = [
   },
 ];
 
+export const loveList = [
+  {
+    name: 'Bhole',
+    type: 'vedic',
+    lang: 'Hindi, Gujarati',
+    exp: '1 years',
+    free: '11/min',
+    image: astrolady,
+  },
+  {
+    name: 'Bhole',
+    type: 'vedic',
+    lang: 'Hindi, Gujarati',
+    exp: '1 years',
+    free: '11/min',
+    image: astrolady,
+  },
+];
+
 export const astroRating = [
   {
     icon: <Feather name="message-square" size={12} color={lightYellow} />,

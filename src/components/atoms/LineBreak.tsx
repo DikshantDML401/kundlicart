@@ -3,8 +3,12 @@ import React from 'react';
 import {widthToDp} from '../../styles/responsive';
 import {mediumGray} from '../../styles/colors';
 
-const LineBreak = () => {
-  return <View style={styles.linebreak} />;
+interface LineProps {
+  lineStyle?: object;
+}
+
+const LineBreak: React.FC<LineProps> = ({lineStyle}) => {
+  return <View style={lineStyle ? lineStyle : styles.linebreak} />;
 };
 
 const styles = StyleSheet.create({

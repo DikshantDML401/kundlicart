@@ -8,6 +8,7 @@ const AppStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Dashboard" component={DashboardStack} />
+      {/* <Stack.Screen name="AccountStack" component={AccountStack} /> */}
     </Stack.Navigator>
   );
 };
