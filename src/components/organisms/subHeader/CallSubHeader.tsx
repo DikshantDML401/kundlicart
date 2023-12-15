@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {callRoutes} from '../../../helpers/HomeTab';
 import {black, skinLight, lightOrange, white} from '../../../styles/colors';
 import {widthToDp} from '../../../styles/responsive';
 import {font16Px} from '../../../utils/typography';
 
-const CallSubHeader = () => {
-  const [selectedItem, setSelectedItem] = useState('All');
+interface headerProps {
+  selected: string;
+  onPress: (item: {name: string}) => void;
+}
 
-  const handleItemClick = (item: any) => {
-    setSelectedItem(item.name);
-  };
-
+const CallSubHeader: React.FC<headerProps> = ({selected, onPress}) => {
   return (
     <ScrollView
       horizontal
@@ -25,21 +24,21 @@ const CallSubHeader = () => {
               styles.scrollItems,
               {
                 backgroundColor:
-                  selectedItem === item.name ? lightOrange : skinLight,
+                  selected === item.name ? lightOrange : skinLight,
               },
             ]}
-            onPress={() => handleItemClick(item)}>
+            onPress={() => onPress(item)}>
             <Text
               style={[
                 styles.title,
-                {color: selectedItem === item.name ? white : black},
+                {color: selected === item.name ? white : black},
               ]}>
               {item?.icon}
             </Text>
             <Text
               style={[
                 styles.title,
-                {color: selectedItem === item.name ? white : black},
+                {color: selected === item.name ? white : black},
               ]}>
               {item?.name}
             </Text>

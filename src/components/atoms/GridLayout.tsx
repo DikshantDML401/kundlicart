@@ -1,24 +1,41 @@
 // Updated GridLayout component
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {widthToDp} from '../../styles/responsive';
-import {black, skinLight} from '../../styles/colors';
-import {font24Px} from '../../utils/typography';
+import {black, lightOrange, skinLight} from '../../styles/colors';
+import {font18Px} from '../../utils/typography';
 
 interface GridLayoutProps {
   heading: string;
   data: Array<{id: number; name: string}>;
+  selected: any[];
+  handleClickItem: (item: {id: number; name: string}) => void; // Accept the item
 }
 
-const GridLayout: React.FC<GridLayoutProps> = ({heading, data}) => {
+const GridLayout: React.FC<GridLayoutProps> = ({
+  heading,
+  data,
+  selected,
+  handleClickItem,
+}) => {
   return (
     <View>
       <Text style={styles.heading}>{heading}</Text>
       <View style={styles.gridContainer}>
         {data.map(item => (
-          <View style={styles.gridItem} key={item.id}>
+          <TouchableOpacity
+            style={[
+              styles.gridItem,
+              {
+                backgroundColor: selected.includes(item.id)
+                  ? lightOrange
+                  : skinLight,
+              },
+            ]}
+            key={item.id}
+            onPress={() => handleClickItem(item)}>
             <Text style={styles.gridText}>{item.name}</Text>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     </View>
@@ -30,22 +47,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginHorizontal: widthToDp('5%'),
+    marginHorizontal: widthToDp('6%'),
   },
   gridItem: {
-    backgroundColor: skinLight,
     alignItems: 'center',
     justifyContent: 'center',
-    width: widthToDp('28%'), // Adjust the width as per your requirement
-    marginVertical: widthToDp('2%'),
+    width: widthToDp('28%'),
+    marginVertical: widthToDp('1%'),
     padding: widthToDp('3%'),
     borderRadius: widthToDp('2%'),
   },
   heading: {
     color: black,
-    fontSize: font24Px,
+    fontSize: font18Px,
     marginHorizontal: widthToDp('5%'),
-    marginTop: widthToDp('3%'),
+    marginVertical: widthToDp('3%'),
   },
   gridText: {
     color: black,

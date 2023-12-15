@@ -1,5 +1,5 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {black, lightOrange, mediumGray} from '../../styles/colors';
 import {font16Px, font18Px} from '../../utils/typography';
@@ -16,6 +16,21 @@ interface FilterProps {
 }
 
 const FilterContent: React.FC<FilterProps> = ({onClose}) => {
+  const [selected, setSelected] = useState<any[]>([]);
+
+  const handleClickItem = (item: any) => {
+    const selectedIndex = selected.indexOf(item.id);
+    let newSelected: any[] = [];
+
+    if (selectedIndex === -1) {
+      newSelected = [...selected, item.id];
+    } else {
+      newSelected = selected.filter(id => id !== item.id);
+    }
+
+    setSelected(newSelected);
+  };
+
   return (
     <>
       <View style={styles.header}>
@@ -28,11 +43,36 @@ const FilterContent: React.FC<FilterProps> = ({onClose}) => {
       </View>
       <LineBreak />
       <ScrollView>
-        <GridLayout heading="Language" data={Language} />
-        <GridLayout heading="Category" data={category} />
-        <GridLayout heading="Price" data={category} />
-        <GridLayout heading="Consultation" data={category} />
-        <GridLayout heading="Skill" data={category} />
+        <GridLayout
+          heading="Language"
+          data={Language}
+          selected={selected}
+          handleClickItem={handleClickItem}
+        />
+        <GridLayout
+          heading="Category"
+          data={category}
+          selected={selected}
+          handleClickItem={handleClickItem}
+        />
+        <GridLayout
+          heading="Price"
+          data={category}
+          selected={selected}
+          handleClickItem={handleClickItem}
+        />
+        <GridLayout
+          heading="Consultation"
+          data={category}
+          selected={selected}
+          handleClickItem={handleClickItem}
+        />
+        <GridLayout
+          heading="Skill"
+          data={category}
+          selected={selected}
+          handleClickItem={handleClickItem}
+        />
       </ScrollView>
       <LineBreak />
       <View style={styles.btnWrapper}>

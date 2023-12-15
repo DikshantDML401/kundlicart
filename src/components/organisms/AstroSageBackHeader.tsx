@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 
-import {black, lightBlack, lightYellow} from '../../styles/colors';
+import {black, darkYellow, lightBlack} from '../../styles/colors';
 import {TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {heightToDp, widthToDp} from '../../styles/responsive';
@@ -16,12 +16,14 @@ interface AstroSage {
   title: string;
   backArrow?: boolean;
   rightIcons?: boolean;
+  walletIcon?: boolean;
 }
 
 const AstroSageBackHeader: React.FC<AstroSage> = ({
   title,
   backArrow = false,
   rightIcons = false,
+  walletIcon = false,
 }) => {
   const navigation = useNavigation();
 
@@ -57,6 +59,13 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
           </View>
         )}
       </View>
+      {walletIcon && (
+        <View style={styles.rightIcons}>
+          <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
+            <Icon name="credit-card" size={22} color={black} />
+          </TouchableWithoutFeedback>
+        </View>
+      )}
       <If show={showFilter}>
         <UpSideModal
           modalStyle={styles.modal}
@@ -73,7 +82,7 @@ export default AstroSageBackHeader;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: lightYellow,
+    backgroundColor: darkYellow,
     paddingVertical: widthToDp('5%'),
     flexDirection: 'row',
     alignItems: 'center',
