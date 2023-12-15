@@ -14,6 +14,14 @@ export const astrologersBioData = [
   {name: 'Dikshant', rating: '3.0', time: '16/min'},
   {name: 'Vipul', rating: '5.6', time: '10/min'},
 ];
+export const astrologersBioDataDetail = [
+  {name: 'Dikshant', rating: '4.0', time: '10/min'},
+  {name: 'Vipul', rating: '5.0', time: '18/min'},
+  {name: 'Dikshant', rating: '4.6', time: '12/min'},
+  {name: 'Vipul', rating: '4.0', time: '15/min'},
+  {name: 'Dikshant', rating: '3.0', time: '16/min'},
+  {name: 'Vipul', rating: '5.6', time: '10/min'},
+];
 export const astrologersData = [
   {name: 'Pandit ji', live: true},
   {name: 'Pandit ji', live: true},
@@ -83,3 +91,24 @@ const data = [
 ];
 
 export default data;
+
+export const ChatWithAstrologerPropsArray = [
+  {
+    topHeadingText: 'Vedic Astrologers',
+    astrologers: astrologersBioData,
+    showIcon: false,
+    subTitle: 'See More',
+  },
+  {
+    topHeadingText: 'Tarot Astrologers',
+    astrologers: astrologersBioData,
+    showIcon: false,
+    subTitle: 'See More',
+  },
+  {
+    topHeadingText: 'Kitab Astrologers',
+    astrologers: astrologersBioData,
+    showIcon: false,
+    subTitle: 'See More',
+  },
+];

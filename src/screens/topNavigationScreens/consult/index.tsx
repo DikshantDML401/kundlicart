@@ -3,10 +3,17 @@ import React from 'react';
 import CunsultTopCard from '../../../components/molecules/common/CunsultTopCard';
 import {widthToDp} from '../../../styles/responsive';
 import {HORIZONTAL_4, VERTICAL_3} from '../../../utils/spacing';
-import {ConsultDataProps, astrologersData} from '../../../helpers/commonText';
+import {
+  ChatWithAstrologerPropsArray,
+  ConsultDataProps,
+  astrologersBioDataDetail,
+  astrologersData,
+} from '../../../helpers/commonText';
 import CarouselCard from '../../../components/molecules/CarouselCard';
 import LiveChat from '../../../components/molecules/common/LiveChatSlider';
 import {ScrollView} from 'react-native';
+import ChatWithAstrologer from '../../../components/molecules/common/ChatAstrologerSlider';
+import CallAstrologerSlider from '../../../components/molecules/common/CallAstrologerSlider';
 
 const Consult = () => {
   const LiveChatTitleProps = {
@@ -14,6 +21,13 @@ const Consult = () => {
     astrologers: astrologersData,
     subTitle: 'See More',
     showIcon: false,
+  };
+  const CallAstrologerProps = {
+    topHeadingText: 'Call with Astrologers',
+    astrologers: astrologersBioDataDetail,
+    showIcon: false,
+    subTitle: 'See More',
+    showLive: false,
   };
   return (
     <ScrollView style={styles.wrapper}>
@@ -25,6 +39,11 @@ const Consult = () => {
         </View>
         <CarouselCard />
         <LiveChat {...LiveChatTitleProps} />
+        <CallAstrologerSlider {...CallAstrologerProps} />
+        {ChatWithAstrologerPropsArray.map((props, index) => (
+          <ChatWithAstrologer key={index} {...props} />
+        ))}
+        <CallAstrologerSlider {...CallAstrologerProps} />
       </View>
     </ScrollView>
   );

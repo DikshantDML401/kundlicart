@@ -26,6 +26,8 @@ const Homepage = () => {
   const ChatWithAstrologerProps = {
     topHeadingText: 'Chat/Call with Astrologer',
     astrologers: astrologersBioData,
+    subTitle: 'View All',
+    showIcon: true,
   };
   const handleShare = () => {
     const options = {

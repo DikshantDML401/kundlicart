@@ -23,6 +23,7 @@ export const placeholderText = widthToDp('4%');
 export const avatarText = widthToDp('10%');
 
 /////     font size in pixels ///
+export const font9Px = heightToDp('1.1%');
 export const font10Px = heightToDp('1.3%');
 export const font11Px = heightToDp('1.4%');
 export const font12Px = heightToDp('1.5%');
