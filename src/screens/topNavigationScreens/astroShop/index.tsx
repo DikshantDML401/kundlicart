@@ -1,19 +1,27 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import React from 'react';
-import {black} from '../../../styles/colors';
+import {yearBanner} from '../../../utils/images';
+import {heightToDp} from '../../../styles/responsive';
+import KundliData from '../../../components/molecules/common/kundliData';
+import {KundliDataProps} from '../../../helpers/commonText';
 
 const AstroShop = () => {
   return (
-    <View>
-      <Text style={styles.heading}>Astro Shop</Text>
-    </View>
+    <ScrollView>
+      <View>
+        {KundliDataProps.map((data, index) => (
+          <KundliData key={index} {...data} />
+        ))}
+      </View>
+      <View>
+        <Image source={yearBanner} style={styles.homeBanner} />
+      </View>
+    </ScrollView>
   );
 };
 
 export default AstroShop;
 
 const styles = StyleSheet.create({
-  heading: {
-    color: black,
-  },
+  homeBanner: {width: 'auto', height: heightToDp('10%')},
 });

@@ -1,4 +1,10 @@
-import {dummy2, dummy3, kundliLogo} from '../utils/images';
+import {
+  dummy2,
+  dummy3,
+  homeBanner,
+  kundliLogo,
+  yearBanner,
+} from '../utils/images';
 import {dummy1} from '../utils/images';
 export const astrologersBioData = [
   {name: 'Dikshant', rating: '4.0', time: '10/min'},
@@ -46,3 +52,34 @@ export const KundliDataProps = [
     textValue3: 'Horoscope',
   },
 ];
+export const ConsultDataProps = [
+  {
+    imagesSource: kundliLogo,
+    title: 'Kundli',
+  },
+  {
+    imagesSource: dummy1,
+    title: 'Matching',
+  },
+  {
+    imagesSource: dummy2,
+    title: 'Horoscope',
+  },
+  {
+    imagesSource: dummy3,
+    title: 'Free Chat',
+  },
+];
+const data = [
+  {
+    imgUrl: yearBanner,
+  },
+  {
+    imgUrl: yearBanner,
+  },
+  {
+    imgUrl: yearBanner,
+  },
+];
+
+export default data;

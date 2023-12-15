@@ -21,6 +21,7 @@ export const HORIZONTAL_2 = widthToDp('2%');
 export const HORIZONTAL_3 = widthToDp('3%');
 export const HORIZONTAL_4 = widthToDp('4%');
 export const HORIZONTAL_5 = widthToDp('5%');
+export const HORIZONTAL_6 = widthToDp('6%');
 export const HORIZONTAL_8 = widthToDp('8%');
 
 //Paddings

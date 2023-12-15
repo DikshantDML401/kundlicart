@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Button} from '@rneui/themed';
 import {heightToDp, widthToDp} from '../../styles/responsive';
-import {font18Px} from '../../utils/typography';
+import {font16Px, font18Px} from '../../utils/typography';
 import {HORIZONTAL_1} from '../../utils/spacing';
 
 interface CustomButton {
@@ -47,7 +47,7 @@ const CustomButton: React.FC<CustomButton> = ({
               ? headingStyle
               : {
                   fontWeight: 'bold',
-                  fontSize: font18Px,
+                  fontSize: font16Px,
                   marginHorizontal: HORIZONTAL_1,
                 }
           }
@@ -57,7 +57,7 @@ const CustomButton: React.FC<CustomButton> = ({
               ? containerHeadStyle
               : {
                   width: widthToDp('80%'),
-                  borderRadius: widthToDp('6%'),
+                  borderRadius: widthToDp('2%'),
                 }
           }
           iconRight

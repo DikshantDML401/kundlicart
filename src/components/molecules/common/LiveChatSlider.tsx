@@ -15,7 +15,7 @@ import {
   font16Px,
   font17Px,
 } from '../../../utils/typography';
-import {VERTICAL_1} from '../../../utils/spacing';
+import {HORIZONTAL_6, VERTICAL_1} from '../../../utils/spacing';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {dummyuser} from '../../../utils/images';
 import {white} from '../../../styles/colors';
@@ -23,21 +23,36 @@ import {white} from '../../../styles/colors';
 interface LiveChatProps {
   topHeadingText: string;
   astrologers: Array<{name: string; live: boolean}>;
+  subTitle: string;
+  showIcon: boolean;
 }
 
-const LiveChat: React.FC<LiveChatProps> = ({topHeadingText, astrologers}) => {
+const LiveChat: React.FC<LiveChatProps> = ({
+  topHeadingText,
+  astrologers,
+  subTitle,
+  showIcon,
+}) => {
   return (
     <View>
       <View style={styles.topWrapper}>
         <Text style={styles.heading}>{topHeadingText}</Text>
         <View style={styles.refreshWrapper}>
-          <Icon
-            name="refresh-cw"
-            size={20}
-            color="black"
-            style={{marginTop: 5}}
-          />
-          <Text style={styles.viewAll}>View All</Text>
+          {showIcon ? (
+            <>
+              <Icon
+                name="refresh-cw"
+                size={20}
+                color="black"
+                style={{marginTop: 5}}
+              />
+              <Text style={styles.viewAll}>{subTitle}</Text>
+            </>
+          ) : (
+            <View style={styles.titleWrapper}>
+              <Text style={styles.viewAll}>{subTitle}</Text>
+            </View>
+          )}
         </View>
       </View>
       <View style={styles.imgWrapper}>
@@ -106,4 +121,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: widthToDp('3%'),
   },
+  titleWrapper: {marginLeft: HORIZONTAL_6},
 });

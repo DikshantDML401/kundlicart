@@ -9,12 +9,14 @@ import Year from '../topNavigationScreens/year';
 import AstroShop from '../topNavigationScreens/astroShop';
 import Reports from '../topNavigationScreens/reports';
 import Video from '../topNavigationScreens/videos';
+import Consult from '../topNavigationScreens/consult';
 
 const FirstRoute = () => <Homepage />;
 const SecondRoute = () => <Year />;
 const ThirdRoute = () => <AstroShop />;
-const FourthRoute = () => <Reports />;
-const FifthRoute = () => <Video />;
+const FourthRoute = () => <Consult />;
+const FifthRoute = () => <Reports />;
+const SixthRoute = () => <Video />;
 
 const renderScene = SceneMap({
   first: FirstRoute,
@@ -22,6 +24,7 @@ const renderScene = SceneMap({
   third: ThirdRoute,
   fourth: FourthRoute,
   fifth: FifthRoute,
+  sixth: SixthRoute,
 });
 const renderTabBar = (props: any) => {
   return (
@@ -64,8 +67,9 @@ export default function Home() {
     {key: 'first', title: 'HOME'},
     {key: 'second', title: '2024'},
     {key: 'third', title: 'ASTRO SHOP'},
-    {key: 'fourth', title: 'REPORTS'},
-    {key: 'fifth', title: 'VIDEO'},
+    {key: 'fourth', title: 'CUNSULT'},
+    {key: 'fifth', title: 'REPORTS'},
+    {key: 'sixth', title: 'Video'},
   ]);
 
   return (
