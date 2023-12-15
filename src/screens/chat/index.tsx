@@ -7,7 +7,6 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import {lightYellow} from '../../styles/colors';
 import CallSubHeader from '../../components/organisms/subHeader/CallSubHeader';
 import {heightToDp, widthToDp} from '../../styles/responsive';
 import {black, blue, darkYellow} from '../../styles/colors';
@@ -33,7 +32,7 @@ const Chat = () => {
         />
       </View>
       <ScrollView>
-        <StatusBar backgroundColor={lightYellow} barStyle={'dark-content'} />
+        <StatusBar backgroundColor={darkYellow} barStyle={'dark-content'} />
         <View style={styles.contentContainer}>
           {astroList &&
             astroList?.map(item => (
