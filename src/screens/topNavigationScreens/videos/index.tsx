@@ -12,8 +12,8 @@ import {yearBanner} from '../../../utils/images';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import {useTranslation} from '../../../components/hooks/useTranslation';
-import { font19Px } from '../../../utils/typography';
-import { HORIZONTAL_2, HORIZONTAL_3, HORIZONTAL_5} from '../../../utils/spacing';
+import {font19Px} from '../../../utils/typography';
+import {HORIZONTAL_2, HORIZONTAL_3, HORIZONTAL_5} from '../../../utils/spacing';
 const Video = () => {
   const {t} = useTranslation();
   const [isPlaying, setPlaying] = useState(false);
@@ -23,7 +23,7 @@ const Video = () => {
   };
   return (
     <ScrollView>
-      <View style={styles.container}>
+      <View>
         <Image source={yearBanner} style={styles.homeBanner} />
       </View>
       <View style={styles.Wrapper}>
@@ -50,20 +50,24 @@ const Video = () => {
 export default Video;
 
 const styles = StyleSheet.create({
-  container:{backgroundColor: '#c4c3c2'},
   Wrapper: {
     flex: 1,
     backgroundColor: white,
     width: widthToDp('95%'),
     margin: HORIZONTAL_2,
-    borderRadius: 10,
-    height: heightToDp('34%')
+    borderRadius: 4,
+    height: heightToDp('33%'),
   },
   homeBanner: {width: 'auto', height: heightToDp('10%')},
   youtubeWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  titleWrapper: {flexDirection: 'column', margin: HORIZONTAL_3, alignItems: 'center',marginBottom: HORIZONTAL_5},
+  titleWrapper: {
+    flexDirection: 'column',
+    margin: HORIZONTAL_3,
+    alignItems: 'center',
+    marginBottom: HORIZONTAL_5,
+  },
   title: {color: black, fontSize: font19Px},
 });
