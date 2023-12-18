@@ -147,3 +147,32 @@ export const category = [
   {id: 5, name: 'Most Rated'},
   {id: 6, name: 'Most Rated'},
 ];
+
+export const Login = {
+  email: 'admin@correo.com',
+  password: 'Password123',
+  contact: '+91 8895887989',
+  wallet: '200',
+};
+
+export const account = [
+  {icon: <Icon name="favorite" size={24} color="black" />, name: 'My Profile'},
+  {
+    icon: <Feather name="briefcase" size={24} color="black" />,
+    name: 'My Wallet',
+  },
+  {
+    icon: <Feather name="gift" size={24} color="black" />,
+    name: 'My Consultations and Recharges',
+  },
+  {icon: <Icon name="favorite" size={24} color="black" />, name: 'Following'},
+  {
+    icon: <Feather name="bar-chart" size={24} color="black" />,
+    name: 'Set Prefrence',
+  },
+  {
+    icon: <Icon name="handshake" size={24} color="black" />,
+    name: 'Notification Setting',
+  },
+  {icon: <Feather name="book" size={24} color="black" />, name: 'Support'},
+];

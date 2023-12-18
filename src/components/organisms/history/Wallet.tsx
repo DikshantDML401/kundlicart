@@ -3,15 +3,18 @@
 /* eslint-disable react/no-unstable-nested-components */
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
-import {black, lightOrange, mediumGray, white} from '../../styles/colors';
-import {font16Px, font17Px, font18Px} from '../../utils/typography';
-import {widthToDp} from '../../styles/responsive';
-import ActionButton from '../../components/atoms/ActionButton';
-import LineBreak from '../../components/atoms/LineBreak';
+import {black, lightOrange, mediumGray, white} from '../../../styles/colors';
+import {font16Px, font17Px, font18Px} from '../../../utils/typography';
+import {widthToDp} from '../../../styles/responsive';
+import ActionButton from '../../atoms/ActionButton';
+import LineBreak from '../../atoms/LineBreak';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 const Wallet = () => {
+  const navigation = useNavigation();
+
   const AvailableBalance = () => (
     <View style={styles.netBalance}>
       <Text style={styles.text}>Available balance</Text>
@@ -35,8 +38,15 @@ const Wallet = () => {
     </View>
   );
 
-  const MyAccountSection = () => (
-    <TouchableOpacity style={[styles.recharge, styles.account]}>
+  const MyAccountSection = ({navigation}) => (
+    <TouchableOpacity
+      style={[styles.recharge, styles.account]}
+      onPress={() =>
+        navigation.navigate('AppStack', {
+          screen: 'AccountStack',
+          params: {screen: 'Account'},
+        })
+      }>
       <Text style={styles.accText}>My Account</Text>
       <Icon name="keyboard-arrow-right" size={24} color={black} />
     </TouchableOpacity>
@@ -56,7 +66,7 @@ const Wallet = () => {
       <AvailableBalance />
       <RechargeSection balance={balance} />
       <LineBreak lineStyle={styles.lineStyle} />
-      <MyAccountSection />
+      <MyAccountSection navigation={navigation} />
       <LineBreak lineStyle={styles.lineStyle} />
       <View>
         {data.length ? (
