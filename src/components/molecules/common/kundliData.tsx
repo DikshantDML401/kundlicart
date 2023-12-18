@@ -4,6 +4,8 @@ import {black, gray} from '../../../styles/colors';
 import {font16Px} from '../../../utils/typography';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {VERTICAL_2} from '../../../utils/spacing';
+import {RootStackParamList} from '../../../navigation/types';
+import {useNavigation} from '@react-navigation/native';
 
 interface KundliDataProps {
   imageSource: any;
@@ -18,16 +20,32 @@ const KundliData: React.FC<KundliDataProps> = ({
   textValue2,
   textValue3,
 }) => {
-  const handleOnClick = () => {};
+  const navigation = useNavigation<RootStackParamList>();
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity onPress={handleOnClick}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('AppStack', {
+            screen: 'Dashboard',
+            params: {
+              screen: 'OpenKundli',
+            },
+          })
+        }>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue1}</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('AppStack', {
+            screen: 'Dashboard',
+            params: {
+              screen: 'Matching',
+            },
+          })
+        }>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue2}</Text>
