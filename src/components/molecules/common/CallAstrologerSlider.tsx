@@ -8,9 +8,15 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import {black, blue, darkYellow, lemon} from '../../../styles/colors';
-import {font10Px, font14Px, font17Px} from '../../../utils/typography';
-import {HORIZONTAL_9, VERTICAL_1} from '../../../utils/spacing';
+import {black, blue, darkYellow} from '../../../styles/colors';
+import {
+  font10Px,
+  font12Px,
+  font14Px,
+  font17Px,
+  font9Px,
+} from '../../../utils/typography';
+import {HORIZONTAL_10, HORIZONTAL_4, VERTICAL_1} from '../../../utils/spacing';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {dummyLive, dummyuser} from '../../../utils/images';
 import {white} from '../../../styles/colors';
@@ -26,12 +32,14 @@ interface LiveChatProps {
   }[];
   showIcon: boolean;
   subTitle: string;
+  showLive: boolean;
 }
-const ChatWithAstrologer: React.FC<LiveChatProps> = ({
+const CallAstrologerSlider: React.FC<LiveChatProps> = ({
   topHeadingText,
   astrologers,
   showIcon,
   subTitle,
+  showLive,
 }) => {
   return (
     <View>
@@ -69,9 +77,14 @@ const ChatWithAstrologer: React.FC<LiveChatProps> = ({
                   color={blue}
                   style={styles.verified}
                 />
+                <View style={styles.offerTextWrapper}>
+                  <Text style={styles.offerText}>Today's Offer</Text>
+                </View>
                 <View style={styles.imageWrapper}>
                   <Image source={dummyuser} style={styles.dummyLogo} />
-                  <Image source={dummyLive} style={styles.dummyLive} />
+                  {showLive ? (
+                    <Image source={dummyLive} style={styles.dummyLive} />
+                  ) : null}
                   <Text style={styles.astrologername}>{astrologer.name}</Text>
                 </View>
                 <View style={styles.ratingWrapper}>
@@ -91,6 +104,9 @@ const ChatWithAstrologer: React.FC<LiveChatProps> = ({
                   />
                   <Text style={styles.time}>{astrologer.time}</Text>
                 </View>
+                <View style={styles.calNowWrapper}>
+                  <Text style={styles.calNow}>Call Now</Text>
+                </View>
               </View>
             </TouchableOpacity>
           ))}
@@ -99,10 +115,40 @@ const ChatWithAstrologer: React.FC<LiveChatProps> = ({
     </View>
   );
 };
-
-export default ChatWithAstrologer;
+export default CallAstrologerSlider;
 
 const styles = StyleSheet.create({
+  offerText: {
+    color: black,
+    fontSize: font9Px,
+    textAlign: 'center',
+  },
+  offerTextWrapper: {
+    backgroundColor: darkYellow,
+    position: 'absolute',
+    width: widthToDp('18%'),
+    height: heightToDp('2%'),
+    top: -1,
+    right: 0,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 20,
+  },
+  calNow: {
+    color: black,
+    fontSize: font12Px,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginTop: 2,
+  },
+  calNowWrapper: {
+    backgroundColor: darkYellow,
+    position: 'absolute',
+    width: widthToDp('20%'),
+    height: heightToDp('2.7%'),
+    bottom: 4,
+    right: 22,
+    borderRadius: 10,
+  },
   imgWrapper: {flexDirection: 'row', marginTop: VERTICAL_1},
   scrollWrapper: {flex: 1},
   heading: {
@@ -134,10 +180,11 @@ const styles = StyleSheet.create({
     borderWidth: widthToDp('0.3%'),
     width: widthToDp('31%'),
     borderRadius: widthToDp('3%'),
-    height: heightToDp('14%'),
+    height: heightToDp('19%'),
     marginLeft: VERTICAL_1,
   },
   imageWrapper: {
+    marginTop: HORIZONTAL_4,
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
@@ -159,12 +206,12 @@ const styles = StyleSheet.create({
     color: black,
     fontSize: font14Px,
     position: 'relative',
-    bottom: 10,
+    bottom: 0,
   },
   ratingWrapper: {
     flexDirection: 'row',
-    top: 90,
-    right: 85,
+    top: 105,
+    right: 83,
   },
   rating: {
     color: black,
@@ -191,5 +238,5 @@ const styles = StyleSheet.create({
     marginTop: 1,
     textDecorationLine: 'line-through',
   },
-  titleWrapper: {marginLeft: HORIZONTAL_9},
+  titleWrapper: {marginLeft: HORIZONTAL_10},
 });
