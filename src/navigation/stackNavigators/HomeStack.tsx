@@ -18,7 +18,6 @@ function HomeStack() {
           headerTitle: () => <AppHeader headerText="" />,
         }}
       />
-
       <Stack.Screen name="AppStack" component={AppStack} />
     </Stack.Navigator>
   );

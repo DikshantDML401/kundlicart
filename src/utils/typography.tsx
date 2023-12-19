@@ -37,3 +37,4 @@ export const font19Px = heightToDp('2.1%');
 export const font18Px = heightToDp('2.7%');
 export const font24Px = heightToDp('3%');
 export const font26Px = heightToDp('3.3%');
+export const font30Px = heightToDp('5.3%');

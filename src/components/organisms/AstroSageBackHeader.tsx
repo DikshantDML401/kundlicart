@@ -72,7 +72,9 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
             onPress={() =>
               navigation.navigate('AppStack', {
                 screen: 'AccountStack',
-                params: {screen: 'Wallet'},
+                params: {
+                  screen: 'Wallet',
+                },
               })
             }>
             <Icon name="credit-card" size={22} color={black} />
