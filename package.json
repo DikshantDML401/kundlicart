@@ -11,6 +11,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^3.1.0",
     "@react-native-firebase/app": "^18.7.1",
     "@react-native-firebase/auth": "^18.7.1",
     "@react-native-masked-view/masked-view": "^0.3.0",
@@ -24,6 +25,7 @@
     "@rneui/base": "^4.0.0-rc.8",
     "@rneui/themed": "^4.0.0-rc.8",
     "i18next": "^23.7.7",
+    "moment": "^2.29.4",
     "patch-package": "^8.0.0",
     "postinstall-postinstall": "^2.1.0",
     "react": "18.2.0",
@@ -33,6 +35,7 @@
     "react-native-date-picker": "^4.3.5",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "^2.14.0",
+    "react-native-maps": "^1.8.4",
     "react-native-modal": "^13.0.1",
     "react-native-pager-view": "^6.2.3",
     "react-native-paper": "^5.11.3",

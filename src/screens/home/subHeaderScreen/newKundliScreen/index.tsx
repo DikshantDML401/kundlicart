@@ -18,6 +18,7 @@ const NewKundli = () => {
   const customtabButtonProps = {
     leftButtonTitle: 'All Local Kundlis',
     rightButtonTitle: 'Cloud Kundli',
+    setStyle: true,
   };
   return (
     <View style={styles.container}>
