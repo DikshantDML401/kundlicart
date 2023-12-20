@@ -12,6 +12,7 @@ const dummy3: ImageSourcePropType = require('../assets/images/lamp.png');
 const dummy4: ImageSourcePropType = require('../assets/images/youtube.png');
 const astrolady: ImageSourcePropType = require('../assets/images/astroLady.jpg');
 const yearBanner: ImageSourcePropType = require('../assets/images/yearBanner.png');
+const astroDetailBg: ImageSourcePropType = require('../assets/images/background.jpg');
 export {
   authHeaderLogo,
   drawerHeader,
@@ -25,4 +26,5 @@ export {
   dummy4,
   astrolady,
   yearBanner,
+  astroDetailBg,
 };

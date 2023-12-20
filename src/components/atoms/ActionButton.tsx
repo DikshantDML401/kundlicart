@@ -1,4 +1,4 @@
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {widthToDp} from '../../styles/responsive';
 import {white} from '../../styles/colors';
@@ -10,6 +10,8 @@ interface ActionProps {
   style?: object;
   textStyle?: object;
   backgroundColor?: string;
+  leftImage?: boolean;
+  leftIcon?: any;
 }
 
 const ActionButton: React.FC<ActionProps> = ({
@@ -18,6 +20,8 @@ const ActionButton: React.FC<ActionProps> = ({
   backgroundColor,
   style,
   textStyle,
+  leftImage = false,
+  leftIcon,
 }) => {
   return (
     <TouchableOpacity
@@ -32,6 +36,7 @@ const ActionButton: React.FC<ActionProps> = ({
               },
             ]
       }>
+      {leftImage && <View>{leftIcon}</View>}
       <Text style={textStyle ? textStyle : styles.btnText}>{title}</Text>
     </TouchableOpacity>
   );

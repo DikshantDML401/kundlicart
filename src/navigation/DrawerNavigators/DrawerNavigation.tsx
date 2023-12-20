@@ -20,7 +20,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigation = () => {
   const routing = [
     {
-      name: 'Dashboard',
+      name: 'Homestack',
       component: HomeStack,
       unmount: false,
       headerShown: false,

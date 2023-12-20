@@ -229,3 +229,36 @@ export const wallet = [
     offerPrice: '55% extra',
   },
 ];
+
+export const callHistory = [
+  {
+    name: 'Preeti',
+    price: '13',
+    time: 'December 20 2023, 2:40:07 PM',
+    charge: 'FREE',
+    duration: '12 seconds',
+    image: astrolady,
+  },
+];
+
+export const astroDetails = [
+  {
+    name: 'Numero Madness',
+    profile: {
+      icon: <Feather name="star" size={24} color="black" />,
+      name: 'Numerology',
+    },
+    language: {
+      icon: <Icon name="translate" size={24} color="black" />,
+      spoken: 'Hindi, English',
+    },
+    experience: {
+      icon: <Icon name="create" size={24} color="black" />,
+      count: '3 Years of experience',
+    },
+    followers: {
+      icon: <Feather name="star" size={24} color="black" />,
+      count: '12 Followers',
+    },
+  },
+];
