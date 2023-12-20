@@ -8,9 +8,14 @@ import {font17Px} from '../../../utils/typography';
 
 interface AppHeaderProps {
   headerText: string;
+  showIcon?: boolean;
 }
-const AppHeader: React.FC<AppHeaderProps> = ({headerText}) => {
+const AppHeader: React.FC<AppHeaderProps> = ({headerText, showIcon}) => {
   const navigation = useNavigation();
+
+  const handleNavigate = () => {
+    navigation.navigate('Home');
+  };
   return (
     <View style={styles.container}>
       <View style={styles.headerLeft}>
@@ -25,11 +30,25 @@ const AppHeader: React.FC<AppHeaderProps> = ({headerText}) => {
 
         <Text style={styles.header}>{headerText}</Text>
       </View>
-      <View style={styles.notificationWrapper}>
-        <Icon name="credit-card" size={22} color={black} />
-        <Icon name="bell" size={22} color={black} />
-        <Icon name="search" size={20} color={black} />
-      </View>
+      {showIcon ? (
+        <View style={styles.notificationWrapper}>
+          <Icon name="credit-card" size={22} color={black} />
+          <Icon
+            name="bell"
+            size={22}
+            color={black}
+            onPress={() => console.log('notification')}
+          />
+          <Icon
+            name="search"
+            size={20}
+            color={black}
+            onPress={() => console.log('Search')}
+          />
+        </View>
+      ) : (
+        <Icon name="home" size={22} color={black} onPress={handleNavigate} />
+      )}
     </View>
   );
 };

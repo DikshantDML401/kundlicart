@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import DashboardStack from './DashboardStack';
 import AccountStack from './AccountStack';
 import CallStack from './CallStack';
+
 const Stack = createStackNavigator();
 
 const AppStack = () => {

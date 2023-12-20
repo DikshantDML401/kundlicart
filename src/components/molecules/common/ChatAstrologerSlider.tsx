@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import {black, blue, darkYellow, lemon} from '../../../styles/colors';
+import {black, blue, darkYellow} from '../../../styles/colors';
 import {font10Px, font14Px, font17Px} from '../../../utils/typography';
 import {HORIZONTAL_9, VERTICAL_1} from '../../../utils/spacing';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     borderColor: darkYellow,
     backgroundColor: white,
     borderWidth: widthToDp('0.3%'),
-    width: widthToDp('31%'),
+    width: widthToDp('32%'),
     borderRadius: widthToDp('3%'),
     height: heightToDp('14%'),
     marginLeft: VERTICAL_1,
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   ratingWrapper: {
     flexDirection: 'row',
     top: 90,
-    right: 85,
+    right: 81,
   },
   rating: {
     color: black,

@@ -63,7 +63,7 @@ export default function TabNavigation() {
                 return (
                   <>
                     {screen.name === 'Home' ? (
-                      <AppHeader headerText="KundliKart" />
+                      <AppHeader headerText="KundliKart" showIcon={true} />
                     ) : screen.name === 'History' ? (
                       <AstroSageBackHeader
                         title={'Consultation History'}
