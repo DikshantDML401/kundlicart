@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {black, yellow} from '../../../../styles/colors';
@@ -8,7 +8,8 @@ import {VERTICAL_1} from '../../../../utils/spacing';
 import DatePicker from 'react-native-date-picker';
 
 const OpenHeader = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [date, setDate] = useState(new Date());
+  const [open, setOpen] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.userWrapper}>
@@ -24,25 +25,18 @@ const OpenHeader = () => {
       <View style={styles.userWrapper}>
         <Icon name="calendar" size={22} color={black} />
         <View style={styles.textInputContainer}>
+          <Button title="Open" onPress={() => setOpen(true)} />
           <DatePicker
-            style={styles.textInput}
-            date={selectedDate}
-            mode="date"
-            format="YYYY-MM-DD"
-            confirmBtnText="Confirm"
-            cancelBtnText="Cancel"
-            customStyles={{
-              dateIcon: {
-                position: 'absolute',
-                left: 0,
-                top: 4,
-                marginLeft: 0,
-              },
-              dateInput: {
-                marginLeft: 36,
-              },
+            modal
+            open={open}
+            date={date}
+            onConfirm={date => {
+              setOpen(false);
+              setDate(date);
             }}
-            onDateChange={date => setSelectedDate(date)}
+            onCancel={() => {
+              setOpen(false);
+            }}
           />
         </View>
       </View>
