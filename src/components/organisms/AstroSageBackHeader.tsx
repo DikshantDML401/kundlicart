@@ -11,6 +11,7 @@ import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {If} from '../../helpers/if';
 import UpSideModal from '../../layouts/UpSideModal';
 import FilterContent from '../molecules/FilterContent';
+import {RootStackParamList} from '../../navigation/types';
 
 interface AstroSage {
   title: string;
@@ -25,7 +26,7 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
   rightIcons = false,
   walletIcon = false,
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<RootStackParamList>();
 
   const [showFilter, setShowFilter] = useState<boolean>(false);
 
@@ -44,7 +45,13 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
       <View style={styles.rightContainer}>
         {rightIcons && (
           <View style={styles.rightIcons}>
-            <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
+            <TouchableWithoutFeedback
+              onPress={() =>
+                navigation.navigate('AppStack', {
+                  screen: 'AccountStack',
+                  params: {screen: 'Wallet'},
+                })
+              }>
               <Icon name="credit-card" size={22} color={black} />
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback onPress={() => setShowFilter(true)}>
@@ -61,7 +68,15 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
       </View>
       {walletIcon && (
         <View style={styles.rightIcons}>
-          <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
+          <TouchableWithoutFeedback
+            onPress={() =>
+              navigation.navigate('AppStack', {
+                screen: 'AccountStack',
+                params: {
+                  screen: 'Wallet',
+                },
+              })
+            }>
             <Icon name="credit-card" size={22} color={black} />
           </TouchableWithoutFeedback>
         </View>
