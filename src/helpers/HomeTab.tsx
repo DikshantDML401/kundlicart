@@ -176,3 +176,56 @@ export const account = [
   },
   {icon: <Feather name="book" size={24} color="black" />, name: 'Support'},
 ];
+
+export const wallet = [
+  {
+    price: '₹50',
+    offer: false,
+  },
+  {
+    price: '₹100',
+    offer: true,
+    offerPrice: 'Get ₹200',
+  },
+  {
+    price: '₹9000',
+    offer: true,
+    offerPrice: '55% extra',
+  },
+  {
+    price: '₹1250',
+    offer: true,
+    offerPrice: '16% extra',
+  },
+  {
+    price: '₹2000',
+    offer: true,
+    offerPrice: '26% extra',
+  },
+  {
+    price: '₹9000',
+    offer: true,
+    offerPrice: '55% extra',
+  },
+  {
+    price: '₹1250',
+    offer: true,
+    offerPrice: '16% extra',
+  },
+  {
+    price: '₹2000',
+    offer: true,
+    offerPrice: '26% extra',
+  },
+  {
+    price: '₹9000',
+    offer: true,
+    offerPrice: '55% extra',
+  },
+
+  {
+    price: '₹9000',
+    offer: true,
+    offerPrice: '55% extra',
+  },
+];
