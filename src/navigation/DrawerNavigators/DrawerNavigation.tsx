@@ -14,6 +14,7 @@ import AboutUs from '../../screens/aboutUs';
 import AstroRegistration from '../../screens/AstroRegistration';
 import ChooseKundli from '../../screens/chooseKundli';
 import Notification from '../../screens/notifications';
+import AppHeader from '../../components/organisms/Appheader/AppHeader';
 
 const Drawer = createDrawerNavigator();
 
@@ -99,6 +100,7 @@ const DrawerNavigation = () => {
               headerStyle: {backgroundColor: darkYellow},
               headerShown: val.headerShown,
               unmountOnBlur: val.unmount,
+              header: () => <AppHeader headerText={val.name} />,
             }}
           />
         ))}

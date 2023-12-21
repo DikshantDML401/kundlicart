@@ -47,6 +47,8 @@ export const brown = '#3D3200';
 export const lightSkin = '#FFF0E4';
 export const thinBlack = '#736A69';
 export const mediumBlack = '#010101';
+export const green = '#00C700';
+export const golden = '#FFD44D';
 //Color for SafeAreaView (IOS)
 export const safeAreaTopColor = '#000000';
 export const safeAreaBottomColor = '#FFFFFF';

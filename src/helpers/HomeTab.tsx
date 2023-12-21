@@ -243,21 +243,20 @@ export const callHistory = [
 
 export const astroDetails = [
   {
-    name: 'Numero Madness',
     profile: {
-      icon: <Feather name="star" size={24} color="black" />,
+      icon: <Feather name="star" size={14} color="white" />,
       name: 'Numerology',
     },
     language: {
-      icon: <Icon name="translate" size={24} color="black" />,
+      icon: <Icon name="translate" size={14} color="white" />,
       spoken: 'Hindi, English',
     },
     experience: {
-      icon: <Icon name="create" size={24} color="black" />,
+      icon: <Icon name="create" size={14} color="white" />,
       count: '3 Years of experience',
     },
     followers: {
-      icon: <Feather name="star" size={24} color="black" />,
+      icon: <Feather name="star" size={14} color="white" />,
       count: '12 Followers',
     },
   },

@@ -1,16 +1,44 @@
-import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Image,
+  Share,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-import {astroDetailBg} from '../../utils/images';
+import {astroDetailBg, astrolady} from '../../utils/images';
 import {heightToDp, widthToDp} from '../../styles/responsive';
-import {white} from '../../styles/colors';
+import {blue, darkYellow, green, white} from '../../styles/colors';
 import {HORIZONTAL_4, VERTICAL_1} from '../../utils/spacing';
 import {font18Px} from '../../utils/typography';
 import {astroDetails} from '../../helpers/HomeTab';
+import ActionButton from '../atoms/ActionButton';
 
 const AstroDetailsBanner = () => {
-  console.log(astroDetails);
+  const [isFollowed, setIsFollowed] = useState('Follow');
+
+  const handleFollowing = () => {
+    isFollowed === 'Follow'
+      ? setIsFollowed('Following')
+      : setIsFollowed('Follow');
+  };
+  const handleShare = () => {
+    const options = {
+      message: 'Check out this awesome app!',
+    };
+
+    Share.share(options)
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        err && console.log(err);
+      });
+  };
   return (
     <View>
       <View style={styles.imageContainer}>
@@ -18,15 +46,49 @@ const AstroDetailsBanner = () => {
       </View>
       <View style={styles.bannerContainer}>
         <View style={styles.shareTxtWrapper}>
-          <Text style={styles.shareTxt}>Kartik</Text>
-          <Feather name="share-2" size={24} color={white} />
+          <Text style={styles.shareTxt}>Bhavya A</Text>
+          <TouchableWithoutFeedback onPress={handleShare}>
+            <Feather name="share-2" size={24} color={white} />
+          </TouchableWithoutFeedback>
         </View>
         <View>
-          {/* <Image source={astrolady} style={styles.astroImage} /> */}
+          <Image source={astrolady} style={styles.astroImage} />
+          <MaterialIcons
+            name="circle"
+            size={18}
+            color={green}
+            style={styles.liveIcon}
+          />
+          <MaterialIcons
+            name="verified"
+            size={36}
+            color={blue}
+            style={styles.verifiedIcon}
+          />
           {astroDetails &&
             astroDetails?.map(item => (
               <View style={styles.AstroDetailContainer}>
-                <View></View>
+                <View style={styles.common}>
+                  {item.profile.icon}
+                  <Text style={styles.commonText}>{item.profile.name}</Text>
+                </View>
+                <View style={styles.common}>
+                  {item.language.icon}
+                  <Text style={styles.commonText}>{item.language.spoken}</Text>
+                </View>
+                <View style={styles.common}>
+                  {item.experience.icon}
+                  <Text style={styles.commonText}>{item.experience.count}</Text>
+                </View>
+                <View style={styles.common}>
+                  {item.followers.icon}
+                  <ActionButton
+                    title={isFollowed}
+                    style={styles.btnStyle}
+                    onPress={handleFollowing}
+                  />
+                  <Text style={styles.commonText}>{item.followers.count}</Text>
+                </View>
               </View>
             ))}
         </View>
@@ -62,14 +124,44 @@ const styles = StyleSheet.create({
     fontSize: font18Px,
   },
   astroImage: {
-    height: heightToDp('8%'),
-    width: widthToDp('18%'),
+    position: 'relative',
+    marginTop: widthToDp('13%'),
+    marginLeft: widthToDp('3%'),
+    height: heightToDp('10%'),
+    width: widthToDp('20%'),
     borderRadius: widthToDp('20%'),
   },
   AstroDetailContainer: {
-    borderWidth: widthToDp('0.1%'),
-    borderColor: 'rgba(0,0,0,0.1)',
+    position: 'absolute',
+    width: widthToDp('73%'),
     borderRadius: widthToDp('5%'),
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: 'rgba(0, 0, 0, 0.04)',
+    paddingLeft: widthToDp('17%'),
+    marginTop: widthToDp('10%'),
+    marginLeft: widthToDp('12%'),
+    paddingVertical: widthToDp('1%'),
+  },
+  common: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: widthToDp('0.5%'),
+  },
+  commonText: {
+    marginLeft: widthToDp('1%'),
+  },
+  btnStyle: {
+    backgroundColor: darkYellow,
+    borderRadius: widthToDp('1%'),
+    paddingHorizontal: widthToDp('1%'),
+    marginLeft: widthToDp('1%'),
+  },
+  liveIcon: {
+    position: 'absolute',
+    left: widthToDp('17%'),
+    top: widthToDp('12%'),
+  },
+  verifiedIcon: {
+    position: 'absolute',
+    bottom: 0,
   },
 });

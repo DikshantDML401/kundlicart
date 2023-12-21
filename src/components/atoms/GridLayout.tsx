@@ -1,5 +1,5 @@
 // Updated GridLayout component
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {widthToDp} from '../../styles/responsive';
 import {black, lightOrange, skinLight} from '../../styles/colors';
@@ -8,16 +8,24 @@ import {font18Px} from '../../utils/typography';
 interface GridLayoutProps {
   heading: string;
   data: Array<{id: number; name: string}>;
-  selected: any[];
-  handleClickItem: (item: {id: number; name: string}) => void; // Accept the item
 }
 
-const GridLayout: React.FC<GridLayoutProps> = ({
-  heading,
-  data,
-  selected,
-  handleClickItem,
-}) => {
+const GridLayout: React.FC<GridLayoutProps> = ({heading, data}) => {
+  const [selected, setSelected] = useState<any[]>([]);
+
+  const handleClickItem = (item: any) => {
+    const selectedIndex = selected.indexOf(item.id);
+    let newSelected: any[] = [];
+
+    if (selectedIndex === -1) {
+      newSelected = [...selected, item.id];
+    } else {
+      newSelected = selected.filter(id => id !== item.id);
+    }
+
+    setSelected(newSelected);
+  };
+
   return (
     <View>
       <Text style={styles.heading}>{heading}</Text>
