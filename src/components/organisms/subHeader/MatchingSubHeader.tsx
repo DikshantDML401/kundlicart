@@ -5,10 +5,10 @@ import {font16Px} from '../../../utils/typography';
 import {black, darkYellow} from '../../../styles/colors';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import OpenKundli from '../../../screens/home/subHeaderScreen/newKundliScreen';
-import NewKundli from '../../../screens/home/subHeaderScreen/openKundli';
+import NewMatching from '../../../screens/home/subHeaderScreen/newMatching';
 
 const FirstRoute = () => <OpenKundli />;
-const SecondRoute = () => <NewKundli />;
+const SecondRoute = () => <NewMatching />;
 
 const renderScene = SceneMap({
   first: FirstRoute,
@@ -47,12 +47,12 @@ const renderTabBar = (props: any) => {
     />
   );
 };
-interface HomeSubHeaderProps {
+interface MatchingSubHeaderProps {
   titleLeft?: string;
   titleRight?: string;
 }
 
-export const HomeSubHeader: React.FC<HomeSubHeaderProps> = ({
+export const MatchingSubHeader: React.FC<MatchingSubHeaderProps> = ({
   titleLeft,
   titleRight,
 }) => {

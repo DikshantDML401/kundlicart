@@ -1,21 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {black} from '../../../styles/colors';
-import HomeSubHeader from '../../../components/organisms/subHeader/homeSubHeader';
+import {MatchingSubHeader} from '../../../components/organisms/subHeader/MatchingSubHeader';
 
 const Matching = () => {
+  const subHeaderPropsdata = {
+    titleLeft: 'OPEN kUNDLI',
+    titleRight: 'NEW MATCHING',
+  };
   return (
     <>
-      <HomeSubHeader />
-      <View>
-        <Text style={styles.heading}>matching</Text>
-      </View>
+      <MatchingSubHeader {...subHeaderPropsdata} />
     </>
   );
 };
 
 export default Matching;
-
-const styles = StyleSheet.create({
-  heading: {color: black},
-});

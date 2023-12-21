@@ -10,7 +10,6 @@ const App = () => {
       SplashScreen.hide();
     }, 1000);
 
-    // Clear the timer to avoid any issues when the component unmounts
     return () => clearTimeout(splashScreenTimer);
   }, []);
   // useEffect(() => {

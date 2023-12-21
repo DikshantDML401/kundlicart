@@ -4,11 +4,11 @@ import Icon from 'react-native-vector-icons/Feather';
 import {Button} from '@rneui/themed';
 import DatePicker from 'react-native-date-picker';
 import moment from 'moment';
-import {black, bodyColor, white, yellow} from '../../styles/colors';
+import {black, white, yellow} from '../../styles/colors';
 import {heightToDp, widthToDp} from '../../styles/responsive';
 import {VERTICAL_1} from '../../utils/spacing';
 
-const DateTimePicker = () => {
+const DatePickerMatching = () => {
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState(new Date());
   const [open, setOpen] = useState(false);
@@ -80,12 +80,12 @@ const DateTimePicker = () => {
   );
 };
 
-export default DateTimePicker;
+export default DatePickerMatching;
 
 const styles = StyleSheet.create({
   userWrapper: {
     flexDirection: 'row',
-    width: widthToDp('95%'),
+    width: widthToDp('80%'),
     gap: widthToDp('5%'),
     alignItems: 'center',
     marginLeft: VERTICAL_1,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   timeButton: {
-    backgroundColor: bodyColor,
+    backgroundColor: white,
     color: black,
     borderRadius: 6,
     borderColor: yellow,
@@ -104,12 +104,12 @@ const styles = StyleSheet.create({
     height: heightToDp('6%'),
   },
   dateButton: {
-    backgroundColor: bodyColor,
+    backgroundColor: white,
     color: black,
     borderRadius: 6,
     borderColor: yellow,
     borderWidth: widthToDp('0.3%'),
-    width: widthToDp('45%'),
+    width: widthToDp('30%'),
     marginLeft: VERTICAL_1,
     height: heightToDp('6%'),
   },
