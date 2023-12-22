@@ -5,7 +5,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AstroDetailsBanner from '../../components/molecules/AstroDetailsBanner';
 import AstroRatingCircle from '../../components/atoms/AstroRatingCircle';
 import {black, lightOrange, mediumGray, white} from '../../styles/colors';
-import {font17Px} from '../../utils/typography';
+import {font16Px, font17Px} from '../../utils/typography';
 import {
   HORIZONTAL_4,
   HORIZONTAL_5,
@@ -62,12 +62,12 @@ const styles = StyleSheet.create({
   lineThrough: {
     textDecorationLine: 'line-through',
     color: mediumGray,
-    fontSize: font17Px,
+    fontSize: font16Px,
     fontWeight: '300',
   },
   actualPrice: {
     color: mediumGray,
-    fontSize: font17Px,
+    fontSize: font16Px,
     fontWeight: '300',
   },
   AboutAstroText: {
