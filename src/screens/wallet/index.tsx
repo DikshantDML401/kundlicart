@@ -46,14 +46,14 @@ const Wallet = () => {
 
   const renderItem = ({item}: {item: WalletItem}) => (
     <>
-      <View style={styles.walletContainer}>
+      <TouchableOpacity style={styles.walletContainer}>
         <Text style={styles.priceText}>{item.price}</Text>
         {item.offer && (
           <View style={styles.offerContainer}>
             <Text style={styles.offer}>{item.offerPrice}</Text>
           </View>
         )}
-      </View>
+      </TouchableOpacity>
     </>
   );
 
@@ -69,7 +69,7 @@ const Wallet = () => {
         <TouchableOpacity
           style={styles.consultNav}
           onPress={() =>
-            navigation.navigate('Dashboard', {
+            navigation.navigate('TabNavigation', {
               screen: 'History',
             })
           }>

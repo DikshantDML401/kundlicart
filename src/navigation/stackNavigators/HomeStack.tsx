@@ -10,9 +10,8 @@ const Stack = createStackNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-
       <Stack.Screen
-        name="Dashboard"
+        name="TabNavigation"
         component={TabNavigation}
         options={{
           headerShown: false,
