@@ -1,18 +1,19 @@
 import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import {Button} from '@rneui/themed';
-import {widthToDp} from '../../styles/responsive';
 import {HORIZONTAL_3} from '../../utils/spacing';
 import {black, yellow} from '../../styles/colors';
 
 interface CustomButtonProps {
   leftButtonTitle?: string;
   rightButtonTitle?: string;
+  setStyle?: boolean;
 }
 
 const CustomTabButtons: React.FC<CustomButtonProps> = ({
   leftButtonTitle,
   rightButtonTitle,
+  setStyle,
 }) => {
   const [activeButton, setActiveButton] = useState<'left' | 'right'>('left');
 
@@ -23,16 +24,24 @@ const CustomTabButtons: React.FC<CustomButtonProps> = ({
     <View style={styles.buttonContainer}>
       <Button
         title={leftButtonTitle}
-        containerStyle={{
-          height: 50,
-          width: 187,
-        }}
-        buttonStyle={{
-          backgroundColor: activeButton === 'left' ? yellow : 'white',
-          borderColor: yellow,
-          borderWidth: activeButton === 'left' ? 0 : 1,
-          height: 50,
-        }}
+        containerStyle={
+          setStyle ? {height: 50, width: 187} : {height: 50, width: 156.5}
+        }
+        buttonStyle={
+          setStyle
+            ? {
+                backgroundColor: activeButton === 'left' ? yellow : 'white',
+                borderColor: yellow,
+                borderWidth: activeButton === 'left' ? 0 : 1,
+                height: 50,
+              }
+            : {
+                backgroundColor: activeButton === 'left' ? yellow : 'white',
+                borderColor: yellow,
+                borderWidth: activeButton === 'left' ? 0 : 1,
+                height: 45,
+              }
+        }
         titleStyle={{
           color: activeButton === 'left' ? 'black' : 'rgba(0, 0, 0, 0.5)',
           marginHorizontal: 20,
@@ -42,16 +51,24 @@ const CustomTabButtons: React.FC<CustomButtonProps> = ({
       />
       <Button
         title={rightButtonTitle}
-        containerStyle={{
-          height: 50,
-          width: 187,
-        }}
-        buttonStyle={{
-          backgroundColor: activeButton === 'right' ? yellow : 'white',
-          borderColor: yellow,
-          borderWidth: activeButton === 'right' ? 0 : 1,
-          height: 50,
-        }}
+        containerStyle={
+          setStyle ? {height: 50, width: 187} : {height: 50, width: 156.5}
+        }
+        buttonStyle={
+          setStyle
+            ? {
+                backgroundColor: activeButton === 'right' ? yellow : 'white',
+                borderColor: yellow,
+                borderWidth: activeButton === 'right' ? 0 : 1,
+                height: 50,
+              }
+            : {
+                backgroundColor: activeButton === 'right' ? yellow : 'white',
+                borderColor: yellow,
+                borderWidth: activeButton === 'right' ? 0 : 1,
+                height: 45,
+              }
+        }
         titleStyle={{
           color: activeButton === 'right' ? 'black' : 'rgba(0, 0, 0, 0.5)',
           marginHorizontal: 20,
@@ -68,7 +85,6 @@ export default CustomTabButtons;
 const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
-    width: widthToDp('95%'),
     marginTop: HORIZONTAL_3,
     marginLeft: 10,
     color: black,

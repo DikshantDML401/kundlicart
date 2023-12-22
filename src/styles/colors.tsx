@@ -56,3 +56,5 @@ export const boldWhite = '#F3F3F3';
 export const boldRed = '#E84359';
 export const boldPink = '#FB90A2';
 export const yellow = '#ffbb3e';
+export const bodyColor = '#f2f2f2';
+export const darkred = '#e65100';

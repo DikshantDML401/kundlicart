@@ -4,7 +4,7 @@ import SearchField from '../../../../components/atoms/SearchField';
 import CustomTabButtons from '../../../../components/atoms/CustomTabButtons';
 import {HORIZONTAL_3} from '../../../../utils/spacing';
 
-const NewKundli = () => {
+const OpenKundli = () => {
   const [value, setValue] = useState<string>('');
 
   const handleValue = (newSearch: string) => {
@@ -18,6 +18,7 @@ const NewKundli = () => {
   const customtabButtonProps = {
     leftButtonTitle: 'All Local Kundlis',
     rightButtonTitle: 'Cloud Kundli',
+    setStyle: true,
   };
   return (
     <View style={styles.container}>
@@ -27,5 +28,5 @@ const NewKundli = () => {
   );
 };
 
-export default NewKundli;
+export default OpenKundli;
 const styles = StyleSheet.create({container: {marginTop: HORIZONTAL_3}});

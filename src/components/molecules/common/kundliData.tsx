@@ -51,7 +51,15 @@ const KundliData: React.FC<KundliDataProps> = ({
           <Text style={styles.kundliText}>{textValue2}</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('AppStack', {
+            screen: 'Dashboard',
+            params: {
+              screen: 'Horoscope',
+            },
+          })
+        }>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue3}</Text>
