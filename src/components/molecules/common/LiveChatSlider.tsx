@@ -10,12 +10,12 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {black, boldRed, darkOrange} from '../../../styles/colors';
 import {
-  font13Px,
+  font12Px,
   font14Px,
   font16Px,
   font17Px,
 } from '../../../utils/typography';
-import {HORIZONTAL_6, VERTICAL_1} from '../../../utils/spacing';
+import {HORIZONTAL_2, HORIZONTAL_6, VERTICAL_1} from '../../../utils/spacing';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {dummyuser} from '../../../utils/images';
 import {white} from '../../../styles/colors';
@@ -34,7 +34,7 @@ const LiveChat: React.FC<LiveChatProps> = ({
   showIcon,
 }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.topWrapper}>
         <Text style={styles.heading}>{topHeadingText}</Text>
         <View style={styles.refreshWrapper}>
@@ -80,6 +80,7 @@ const LiveChat: React.FC<LiveChatProps> = ({
 export default LiveChat;
 
 const styles = StyleSheet.create({
+  container: {marginVertical: HORIZONTAL_2},
   imgWrapper: {flexDirection: 'row', marginTop: VERTICAL_1},
   scrollWrapper: {flex: 1},
   heading: {color: black, fontSize: font17Px, marginLeft: VERTICAL_1},
@@ -98,15 +99,15 @@ const styles = StyleSheet.create({
   imageWrapper: {
     flexDirection: 'column',
     backgroundColor: darkOrange,
-    width: widthToDp('26%'),
+    width: widthToDp('28%'),
     alignItems: 'center',
     borderRadius: widthToDp('3%'),
-    height: heightToDp('13.5%'),
+    height: heightToDp('15%'),
     marginLeft: VERTICAL_1,
   },
   dummyLogo: {
-    width: widthToDp('16%'),
-    height: heightToDp('7%'),
+    width: widthToDp('18%'),
+    height: heightToDp('8%'),
     marginTop: VERTICAL_1,
     position: 'relative',
   },
@@ -114,12 +115,12 @@ const styles = StyleSheet.create({
   liveText: {
     color: boldRed,
     position: 'relative',
-    bottom: widthToDp('3%'),
+    bottom: widthToDp('2%'),
     backgroundColor: white,
-    fontSize: font13Px,
-    width: widthToDp('10%'),
+    fontSize: font12Px,
+    width: widthToDp('12%'),
     textAlign: 'center',
-    borderRadius: widthToDp('3%'),
+    borderRadius: widthToDp('1%'),
   },
   titleWrapper: {marginLeft: HORIZONTAL_6},
 });
