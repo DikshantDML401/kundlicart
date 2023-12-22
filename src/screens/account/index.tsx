@@ -12,8 +12,8 @@ import {Login} from '../../helpers/HomeTab';
 import {
   black,
   lightOrange,
-  lightSkin,
   mediumBlack,
+  skinLight,
   thinBlack,
   white,
 } from '../../styles/colors';
@@ -101,7 +101,7 @@ export default Account;
 
 const styles = StyleSheet.create({
   loginData: {
-    backgroundColor: lightSkin,
+    backgroundColor: skinLight,
     paddingVertical: VERTICAL_2,
     paddingHorizontal: HORIZONTAL_5,
     marginBottom: VERTICAL_4,

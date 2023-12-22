@@ -26,6 +26,7 @@ const AstroDetailsBanner = () => {
       ? setIsFollowed('Following')
       : setIsFollowed('Follow');
   };
+
   const handleShare = () => {
     const options = {
       message: 'Check out this awesome app!',
