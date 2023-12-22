@@ -6,7 +6,7 @@ import AppHeader from '../../components/organisms/Appheader/AppHeader';
 import Matching from '../../screens/home/matching';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 import Horoscope from '../../screens/home/horoscope';
-import locationPlace from '../../screens/home/locationPlace';
+import LocationPlace from '../../screens/home/locationPlace';
 const DashboardStack = () => {
   const Stack = createStackNavigator();
   return (
@@ -59,12 +59,12 @@ const DashboardStack = () => {
       />
       <Stack.Screen
         name="locationPlace"
-        component={locationPlace}
+        component={LocationPlace}
         options={{
           headerShown: true,
           header: () => (
             <AstroSageBackHeader
-              title="Horoscope"
+              title="Search Place"
               backArrow={true}
               rightIcons={false}
               walletIcon={false}

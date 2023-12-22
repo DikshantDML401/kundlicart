@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const locationPlace = () => {
+const LocationPlace = () => {
   return (
     <View>
       <Text style={{color: 'black'}}>locationPlace</Text>
@@ -9,6 +9,6 @@ const locationPlace = () => {
   );
 };
 
-export default locationPlace;
+export default LocationPlace;
 
 const styles = StyleSheet.create({});
