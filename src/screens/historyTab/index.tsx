@@ -4,9 +4,9 @@ import React, {useState} from 'react';
 import {black, darkYellow} from '../../styles/colors';
 import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
 import {heightToDp, widthToDp} from '../../styles/responsive';
-import Wallet from '../../components/organisms/history/Wallet';
-import CallHistory from '../../components/organisms/history/CallHistory';
-import ChatHistory from '../../components/organisms/history/ChatHistory';
+import Wallet from './history/Wallet';
+import CallHistory from './history/CallHistory';
+import ChatHistory from './history/ChatHistory';
 import {font18Px} from '../../utils/typography';
 
 const FirstRoute = () => <Wallet />;

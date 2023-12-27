@@ -4,9 +4,9 @@ import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {black, darkYellow, mediumGray} from '../../../styles/colors';
 import {font14Px, font15Px, font22Px} from '../../../utils/typography';
 import {HORIZONTAL_4, VERTICAL_1} from '../../../utils/spacing';
-import ActionButton from '../../atoms/ActionButton';
+import ActionButton from '../../../components/atoms/ActionButton';
 import Feather from 'react-native-vector-icons/Feather';
-import LineBreak from '../../atoms/LineBreak';
+import LineBreak from '../../../components/atoms/LineBreak';
 import {callHistory} from '../../../helpers/HomeTab';
 
 const CallHistory = () => {

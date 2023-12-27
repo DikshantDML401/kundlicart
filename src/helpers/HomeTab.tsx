@@ -261,3 +261,61 @@ export const astroDetails = [
     },
   },
 ];
+
+export const review = [
+  {
+    contact: '80917*****',
+    content: 'Its fine but can be better',
+    date: '25 Dec 2023',
+  },
+  {
+    contact: '89817*****',
+    content: 'Could be improved',
+    date: '28 Dec 2023',
+  },
+  {
+    contact: '80917*****',
+    content: 'Its fine but can be better',
+    date: '25 Dec 2023',
+  },
+  {
+    contact: '89817*****',
+    content: 'Could be improved',
+    date: '28 Dec 2023',
+  },
+  {
+    contact: '80917*****',
+    content: 'Its fine but can be better',
+    date: '25 Dec 2023',
+  },
+  {
+    contact: '89817*****',
+    content: 'Could be improved',
+    date: '28 Dec 2023',
+  },
+  {
+    contact: '80917*****',
+    content: 'Its fine but can be better',
+    date: '25 Dec 2023',
+  },
+  {
+    contact: '89817*****',
+    content: 'Could be improved',
+    date: '28 Dec 2023',
+  },
+  {
+    contact: '80917*****',
+    content: 'Its fine but can be better',
+    date: '25 Dec 2023',
+  },
+  {
+    contact: '89817*****',
+    content: 'Could be improved',
+    date: '28 Dec 2023',
+  },
+  {
+    contact: '80917*****',
+    content: 'Its fine but can be better',
+    date: '25 Dec 2023',
+  },
+];

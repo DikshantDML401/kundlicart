@@ -40,7 +40,7 @@ const Call = () => {
         <StatusBar backgroundColor={darkYellow} barStyle={'dark-content'} />
         <View style={styles.contentContainer}>
           {astroList &&
-            astroList?.map(item => (
+            astroList?.map((item, index) => (
               <TouchableOpacity
                 style={styles.container}
                 onPress={() =>
@@ -50,7 +50,8 @@ const Call = () => {
                       AstroDetails: undefined,
                     },
                   })
-                }>
+                }
+                key={index}>
                 <View style={styles.imageContainer}>
                   <Image source={item.image} style={styles.image} />
                 </View>
