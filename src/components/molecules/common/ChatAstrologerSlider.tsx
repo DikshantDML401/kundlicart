@@ -10,7 +10,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {black, blue, darkYellow} from '../../../styles/colors';
 import {font10Px, font14Px, font17Px} from '../../../utils/typography';
-import {HORIZONTAL_9, VERTICAL_1} from '../../../utils/spacing';
+import {HORIZONTAL_2, HORIZONTAL_9, VERTICAL_1} from '../../../utils/spacing';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {dummyLive, dummyuser} from '../../../utils/images';
 import {white} from '../../../styles/colors';
@@ -34,7 +34,7 @@ const ChatWithAstrologer: React.FC<LiveChatProps> = ({
   subTitle,
 }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.topWrapper}>
         <Text style={styles.heading}>{topHeadingText}</Text>
         <View style={styles.refreshWrapper}>
@@ -103,6 +103,7 @@ const ChatWithAstrologer: React.FC<LiveChatProps> = ({
 export default ChatWithAstrologer;
 
 const styles = StyleSheet.create({
+  container: {marginBottom: HORIZONTAL_2},
   imgWrapper: {flexDirection: 'row', marginTop: VERTICAL_1},
   scrollWrapper: {flex: 1},
   heading: {

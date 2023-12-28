@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   },
   checkBox: {backgroundColor: '#f2f2f2'},
   clearAllBtn: {
-    width: widthToDp('90%'),
+    width: widthToDp('92%'),
     borderRadius: widthToDp('1%'),
     marginHorizontal: widthToDp('3%'),
   },
