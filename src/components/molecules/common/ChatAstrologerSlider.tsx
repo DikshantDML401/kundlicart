@@ -18,14 +18,14 @@ import Symbol from 'react-native-vector-icons/MaterialIcons';
 import {lightYellow} from '../../../styles/colors';
 
 interface LiveChatProps {
-  topHeadingText: string;
+  topHeadingText?: string;
   astrologers: {
     name: string;
     rating: string;
     time: string;
   }[];
-  showIcon: boolean;
-  subTitle: string;
+  showIcon?: boolean;
+  subTitle?: string;
 }
 const ChatWithAstrologer: React.FC<LiveChatProps> = ({
   topHeadingText,

@@ -2,7 +2,7 @@ import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import AstroSageLogin from '../../screens/astroSageLogin';
 import AstroSageSignUp from '../../screens/AstroSageSignUp';
-import {lightYellow} from '../../styles/colors';
+import {darkYellow} from '../../styles/colors';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -10,7 +10,7 @@ const AstroSageTab = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {backgroundColor: lightYellow},
+        tabBarStyle: {backgroundColor: darkYellow},
         tabBarLabelStyle: {fontSize: 16, fontWeight: '400'},
       }}>
       <Tab.Screen name="SIGN IN" component={AstroSageLogin} />
