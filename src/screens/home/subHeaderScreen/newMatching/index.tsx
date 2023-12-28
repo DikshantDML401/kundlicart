@@ -78,7 +78,15 @@ const NewMatching = () => {
         <DatePickerMatching />
         <View style={styles.locationWrapper}>
           <Icon name="map-pin" size={22} color={black} />
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('AppStack', {
+                screen: 'Dashboard',
+                params: {
+                  screen: 'locationPlace',
+                },
+              })
+            }>
             <View style={styles.locationBorder}>
               <Text style={styles.location}>Select Location</Text>
             </View>

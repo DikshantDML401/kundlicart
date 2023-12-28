@@ -4,8 +4,6 @@ import {black, bodyColor, white} from '../../../styles/colors';
 import {font16Px} from '../../../utils/typography';
 import {heightToDp, widthToDp} from '../../../styles/responsive';
 import {VERTICAL_2} from '../../../utils/spacing';
-import {RootStackParamList} from '../../../navigation/types';
-import {useNavigation} from '@react-navigation/native';
 
 interface KundliDataProps {
   imageSource: any;
@@ -14,52 +12,27 @@ interface KundliDataProps {
   textValue3: string;
 }
 
-const KundliData: React.FC<KundliDataProps> = ({
+const HoroScope: React.FC<KundliDataProps> = ({
   imageSource,
   textValue1,
   textValue2,
   textValue3,
 }) => {
-  const navigation = useNavigation<RootStackParamList>();
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('AppStack', {
-            screen: 'Dashboard',
-            params: {
-              screen: 'OpenKundli',
-            },
-          })
-        }>
+      <TouchableOpacity>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue1}</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('AppStack', {
-            screen: 'Dashboard',
-            params: {
-              screen: 'Matching',
-            },
-          })
-        }>
+      <TouchableOpacity>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue2}</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('AppStack', {
-            screen: 'Dashboard',
-            params: {
-              screen: 'Horoscope',
-            },
-          })
-        }>
+      <TouchableOpacity>
         <View style={styles.kundliWrapper}>
           <Image source={imageSource} style={styles.kundliLogo} />
           <Text style={styles.kundliText}>{textValue3}</Text>
@@ -68,7 +41,7 @@ const KundliData: React.FC<KundliDataProps> = ({
     </View>
   );
 };
-export default KundliData;
+export default HoroScope;
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
@@ -77,10 +50,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     opacity: 20,
     backgroundColor: bodyColor,
-    padding: 1,
+    padding: 0.7,
   },
   kundliWrapper: {
-    paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 7,
@@ -89,7 +61,7 @@ const styles = StyleSheet.create({
     borderRightColor: bodyColor,
     backgroundColor: white,
   },
-  kundliLogo: {width: widthToDp('10%'), height: heightToDp('5%')},
+  kundliLogo: {width: widthToDp('16%'), height: heightToDp('8%')},
   kundliText: {
     color: black,
     fontSize: font16Px,

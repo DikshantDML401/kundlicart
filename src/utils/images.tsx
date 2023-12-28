@@ -13,6 +13,9 @@ const dummy4: ImageSourcePropType = require('../assets/images/youtube.png');
 const astrolady: ImageSourcePropType = require('../assets/images/astroLady.jpg');
 const yearBanner: ImageSourcePropType = require('../assets/images/yearBanner.png');
 const astroDetailBg: ImageSourcePropType = require('../assets/images/background.jpg');
+const aries: ImageSourcePropType = require('../assets/images/aries.jpeg');
+const taurus: ImageSourcePropType = require('../assets/images/taurus.jpg');
+const gemini: ImageSourcePropType = require('../assets/images/gemini.jpeg');
 export {
   authHeaderLogo,
   drawerHeader,
@@ -27,4 +30,7 @@ export {
   astrolady,
   yearBanner,
   astroDetailBg,
+  aries,
+  taurus,
+  gemini,
 };

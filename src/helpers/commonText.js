@@ -1,8 +1,10 @@
 import {
+  aries,
   dummy2,
   dummy3,
-  homeBanner,
+  gemini,
   kundliLogo,
+  taurus,
   yearBanner,
 } from '../utils/images';
 import {dummy1} from '../utils/images';
@@ -58,6 +60,29 @@ export const KundliDataProps = [
     textValue1: 'Kundli',
     textValue2: 'Matching',
     textValue3: 'Horoscope',
+  },
+];
+export const HoroScopeDataProps = [
+  {
+    id: 1,
+    imageSource: aries,
+    textValue1: 'Cancer',
+    textValue2: 'Leo',
+    textValue3: 'Vargo',
+  },
+  {
+    id: 2,
+    imageSource: taurus,
+    textValue1: 'Aries',
+    textValue2: 'Taurus',
+    textValue3: 'Gemini',
+  },
+  {
+    id: 3,
+    imageSource: gemini,
+    textValue1: 'Libra',
+    textValue2: 'Scorpion',
+    textValue3: 'Sagitarius',
   },
 ];
 export const ConsultDataProps = [
