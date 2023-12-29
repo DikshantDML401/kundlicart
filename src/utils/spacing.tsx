@@ -25,6 +25,8 @@ export const HORIZONTAL_6 = widthToDp('6%');
 export const HORIZONTAL_8 = widthToDp('8%');
 export const HORIZONTAL_9 = widthToDp('18%');
 export const HORIZONTAL_10 = widthToDp('15%');
+export const HORIZONTAL_11 = widthToDp('13%');
+export const HORIZONTAL_12 = widthToDp('10%');
 //Paddings
 export const BUTTON_PADDING = heightToDp('1.5%');
 
