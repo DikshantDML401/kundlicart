@@ -74,9 +74,10 @@ const Chat = () => {
                         </View>
                       ))}
                     <ActionButton
-                      title={'busy'}
+                      title={'Chat'}
                       onPress={() => console.log('hello')}
                       backgroundColor={darkYellow}
+                      textStyle={styles.btnText}
                     />
                   </View>
                 </View>
@@ -133,5 +134,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: widthToDp('1%'),
+  },
+  btnText: {
+    color: black,
+    fontWeight: '500',
   },
 });
