@@ -12,7 +12,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import {astroDetailBg, astrolady} from '../../utils/images';
 import {heightToDp, widthToDp} from '../../styles/responsive';
-import {blue, darkYellow, green, white} from '../../styles/colors';
+import {blue, darkOrange, green, white} from '../../styles/colors';
 import {HORIZONTAL_4, VERTICAL_1} from '../../utils/spacing';
 import {font18Px} from '../../utils/typography';
 import {astroDetails} from '../../helpers/HomeTab';
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     marginLeft: widthToDp('1%'),
   },
   btnStyle: {
-    backgroundColor: darkYellow,
+    backgroundColor: darkOrange,
     borderRadius: widthToDp('1%'),
     paddingHorizontal: widthToDp('1%'),
     marginLeft: widthToDp('1%'),

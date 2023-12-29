@@ -12,6 +12,7 @@ interface ActionProps {
   backgroundColor?: string;
   leftImage?: boolean;
   leftIcon?: any;
+  iconStyle?: object;
 }
 
 const ActionButton: React.FC<ActionProps> = ({
@@ -22,6 +23,7 @@ const ActionButton: React.FC<ActionProps> = ({
   textStyle,
   leftImage = false,
   leftIcon,
+  iconStyle,
 }) => {
   return (
     <TouchableOpacity
@@ -36,7 +38,7 @@ const ActionButton: React.FC<ActionProps> = ({
               },
             ]
       }>
-      {leftImage && <View>{leftIcon}</View>}
+      {leftImage && <View style={iconStyle}>{leftIcon}</View>}
       <Text style={textStyle ? textStyle : styles.btnText}>{title}</Text>
     </TouchableOpacity>
   );

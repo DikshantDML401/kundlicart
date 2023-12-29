@@ -44,10 +44,10 @@ const Call = () => {
               <TouchableOpacity
                 style={styles.container}
                 onPress={() =>
-                  navigation.navigate('AppStack', {
-                    screen: 'CallStack',
+                  navigation.navigate('TabNavigation', {
+                    screen: 'Call',
                     params: {
-                      AstroDetails: undefined,
+                      screen: 'AstroDetails',
                     },
                   })
                 }
@@ -84,9 +84,10 @@ const Call = () => {
                       </View>
                     ))}
                   <ActionButton
-                    title={'busy'}
+                    title={'Call'}
                     onPress={() => console.log('hello')}
                     backgroundColor={darkYellow}
+                    textStyle={styles.btnText}
                   />
                 </View>
               </TouchableOpacity>
@@ -142,5 +143,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: widthToDp('1%'),
+  },
+  btnText: {
+    color: black,
+    fontWeight: '500',
   },
 });

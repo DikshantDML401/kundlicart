@@ -34,6 +34,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const Account = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loginData, setLoginData] = useState<any>(Login);
 
   const handleShare = () => {
