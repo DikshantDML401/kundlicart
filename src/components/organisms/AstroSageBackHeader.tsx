@@ -18,6 +18,7 @@ interface AstroSage {
   backArrow?: boolean;
   rightIcons?: boolean;
   walletIcon?: boolean;
+  containerStyle?: boolean;
 }
 
 const AstroSageBackHeader: React.FC<AstroSage> = ({
@@ -25,79 +26,157 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
   backArrow = false,
   rightIcons = false,
   walletIcon = false,
+  containerStyle = false,
 }) => {
   const navigation = useNavigation<RootStackParamList>();
 
   const [showFilter, setShowFilter] = useState<boolean>(false);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.leftContainer}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <View style={styles.backArrow}>
-            {backArrow && (
-              <Icon name="arrow-left" size={24} color={lightBlack} />
+    <>
+      {containerStyle ? (
+        <View style={styles.container}>
+          <View style={styles.leftContainer}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <View style={styles.backArrow}>
+                {backArrow && (
+                  <Icon name="arrow-left" size={24} color={lightBlack} />
+                )}
+              </View>
+            </TouchableOpacity>
+            <Text style={styles.title}>{title}</Text>
+          </View>
+          <View style={styles.rightContainer}>
+            {rightIcons && (
+              <View style={styles.rightIcons}>
+                <TouchableWithoutFeedback
+                  onPress={() =>
+                    navigation.navigate('TabNavigation', {
+                      screen: 'History',
+                      params: {
+                        screen: 'Wallet',
+                      },
+                    })
+                  }>
+                  <Icon name="credit-card" size={22} color={black} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={() => setShowFilter(true)}>
+                  <Icon name="filter" size={22} color={black} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback
+                  onPress={() => console.log('pressed')}>
+                  <Icon name="bell" size={22} color={black} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback
+                  onPress={() => console.log('pressed')}>
+                  <Icon name="search" size={22} color={black} />
+                </TouchableWithoutFeedback>
+              </View>
             )}
           </View>
-        </TouchableOpacity>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-      <View style={styles.rightContainer}>
-        {rightIcons && (
-          <View style={styles.rightIcons}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                navigation.navigate('TabNavigation', {
-                  screen: 'History',
-                  params: {
-                    screen: 'Wallet',
-                  },
-                })
-              }>
-              <Icon name="credit-card" size={22} color={black} />
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => setShowFilter(true)}>
-              <Icon name="filter" size={22} color={black} />
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
-              <Icon name="bell" size={22} color={black} />
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => console.log('pressed')}>
-              <Icon name="search" size={22} color={black} />
-            </TouchableWithoutFeedback>
+          {walletIcon && (
+            <View style={styles.rightIcons}>
+              <TouchableWithoutFeedback
+                onPress={() =>
+                  navigation.navigate('TabNavigation', {
+                    screen: 'History',
+                    params: {
+                      screen: 'Wallet',
+                    },
+                  })
+                }>
+                <Icon name="credit-card" size={22} color={black} />
+              </TouchableWithoutFeedback>
+            </View>
+          )}
+          <If show={showFilter}>
+            <UpSideModal
+              modalStyle={styles.modal}
+              style={styles.modalContainer}
+              value={showFilter}>
+              <FilterContent onClose={() => setShowFilter(false)} />
+            </UpSideModal>
+          </If>
+        </View>
+      ) : (
+        <View style={styles.containerStyle}>
+          <View style={styles.leftContainer}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <View style={styles.backArrow}>
+                {backArrow && (
+                  <Icon name="arrow-left" size={24} color={lightBlack} />
+                )}
+              </View>
+            </TouchableOpacity>
+            <Text style={styles.title}>{title}</Text>
           </View>
-        )}
-      </View>
-      {walletIcon && (
-        <View style={styles.rightIcons}>
-          <TouchableWithoutFeedback
-            onPress={() =>
-              navigation.navigate('TabNavigation', {
-                screen: 'History',
-                params: {
-                  screen: 'Wallet',
-                },
-              })
-            }>
-            <Icon name="credit-card" size={22} color={black} />
-          </TouchableWithoutFeedback>
+          <View style={styles.rightContainer}>
+            {rightIcons && (
+              <View style={styles.rightIcons}>
+                <TouchableWithoutFeedback
+                  onPress={() =>
+                    navigation.navigate('TabNavigation', {
+                      screen: 'History',
+                      params: {
+                        screen: 'Wallet',
+                      },
+                    })
+                  }>
+                  <Icon name="credit-card" size={22} color={black} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={() => setShowFilter(true)}>
+                  <Icon name="filter" size={22} color={black} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback
+                  onPress={() => console.log('pressed')}>
+                  <Icon name="bell" size={22} color={black} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback
+                  onPress={() => console.log('pressed')}>
+                  <Icon name="search" size={22} color={black} />
+                </TouchableWithoutFeedback>
+              </View>
+            )}
+          </View>
+          {walletIcon && (
+            <View style={styles.rightIcons}>
+              <TouchableWithoutFeedback
+                onPress={() =>
+                  navigation.navigate('TabNavigation', {
+                    screen: 'History',
+                    params: {
+                      screen: 'Wallet',
+                    },
+                  })
+                }>
+                <Icon name="credit-card" size={22} color={black} />
+              </TouchableWithoutFeedback>
+            </View>
+          )}
+          <If show={showFilter}>
+            <UpSideModal
+              modalStyle={styles.modal}
+              style={styles.modalContainer}
+              value={showFilter}>
+              <FilterContent onClose={() => setShowFilter(false)} />
+            </UpSideModal>
+          </If>
         </View>
       )}
-      <If show={showFilter}>
-        <UpSideModal
-          modalStyle={styles.modal}
-          style={styles.modalContainer}
-          value={showFilter}>
-          <FilterContent onClose={() => setShowFilter(false)} />
-        </UpSideModal>
-      </If>
-    </View>
+    </>
   );
 };
 
 export default AstroSageBackHeader;
 
 const styles = StyleSheet.create({
+  containerStyle: {
+    backgroundColor: darkYellow,
+    paddingVertical: widthToDp('2%'),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   container: {
     backgroundColor: darkYellow,
     paddingVertical: widthToDp('5%'),

@@ -1,14 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import LocationSubHeader from '../../../components/organisms/subHeader/locationSubHeader';
 
 const LocationPlace = () => {
   return (
-    <View>
-      <Text style={{color: 'black'}}>locationPlace</Text>
-    </View>
+    <>
+      <LocationSubHeader />
+    </>
   );
 };
 
 export default LocationPlace;
-
-const styles = StyleSheet.create({});

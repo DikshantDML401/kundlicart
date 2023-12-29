@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import Home from '../../screens/home';
@@ -38,6 +39,7 @@ const DashboardStack = () => {
               backArrow={true}
               rightIcons={false}
               walletIcon={false}
+              containerStyle={false}
             />
           ),
         }}
@@ -49,10 +51,11 @@ const DashboardStack = () => {
           headerShown: true,
           header: () => (
             <AstroSageBackHeader
-              title="Horoscope"
+              title="Select Your Sign"
               backArrow={true}
               rightIcons={false}
               walletIcon={false}
+              containerStyle={true}
             />
           ),
         }}
@@ -68,6 +71,7 @@ const DashboardStack = () => {
               backArrow={true}
               rightIcons={false}
               walletIcon={false}
+              containerStyle={false}
             />
           ),
         }}

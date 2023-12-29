@@ -10,7 +10,7 @@ import {
   astrologersBioData,
   astrologersData,
 } from '../../../helpers/commonText';
-import {HORIZONTAL_3} from '../../../utils/spacing';
+import {HORIZONTAL_3, VERTICAL_1} from '../../../utils/spacing';
 import CustomButton from '../../../components/atoms/CustomButton';
 import {orange, white} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -67,8 +67,7 @@ const Homepage = () => {
                 size={22}
                 color={white}
                 style={{
-                  marginLeft: 25,
-                  paddingRight: 17,
+                  marginLeft: 10,
                 }}
               />
             }
@@ -92,6 +91,7 @@ const styles = StyleSheet.create({
   headingStyle: {
     fontWeight: 'bold',
     fontSize: font17Px,
+    marginRight: VERTICAL_1,
   },
   containerHeadStyle: {
     width: widthToDp('98%'),
