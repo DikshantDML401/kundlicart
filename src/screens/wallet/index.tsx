@@ -71,6 +71,9 @@ const Wallet = () => {
           onPress={() =>
             navigation.navigate('TabNavigation', {
               screen: 'History',
+              params: {
+                screen: 'History',
+              },
             })
           }>
           <Text style={styles.consultationTxt}>Consultation History</Text>

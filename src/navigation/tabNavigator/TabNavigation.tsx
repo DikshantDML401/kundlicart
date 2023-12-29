@@ -3,14 +3,14 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 import {black, darkYellow, orange, paleOrange} from '../../styles/colors';
-import Call from '../../screens/call';
 import Live from '../../screens/live';
 import Chat from '../../screens/chat';
-import History from '../../screens/historyTab';
 import Home from '../../screens/home';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 import AppHeader from '../../components/organisms/Appheader/AppHeader';
 import {StatusBar} from 'react-native';
+import CallStack from '../stackNavigators/CallStack';
+import HistoryStack from '../stackNavigators/HistoryStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,30 +20,35 @@ const tabScreens = [
     component: Home,
     icon: 'home',
     color: black,
+    headerShown: true,
   },
   {
     name: 'Call',
-    component: Call,
+    component: CallStack,
     icon: 'phone-call',
     color: black,
+    headerShown: false,
   },
   {
     name: 'Live',
     component: Live,
     icon: 'video',
     color: black,
+    headerShown: true,
   },
   {
     name: 'Chat',
     component: Chat,
     icon: 'message-circle',
     color: black,
+    headerShown: true,
   },
   {
     name: 'History',
-    component: History,
+    component: HistoryStack,
     icon: 'book',
     color: black,
+    headerShown: false,
   },
 ];
 
@@ -58,19 +63,12 @@ export default function TabNavigation() {
             name={screen.name}
             component={screen.component}
             options={{
-              headerShown: true,
+              headerShown: screen.headerShown,
               header: () => {
                 return (
                   <>
                     {screen.name === 'Home' ? (
                       <AppHeader headerText="KundliKart" showIcon={true} />
-                    ) : screen.name === 'History' ? (
-                      <AstroSageBackHeader
-                        title={'Consultation History'}
-                        backArrow={true}
-                        rightIcons={false}
-                        walletIcon={true}
-                      />
                     ) : (
                       <AstroSageBackHeader
                         title={'KundliKart'}

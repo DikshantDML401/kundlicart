@@ -44,10 +44,10 @@ const Call = () => {
               <TouchableOpacity
                 style={styles.container}
                 onPress={() =>
-                  navigation.navigate('AppStack', {
-                    screen: 'CallStack',
+                  navigation.navigate('TabNavigation', {
+                    screen: 'Call',
                     params: {
-                      AstroDetails: undefined,
+                      screen: 'AstroDetails',
                     },
                   })
                 }
