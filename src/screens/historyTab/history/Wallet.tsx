@@ -42,8 +42,8 @@ const Wallet = () => {
     <TouchableOpacity
       style={[styles.recharge, styles.account]}
       onPress={() =>
-        navigation.navigate('AppStack', {
-          screen: 'AccountStack',
+        navigation.navigate('TabNavigation', {
+          screen: 'History',
           params: {screen: 'Account'},
         })
       }>

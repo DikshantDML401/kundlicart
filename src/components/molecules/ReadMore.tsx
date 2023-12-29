@@ -1,22 +1,33 @@
 import {StyleSheet, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import {
   black,
+  darkOrange,
   lightGreen,
   lightOrange,
   lightYellow,
+  lightgrey,
   orange,
+  white,
 } from '../../styles/colors';
-import {font17Px, font18Px} from '../../utils/typography';
-import {HORIZONTAL_1, HORIZONTAL_4, VERTICAL_1} from '../../utils/spacing';
+import {font16Px, font17Px, font18Px} from '../../utils/typography';
+import {
+  HORIZONTAL_1,
+  HORIZONTAL_3,
+  HORIZONTAL_4,
+  VERTICAL_1,
+} from '../../utils/spacing';
 
-import {TouchableOpacity} from 'react-native';
 import {widthToDp} from '../../styles/responsive';
+import LineBreak from '../atoms/LineBreak';
+import {useTranslation} from '../hooks/useTranslation';
 
 const ReadMore = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const {t} = useTranslation();
 
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
@@ -25,49 +36,61 @@ const ReadMore = () => {
     <View style={styles.readMore}>
       <Text style={styles.readmoreText}>
         {isExpanded
-          ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
-          : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+          ? `${t('ReadMore.readMoreText')}`
+          : `${t('ReadMore.seeLessText')}`}
       </Text>
       {isExpanded && (
         <>
           <View>
             <View style={styles.expertiseWrapper}>
-              <MaterialIcons name="interests" size={24} color={lightGreen} />
-              <Text style={styles.expertise}>Expertise</Text>
+              <View style={styles.iconContainer}>
+                <MaterialIcons
+                  name="interests"
+                  size={24}
+                  color={lightGreen}
+                  style={styles.expertiseIcon}
+                />
+              </View>
+              <View>
+                <Text style={styles.expertise}>Expertise</Text>
+                <LineBreak lineStyle={styles.linebreak} />
+              </View>
             </View>
-            <Text
-              style={[
-                styles.readmoreText,
-                {marginHorizontal: HORIZONTAL_1, marginTop: VERTICAL_1},
-              ]}>
-              Vedic, Tarrot Reading
-            </Text>
+            <Text style={styles.skillText}>Vedic, Tarrot Reading</Text>
           </View>
           <View>
             <View style={styles.expertiseWrapper}>
-              <MaterialIcons name="school" size={24} color={lightYellow} />
-              <Text style={styles.expertise}>Education</Text>
+              <View style={styles.iconContainer}>
+                <MaterialIcons
+                  name="school"
+                  size={24}
+                  color={lightYellow}
+                  style={styles.expertiseIcon}
+                />
+              </View>
+              <View>
+                <Text style={styles.expertise}>Education</Text>
+                <LineBreak lineStyle={styles.linebreak} />
+              </View>
             </View>
-            <Text
-              style={[
-                styles.readmoreText,
-                {marginHorizontal: HORIZONTAL_1, marginTop: VERTICAL_1},
-              ]}>
-              Vedic, Tarrot Reading
-            </Text>
+            <Text style={styles.skillText}>Vedic, Tarrot Reading</Text>
           </View>
           <View>
             <View style={styles.expertiseWrapper}>
-              <MaterialIcons name="adjust" size={24} color={orange} />
-              <Text style={styles.expertise}>Focus Area</Text>
+              <View style={styles.iconContainer}>
+                <MaterialIcons
+                  name="adjust"
+                  size={24}
+                  color={orange}
+                  style={styles.expertiseIcon}
+                />
+              </View>
+              <View>
+                <Text style={styles.expertise}>Focus Area</Text>
+                <LineBreak lineStyle={styles.linebreak} />
+              </View>
             </View>
-            <Text
-              style={[
-                styles.readmoreText,
-                {marginHorizontal: HORIZONTAL_1, marginTop: VERTICAL_1},
-              ]}>
-              Vedic, Tarrot Reading
-            </Text>
+            <Text style={styles.skillText}>Vedic, Tarrot Reading</Text>
           </View>
         </>
       )}
@@ -111,6 +134,27 @@ const styles = StyleSheet.create({
     color: black,
     fontSize: font18Px,
     fontWeight: '500',
-    textDecorationLine: 'underline',
+  },
+  linebreak: {
+    marginTop: widthToDp('2%'),
+    borderWidth: widthToDp('0.05%'),
+    width: widthToDp('35%'),
+    borderColor: darkOrange,
+  },
+  expertiseIcon: {
+    backgroundColor: lightgrey,
+    borderRadius: widthToDp('20%'),
+    padding: widthToDp('2%'),
+  },
+  iconContainer: {
+    backgroundColor: white,
+    borderRadius: widthToDp('20%'),
+    padding: widthToDp('1.5%'),
+  },
+  skillText: {
+    color: black,
+    fontSize: font16Px,
+    marginLeft: HORIZONTAL_3,
+    marginTop: VERTICAL_1,
   },
 });

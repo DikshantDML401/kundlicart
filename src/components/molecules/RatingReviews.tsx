@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -7,9 +8,25 @@ import {font16Px, font17Px, font18Px} from '../../utils/typography';
 import {HORIZONTAL_5, VERTICAL_1} from '../../utils/spacing';
 import {widthToDp} from '../../styles/responsive';
 import {review} from '../../helpers/HomeTab';
+import {Menu, MenuItem} from 'react-native-material-menu';
 
 const RatingReviews = () => {
-  const [showAllReviews, setShowAllReviews] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState<boolean>(false);
+  const [selectedReviewIndex, setSelectedReviewIndex] = useState<number | null>(
+    null,
+  );
+
+  const [visible, setVisible] = useState(false);
+  const showMenu = (index: number) => {
+    setVisible(true);
+    setSelectedReviewIndex(index);
+  };
+
+  const hideMenu = () => {
+    setVisible(false);
+    setSelectedReviewIndex(null);
+  };
+
   const displayedReviews = showAllReviews ? review : review.slice(0, 2);
 
   const reviewCount = review.length;
@@ -17,6 +34,9 @@ const RatingReviews = () => {
   const toggleShowAllReviews = () => {
     setShowAllReviews(!showAllReviews);
   };
+
+  console.log(review.length);
+
   return (
     <View style={{marginHorizontal: HORIZONTAL_5}}>
       <View style={styles.RatingReviews}>
@@ -47,20 +67,38 @@ const RatingReviews = () => {
               <Text style={styles.reviewCount}>{val?.date}</Text>
               <Text style={styles.reviewCount}>{val?.content}</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => showMenu(index)}>
               <MaterialIcons name="more-vert" size={24} color={black} />
+
+              {visible && selectedReviewIndex === index && (
+                <View style={{}}>
+                  <Menu
+                    visible={visible}
+                    onRequestClose={hideMenu}
+                    style={styles.menuWrapper}>
+                    <MenuItem onPress={hideMenu} textStyle={styles.menuItems}>
+                      Report Review
+                    </MenuItem>
+                    <MenuItem onPress={hideMenu} textStyle={styles.menuItems}>
+                      Block Review
+                    </MenuItem>
+                  </Menu>
+                </View>
+              )}
             </TouchableOpacity>
           </View>
         ))
       ) : (
         <Text style={styles.reviewCount}>NA</Text>
       )}
-      {displayedReviews.length ? (
+      {displayedReviews.length > 2 ? (
+        <TouchableOpacity onPress={toggleShowAllReviews}>
+          <Text style={styles.seeAll}>See Less Reviews</Text>
+        </TouchableOpacity>
+      ) : (
         <TouchableOpacity onPress={toggleShowAllReviews}>
           <Text style={styles.seeAll}>See All Reviews</Text>
         </TouchableOpacity>
-      ) : (
-        <></>
       )}
     </View>
   );
@@ -100,5 +138,11 @@ const styles = StyleSheet.create({
     fontSize: font17Px,
     fontWeight: '400',
     textDecorationLine: 'underline',
+  },
+  menuItems: {
+    color: black,
+  },
+  menuWrapper: {
+    width: widthToDp('45%'),
   },
 });

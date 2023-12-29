@@ -2,36 +2,23 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
-import AstrologerDetail from '../../screens/astrologerDetail';
-import Call from '../../screens/call';
-const CallStack = () => {
+import History from '../../screens/historyTab';
+import Account from '../../screens/account';
+import Wallet from '../../screens/wallet';
+const HistoryStack = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator
-      initialRouteName="Call"
+      initialRouteName="History"
       screenOptions={{headerShown: false}}>
       <Stack.Screen
-        name="Call"
-        component={Call}
+        name="History"
+        component={History}
         options={{
           headerShown: true,
           header: () => (
             <AstroSageBackHeader
-              title={'KundliKart'}
-              backArrow={true}
-              rightIcons={true}
-            />
-          ),
-        }}
-      />
-      <Stack.Screen
-        name="AstroDetails"
-        component={AstrologerDetail}
-        options={{
-          headerShown: true,
-          header: () => (
-            <AstroSageBackHeader
-              title="Astrologer Details"
+              title={'Consultation History'}
               backArrow={true}
               rightIcons={false}
               walletIcon={true}
@@ -39,8 +26,31 @@ const CallStack = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="Account"
+        component={Account}
+        options={{
+          headerShown: true,
+          header: () => (
+            <AstroSageBackHeader
+              title="Account"
+              backArrow={true}
+              rightIcons={false}
+              walletIcon={true}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="Wallet"
+        component={Wallet}
+        options={{
+          headerShown: true,
+          header: () => <AstroSageBackHeader title="Wallet" backArrow={true} />,
+        }}
+      />
     </Stack.Navigator>
   );
 };
 
-export default CallStack;
+export default HistoryStack;
