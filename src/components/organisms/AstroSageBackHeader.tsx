@@ -51,9 +51,11 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
               <View style={styles.rightIcons}>
                 <TouchableWithoutFeedback
                   onPress={() =>
-                    navigation.navigate('AppStack', {
-                      screen: 'AccountStack',
-                      params: {screen: 'Wallet'},
+                    navigation.navigate('TabNavigation', {
+                      screen: 'History',
+                      params: {
+                        screen: 'Wallet',
+                      },
                     })
                   }>
                   <Icon name="credit-card" size={22} color={black} />
@@ -76,8 +78,8 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
             <View style={styles.rightIcons}>
               <TouchableWithoutFeedback
                 onPress={() =>
-                  navigation.navigate('AppStack', {
-                    screen: 'AccountStack',
+                  navigation.navigate('TabNavigation', {
+                    screen: 'History',
                     params: {
                       screen: 'Wallet',
                     },
@@ -113,9 +115,11 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
               <View style={styles.rightIcons}>
                 <TouchableWithoutFeedback
                   onPress={() =>
-                    navigation.navigate('AppStack', {
-                      screen: 'AccountStack',
-                      params: {screen: 'Wallet'},
+                    navigation.navigate('TabNavigation', {
+                      screen: 'History',
+                      params: {
+                        screen: 'Wallet',
+                      },
                     })
                   }>
                   <Icon name="credit-card" size={22} color={black} />
@@ -138,8 +142,8 @@ const AstroSageBackHeader: React.FC<AstroSage> = ({
             <View style={styles.rightIcons}>
               <TouchableWithoutFeedback
                 onPress={() =>
-                  navigation.navigate('AppStack', {
-                    screen: 'AccountStack',
+                  navigation.navigate('TabNavigation', {
+                    screen: 'History',
                     params: {
                       screen: 'Wallet',
                     },
