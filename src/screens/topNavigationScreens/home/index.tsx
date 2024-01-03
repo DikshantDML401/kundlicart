@@ -10,11 +10,19 @@ import {
   astrologersBioData,
   astrologersData,
 } from '../../../helpers/commonText';
-import {HORIZONTAL_3, VERTICAL_1} from '../../../utils/spacing';
+import {
+  HORIZONTAL_3,
+  HORIZONTAL_4,
+  HORIZONTAL_8,
+  HORIZONTAL_9,
+  VERTICAL_1,
+} from '../../../utils/spacing';
 import CustomButton from '../../../components/atoms/CustomButton';
-import {orange, white} from '../../../styles/colors';
+import {black, darkYellow, orange, white} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {font17Px} from '../../../utils/typography';
+import {font17Px, font18Px} from '../../../utils/typography';
+import ActionButton from '../../../components/atoms/ActionButton';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Homepage = () => {
   const LiveChatTitleProps = {
@@ -43,8 +51,8 @@ const Homepage = () => {
       });
   };
   return (
-    <ScrollView style={styles.container}>
-      <View>
+    <>
+      <ScrollView style={styles.container}>
         <Image source={homeBanner} style={styles.homeBanner} />
         <KundliData {...KundliDataProps[3]} />
         <LiveChat {...LiveChatTitleProps} />
@@ -54,7 +62,7 @@ const Homepage = () => {
             <KundliData key={index} {...data} />
           ))}
         </View>
-        <View>
+        <View style={styles.customButton}>
           <CustomButton
             title="Share App with Friends"
             color={orange}
@@ -77,8 +85,30 @@ const Homepage = () => {
             }}
           />
         </View>
+      </ScrollView>
+      <View style={styles.callBtnContainer}>
+        <ActionButton
+          title="Call"
+          onPress={() => console.log('hi')}
+          style={styles.callBtn}
+          leftImage={true}
+          leftIcon={
+            <MaterialIcons name="wifi-calling-3" size={24} color={black} />
+          }
+          textStyle={styles.btnTextStyle}
+          iconStyle={styles.iconStyle}
+        />
+        <ActionButton
+          title="Chat"
+          onPress={() => console.log('hi')}
+          style={styles.callBtn}
+          leftImage={true}
+          leftIcon={<MaterialIcons name="chat" size={24} color={black} />}
+          textStyle={styles.btnTextStyle}
+          iconStyle={styles.iconStyle}
+        />
       </View>
-    </ScrollView>
+    </>
   );
 };
 
@@ -97,5 +127,31 @@ const styles = StyleSheet.create({
     width: widthToDp('98%'),
     borderRadius: widthToDp('0%'),
     margin: HORIZONTAL_3,
+  },
+  customButton: {marginBottom: HORIZONTAL_9},
+  callBtnContainer: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: widthToDp('7%'),
+    justifyContent: 'space-between',
+    width: widthToDp('100%'),
+    paddingHorizontal: HORIZONTAL_8,
+  },
+  callBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: widthToDp('7%'),
+    backgroundColor: darkYellow,
+    width: widthToDp('40%'),
+  },
+  btnTextStyle: {
+    color: black,
+    fontSize: font18Px,
+    fontWeight: '600',
+    paddingHorizontal: HORIZONTAL_4,
+    paddingVertical: widthToDp('1.5%'),
+  },
+  iconStyle: {
+    paddingLeft: widthToDp('3%'),
   },
 });

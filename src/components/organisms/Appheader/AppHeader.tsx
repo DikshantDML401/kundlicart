@@ -5,6 +5,7 @@ import {black, darkYellow} from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 import {font17Px} from '../../../utils/typography';
+import {RootStackParamList} from '../../../navigation/types';
 
 interface AppHeaderProps {
   headerText: string;
@@ -16,6 +17,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({headerText, showIcon}) => {
   const handleNavigate = () => {
     navigation.navigate('Home');
   };
+  const navigations = useNavigation<RootStackParamList>();
   return (
     <View style={styles.container}>
       <View style={styles.headerLeft}>
@@ -37,7 +39,14 @@ const AppHeader: React.FC<AppHeaderProps> = ({headerText, showIcon}) => {
             name="bell"
             size={22}
             color={black}
-            onPress={() => console.log('notification')}
+            onPress={() =>
+              navigations.navigate('AppStack', {
+                screen: 'Dashboard',
+                params: {
+                  screen: 'Notification',
+                },
+              })
+            }
           />
           <Icon
             name="search"
