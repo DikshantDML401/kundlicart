@@ -8,6 +8,7 @@ import Matching from '../../screens/home/matching';
 import AstroSageBackHeader from '../../components/organisms/AstroSageBackHeader';
 import Horoscope from '../../screens/home/horoscope';
 import LocationPlace from '../../screens/home/locationPlace';
+import Notification from '../../screens/appHeader/notification';
 const DashboardStack = () => {
   const Stack = createStackNavigator();
   return (
@@ -68,6 +69,22 @@ const DashboardStack = () => {
           header: () => (
             <AstroSageBackHeader
               title="Search Place"
+              backArrow={true}
+              rightIcons={false}
+              walletIcon={false}
+              containerStyle={false}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="Notification"
+        component={Notification}
+        options={{
+          headerShown: true,
+          header: () => (
+            <AstroSageBackHeader
+              title="Notifications"
               backArrow={true}
               rightIcons={false}
               walletIcon={false}
